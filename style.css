@@ -70,3 +70,12 @@ body {
   background-color: black;
   color: white;
 }
+
+/*Software Skills Buttons*/
+.software-button {
+  background-color: #333333;
+  border: none;
+  border-radius: 17px;
+  width: 68px;
+  height: 46px;
+}
