@@ -12,7 +12,7 @@
       content="Full-Stack Developer, Web Developer, Front-End, Back-End, JavaScript, HTML5, CSS3, React, Node.js, Web Development, Programming, Software Engineer"
     />
     <title>Rafael Matos | Portfolio</title>
-    <!--Put here the final preferred version of teh page-->
+    <!--Put here the final preferred version of the page-->
     <link rel="canonical" href="" />
     <!--Including Bootstrap-->
     <link
@@ -25,6 +25,144 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!--Header with navbar-->
+    <header>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <!--Logo-->
+          <a class="navbar-brand" href="#"
+            ><img src="./assets/logo_placeholder.png" alt="Rafael Matos Logo"
+          /></a>
+          <!--Hamburguer menu-->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--Items NavBar-->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">about</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">curriculum</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">en</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">pt</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--Main content of the website-->
+    <main>
+      <!--Section Intro-->
+      <section>
+        <!--First Text-->
+        <pre>
+[HELLO   I´m a Full Stack Developer 
+    WORLD !]
+                Writing code that creates experiences
+      </pre
+        >
+        <!--First Image-->
+        <img
+          style="width: 500px; height: auto"
+          src="./assets/imagem_inicial.png"
+          alt="Greek Image by midoriya"
+          title="Greek Image by midoriya"
+        />
+        <!--Toggle Dark Mode-->
+        <!-- Rounded switch -->
+        <label class="switch d-inline-flex gap-1">
+          <p>Light</p>
+          <input onclick="myFunction()" type="checkbox" />
+          <span class="slider round"></span>
+          <p>Dark</p>
+        </label>
+      </section>
+
+      <!--Section About-->
+      <section>
+        <!--Second text-->
+        <h1>&lt;/I am Rafael&gt;</h1>
+        <aside>
+          <img
+            style="width: 298px; height: auto"
+            src="./assets/2_image.png"
+            class="rounded float-start"
+            alt="Greek Image by midoriya"
+            title="Greek Image by midoriya"
+          />
+        </aside>
+        <p>
+          I'm a Junior Full Stack Developer with a passion for technology,
+          problem solving and creating responsive, dynamic websites and
+          applications that offer an intuitive user experience.
+        </p>
+        <p>
+          I'm focused on learning new technologies and constantly improving my
+          skills, whether through personal projects or collaborating as part of
+          a team. I love new challenges and value a work environment that
+          encourages innovation and continuous growth.
+        </p>
+      </section>
+      <!--Section Education-->
+      <section>
+        <h2>My Education</h2>
+        <ul>
+          <li class="text-start">
+            Jan 2024<br />Udemy - HTML and CSS<br />Beginners Course, Computer
+            Science
+          </li>
+          <li class="text-start">
+            Feb 2024 - Jun 2024<br />IEFP - Programming Languages<br />.NET
+            Programming, Computer Science
+          </li>
+          <li class="text-start">
+            Sept 2024 - Actual
+            <br />Tokio School <br />Full Stack Developer
+          </li>
+        </ul>
+        <h2 class="text-end">My Experience</h2>
+        <ul>
+          <li>
+            2024
+            <br />Ableton - About Page<br />Website
+          </li>
+          <li>
+            2024
+            <br />Company Site<br />Website
+          </li>
+          <li>
+            2024
+            <br />Lary The Fairy <br />Game
+          </li>
+          <li>
+            2024
+            <br />Freelancer <br />Full-Stack
+          </li>
+        </ul>
+        <aside>
+          <img src="./assets/3_image.png" alt="" />
+        </aside>
+      </section>
+    </main>
+
     <!--Including Bootstrap-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
