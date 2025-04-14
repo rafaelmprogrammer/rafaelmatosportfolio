@@ -1,0 +1,19 @@
+{
+  "about": "about",
+  "curriculum": "curriculum",
+  "projects": "projects",
+  "contact": "contact",
+  "hello": "[HELLO   I'm a Full Stack Developer \n    WORLD !]",
+  "subtitle": "Writing code that creates experiences",
+  "aboutTitle": "</I am Rafael>",
+  "aboutText1": "I'm a Junior Full Stack Developer with a passion for technology, problem solving and creating responsive, dynamic websites and applications that offer an intuitive user experience.",
+  "aboutText2": "I'm focused on learning new technologies and constantly improving my skills, whether through personal projects or collaborating as part of a team. I love new challenges and value a work environment that encourages innovation and continuous growth.",
+  "education": "My Education",
+  "experience": "My Experience",
+  "languages": "Languages",
+  "frameworks": "Frameworks",
+  "startProject": "Start a Project?",
+  "letsDoThis": "Let's do this",
+  "programmingBy": "Programming by",
+  "webDesignBy": "WebDesign by"
+}

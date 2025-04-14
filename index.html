@@ -46,22 +46,39 @@
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#about-section">about</a>
+                <a class="nav-link" href="#about-section" data-translate="about"
+                  >about</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#curriculum-section">curriculum</a>
+                <a
+                  class="nav-link"
+                  href="#curriculum-section"
+                  data-translate="curriculum"
+                  >curriculum</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#projects-section">projects</a>
+                <a
+                  class="nav-link"
+                  href="#projects-section"
+                  data-translate="projects"
+                  >projects</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contact-section">contact</a>
+                <a
+                  class="nav-link"
+                  href="#contact-section"
+                  data-translate="contact"
+                  >contact</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">en</a>
+                <a class="nav-link" href="#" data-lang="en">en</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">pt</a>
+                <a class="nav-link" href="#" data-lang="pt">pt</a>
               </li>
             </ul>
           </div>
@@ -74,8 +91,8 @@
       <!--Section Intro-->
       <section id="intro-section">
         <!--First Text-->
-        <pre>
-[HELLO   I´m a Full Stack Developer 
+        <pre data-translate="hello">
+[HELLO   I'm a Full Stack Developer 
     WORLD !]
                 Writing code that creates experiences
       </pre
@@ -103,7 +120,7 @@
       <!--Section About-->
       <section id="about-section">
         <!--Second text-->
-        <h1>&lt;/I am Rafael&gt;</h1>
+        <h1 data-translate="aboutTitle">&lt;/I am Rafael&gt;</h1>
         <aside>
           <img
             style="width: 298px; height: auto"
@@ -113,12 +130,12 @@
             title="Greek Image by midoriya"
           />
         </aside>
-        <p>
+        <p data-translate="aboutText1">
           I'm a Junior Full Stack Developer with a passion for technology,
           problem solving and creating responsive, dynamic websites and
           applications that offer an intuitive user experience.
         </p>
-        <p>
+        <p data-translate="aboutText2">
           I'm focused on learning new technologies and constantly improving my
           skills, whether through personal projects or collaborating as part of
           a team. I love new challenges and value a work environment that
@@ -127,7 +144,7 @@
       </section>
       <!--Section Education-->
       <section id="education-section">
-        <h2>My Education</h2>
+        <h2 data-translate="education">My Education</h2>
         <ul>
           <li class="text-start">
             Jan 2024<br />Udemy - HTML and CSS<br />Beginners Course, Computer
@@ -142,7 +159,7 @@
             <br />Tokio School <br />Full Stack Developer
           </li>
         </ul>
-        <h2 class="text-end">My Experience</h2>
+        <h2 class="text-end" data-translate="experience">My Experience</h2>
         <ul>
           <li>
             2024
@@ -194,7 +211,7 @@
           />
         </button>
         <div>
-          <h3 class="text-start">Languages</h3>
+          <h3 class="text-start" data-translate="languages">Languages</h3>
           <ul>
             <li>HTML</li>
             <li>CSS</li>
@@ -210,7 +227,7 @@
           </ul>
         </div>
         <div>
-          <h3 class="text-end">Frameworks</h3>
+          <h3 class="text-end" data-translate="frameworks">Frameworks</h3>
 
           <ul>
             <li>Bootstrap</li>
@@ -270,8 +287,8 @@
       </section>
       <!--Section Contact-->
       <section id="contact-section">
-        <p class="text-start">Start a Project?</p>
-        <button>Let's do this</button>
+        <p class="text-start" data-translate="startProject">Start a Project?</p>
+        <button data-translate="letsDoThis">Let's do this</button>
         <aside>
           <img
             src="./assets/glass-sculpture-of-hera.png"
@@ -286,16 +303,30 @@
       <footer>
         <ul class="nav justify-content-center">
           <li class="nav-item">
-            <a class="nav-link" href="#about-section">about</a>
+            <a class="nav-link" href="#about-section" data-translate="about"
+              >about</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#curriculum-section">curriculum</a>
+            <a
+              class="nav-link"
+              href="#curriculum-section"
+              data-translate="curriculum"
+              >curriculum</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#projects-section">projects</a>
+            <a
+              class="nav-link"
+              href="#projects-section"
+              data-translate="projects"
+              >projects</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact-section">contact</a>
+            <a class="nav-link" href="#contact-section" data-translate="contact"
+              >contact</a
+            >
           </li>
         </ul>
         <ul class="nav justify-content-center">
@@ -316,7 +347,9 @@
           </li>
         </ul>
         <p>
-          2025 Programming by <a href="">Rafael Matos</a> | WebDesign by
+          2025 <span data-translate="programmingBy">Programming by</span>
+          <a href="">Rafael Matos</a> |
+          <span data-translate="webDesignBy">WebDesign by</span>
           <a href="">Viviana Sousa</a>
         </p>
       </footer>
