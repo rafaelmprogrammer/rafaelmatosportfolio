@@ -1,24 +1,3 @@
-//DARK AND LIGHT MODE
-const themeToggle = document.getElementById('theme-toggle');
-
-//verificar se há preferência guardada no localStorage para o tema
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'dark') {
-  document.body.classList.add('dark-mode');
-  themeToggle.checked = true;
-}
-
-//Listen if the toggle changed
-themeToggle.addEventListener('change', () => {
-  if (themeToggle.checked) {
-    document.body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    document.body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light');
-  }
-});
-
 //Traduções - Idiomas
 // Variável global para armazenar as traduções
 let translations = {};
@@ -65,6 +44,18 @@ async function updatePageLanguage(lang) {
     subtitle.textContent = translations[lang].subtitle;
   }
 
+  //Atualiza o theme mode
+  const lightMode = document.querySelector(
+    '.theme-toggle-wrapper .light-theme'
+  );
+  if (lightMode) {
+    lightMode.textContent = translations[lang].light;
+  }
+  const darkMode = document.querySelector('.theme-toggle-wrapper .dark-theme');
+  if (darkMode) {
+    darkMode.textContent = translations[lang].dark;
+  }
+
   // Atualiza a seção about
   const aboutTitle = document.querySelector('#about-section h1');
   if (aboutTitle) {
@@ -88,6 +79,18 @@ async function updatePageLanguage(lang) {
     experienceTitle.textContent = translations[lang].experience;
   }
 
+  // Atualiza os itens de educação
+  const educationItems = document.querySelectorAll(
+    '#education-section ul li[data-translate]'
+  );
+  educationItems.forEach((item) => {
+    const key = item.getAttribute('data-translate');
+    if (key && translations[lang][key]) {
+      // Preserva as quebras de linha do texto original
+      item.innerHTML = translations[lang][key].replace(/\n/g, '<br />');
+    }
+  });
+
   // Atualiza as seções de linguagens e frameworks
   const languagesTitle = document.querySelector(
     '#curriculum-section h3.text-start'
@@ -103,6 +106,12 @@ async function updatePageLanguage(lang) {
     frameworksTitle.textContent = translations[lang].frameworks;
   }
 
+  // Atualiza o título dos projetos
+  const myProjectsTitle = document.querySelector('#projects-section h2');
+  if (myProjectsTitle) {
+    myProjectsTitle.textContent = translations[lang].myProjects;
+  }
+
   // Atualiza a seção de contato
   const startProject = document.querySelector('#contact-section p');
   if (startProject) {
@@ -115,6 +124,12 @@ async function updatePageLanguage(lang) {
   }
 
   // Atualiza o footer
+  document.querySelectorAll('footer ul li a').forEach((link) => {
+    const key = link.getAttribute('data-translate');
+    if (key && translations[lang][key]) {
+      link.textContent = translations[lang][key];
+    }
+  });
   const footerText = document.querySelector('footer p');
   if (footerText) {
     footerText.innerHTML = `2025 ${translations[lang].programmingBy} <a href="">Rafael Matos</a> | ${translations[lang].webDesignBy} <a href="">Viviana Sousa</a>`;

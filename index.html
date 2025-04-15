@@ -22,7 +22,7 @@
       crossorigin="anonymous"
     />
     <!--Including External file of CSS-->
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <!--Header with navbar-->
@@ -31,7 +31,9 @@
         <div class="container-fluid">
           <!--Logo-->
           <a class="navbar-brand" href="#intro-section"
-            ><img src="./assets/logo_placeholder.png" alt="Rafael Matos Logo"
+            ><img
+              src="./assets/images/logo/logo_placeholder.png"
+              alt="Rafael Matos Logo"
           /></a>
           <!--Hamburguer menu-->
           <button
@@ -100,7 +102,7 @@
         <!--First Image-->
         <img
           style="width: 500px; height: auto"
-          src="./assets/imagem_inicial.png"
+          src="./assets/profile/imagem_inicial.png"
           alt="Greek Image by midoriya"
           title="Greek Image by midoriya"
         />
@@ -108,12 +110,12 @@
         <!--Toggle Dark Mode-->
         <!-- Rounded switch -->
         <div class="theme-toggle-wrapper">
-          <span>LIGHT</span>
+          <span class="light-theme" data-translate="light">LIGHT</span>
           <label class="theme-switch">
             <input type="checkbox" id="theme-toggle" />
             <span class="slider"></span>
           </label>
-          <span>DARK</span>
+          <span class="dark-theme" data-translate="dark">DARK</span>
         </div>
       </section>
 
@@ -124,7 +126,7 @@
         <aside>
           <img
             style="width: 298px; height: auto"
-            src="./assets/2_image.png"
+            src="./assets/profile/2_image.png"
             class="rounded float-start"
             alt="Greek Image by midoriya"
             title="Greek Image by midoriya"
@@ -146,17 +148,17 @@
       <section id="education-section">
         <h2 data-translate="education">My Education</h2>
         <ul>
-          <li class="text-start">
+          <li class="text-start" data-translate="educationItem1">
             Jan 2024<br />Udemy - HTML and CSS<br />Beginners Course, Computer
             Science
           </li>
-          <li class="text-start">
+          <li class="text-start" data-translate="educationItem2">
             Feb 2024 - Jun 2024<br />IEFP - Programming Languages<br />.NET
             Programming, Computer Science
           </li>
-          <li class="text-start">
-            Sept 2024 - Actual
-            <br />Tokio School <br />Full Stack Developer
+          <li class="text-start" data-translate="educationItem3">
+            Sept 2024 - Current
+            <br />Tokio School <br />Full Stack Developer, Computer Science
           </li>
         </ul>
         <h2 class="text-end" data-translate="experience">My Experience</h2>
@@ -179,7 +181,7 @@
           </li>
         </ul>
         <aside>
-          <img src="./assets/3_image.png" alt="" />
+          <img src="./assets/profile/3_image.png" alt="" />
         </aside>
       </section>
       <!--Section Skills-->
@@ -188,25 +190,31 @@
         <!--Placeholders- Are they buttons? Or just images?-->
         <button class="software-button">
           <img
-            src="./assets/icons8-visual-studio.png"
+            src="./assets/images/icons/tech/icons8-visual-studio.png"
             alt="Visual Studio Code Icon"
           />
         </button>
         <button class="software-button">
           <img
-            src="./assets/icons8-visual-studio-code-2019.png"
+            src="./assets/images/icons/tech/icons8-visual-studio-code-2019.png"
             alt="Microsoft Visual Studio Icon"
           />
         </button>
         <button class="software-button">
-          <img src="./assets/icons8-c++.png" alt="Dev C++ Icon" />
-        </button>
-        <button class="software-button">
-          <img src="./assets/icons8-unity.png" alt="Unity Icon" />
+          <img
+            src="./assets/images/icons/tech/icons8-c++.png"
+            alt="Dev C++ Icon"
+          />
         </button>
         <button class="software-button">
           <img
-            src="./assets/icons8-unreal-engine.png"
+            src="./assets/images/icons/tech/icons8-unity.png"
+            alt="Unity Icon"
+          />
+        </button>
+        <button class="software-button">
+          <img
+            src="./assets/images/icons/tech/icons8-unreal-engine.png"
             alt="Unreal Engine Icon"
           />
         </button>
@@ -239,7 +247,9 @@
       </section>
       <!--Section My Projects-->
       <section id="projects-section">
-        <h2 class="text-uppercase">&lt;/My Projects&gt;</h2>
+        <h2 class="text-uppercase" data-translate="myProjects">
+          &lt;/My Projects&gt;
+        </h2>
         <!--Slider Placeholder-->
         <div id="carouselExampleFade" class="carousel slide carousel-fade">
           <div class="carousel-inner">
@@ -291,7 +301,7 @@
         <button data-translate="letsDoThis">Let's do this</button>
         <aside>
           <img
-            src="./assets/glass-sculpture-of-hera.png"
+            src="./assets/profile/glass-sculpture-of-hera.png"
             alt="Greek Image by midoriya"
             title="Greek Image by midoriya"
             style="width: 252px; height: 241px"
@@ -332,17 +342,23 @@
         <ul class="nav justify-content-center">
           <li class="nav-item">
             <a class="nav-link" href="#"
-              ><img src="./assets/INSTA-ICON.png" alt="Instagram Icon"
+              ><img
+                src="./assets/images/icons/social/INSTA-ICON.png"
+                alt="Instagram Icon"
             /></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"
-              ><img src="./assets/github-icon.png" alt="Instagram Icon"
+              ><img
+                src="./assets/images/icons/social/github-icon.png"
+                alt="GitHub Icon"
             /></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"
-              ><img src="./assets/linkedin-icon.png" alt="Instagram Icon"
+              ><img
+                src="./assets/images/icons/social/linkedin-icon.png"
+                alt="LinkedIn Icon"
             /></a>
           </li>
         </ul>
@@ -355,13 +371,16 @@
       </footer>
     </main>
 
-    <!--Including Bootstrap-->
+    <!-- Scripts -->
+    <!-- Bootstrap Bundle (includes Popper) -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <!--Including External file of JS-->
-    <script src="./main.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="./js/translations.js" defer></script>
+    <script src="./js/main.js" defer></script>
   </body>
 </html>

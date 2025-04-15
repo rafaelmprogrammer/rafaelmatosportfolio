@@ -15,5 +15,11 @@
   "startProject": "Start a Project?",
   "letsDoThis": "Let's do this",
   "programmingBy": "Programming by",
-  "webDesignBy": "WebDesign by"
+  "webDesignBy": "WebDesign by",
+  "light": "LIGHT",
+  "dark": "DARK",
+  "educationItem1": "Jan 2024\nUdemy - HTML and CSS\nBeginners Course, Computer Science",
+  "educationItem2": "Feb 2024 - Jun 2024\nIEFP - Programming Languages\n.NET Programming, Computer Science",
+  "educationItem3": "Sept 2024 - Current\nTokio School\nFull Stack Developer, Computer Science",
+  "myProjects": "</My Projects>"
 }

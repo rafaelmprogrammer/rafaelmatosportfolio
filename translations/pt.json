@@ -15,5 +15,11 @@
   "startProject": "Iniciar um Projeto?",
   "letsDoThis": "Vamos lá",
   "programmingBy": "Programação por",
-  "webDesignBy": "Design por"
+  "webDesignBy": "Design por",
+  "light": "CLARO",
+  "dark": "ESCURO",
+  "educationItem1": "Jan 2024\nUdemy - HTML and CSS\nCurso de Iniciante, Ciências da Computação",
+  "educationItem2": "Fev 2024 - Jun 2024\nIEFP - Linguagens de Programação\nProgramação .NET, Ciências da Computação",
+  "educationItem3": "Set 2024 - Atual\nTokio School\nFull Stack Developer, Ciências da Computação",
+  "myProjects": "</Os meus Projetos>"
 }
