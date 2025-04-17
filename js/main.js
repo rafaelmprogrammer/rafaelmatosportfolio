@@ -46,44 +46,71 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   // Get all sections
   const sections = document.querySelectorAll('section[id]');
+  let isScrolling = false;
+
+  // Debounce function to limit how often the scroll handler fires
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
 
   // Function to update active menu item
   function updateActiveMenuItem() {
-    // Get current scroll position
-    const scrollPosition = window.scrollY;
+    if (isScrolling) return;
 
-    // Check each section
+    // Get current scroll position with a small offset
+    const scrollPosition = window.scrollY + 100;
+
+    // Find the current section
+    let currentSection = null;
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100; // Offset for header
+      const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
       const sectionId = section.getAttribute('id');
 
-      // If we're within this section
       if (
         scrollPosition >= sectionTop &&
         scrollPosition < sectionTop + sectionHeight
       ) {
-        // Remove active class from all menu items
-        document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
-          // Não remover a classe active dos links de idioma
-          if (!link.closest('.lang-switch')) {
+        currentSection = sectionId;
+      }
+    });
+
+    // Update menu items
+    document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
+      // Não remover a classe active dos links de idioma
+      if (!link.closest('.lang-switch')) {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const sectionId = href.substring(1);
+          if (sectionId === currentSection) {
+            link.classList.add('active');
+          } else {
             link.classList.remove('active');
           }
-        });
-
-        // Add active class to corresponding menu item
-        const activeLink = document.querySelector(
-          `.navbar-nav .nav-link[href="#${sectionId}"]`
-        );
-        if (activeLink) {
-          activeLink.classList.add('active');
         }
       }
     });
   }
 
+  // Create debounced version of updateActiveMenuItem
+  const debouncedUpdate = debounce(updateActiveMenuItem, 100);
+
   // Update on scroll
-  window.addEventListener('scroll', updateActiveMenuItem);
+  window.addEventListener('scroll', () => {
+    isScrolling = true;
+    debouncedUpdate();
+    setTimeout(() => {
+      isScrolling = false;
+    }, 150);
+  });
 
   // Update on page load
   updateActiveMenuItem();
