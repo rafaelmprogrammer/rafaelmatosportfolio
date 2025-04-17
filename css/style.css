@@ -1,86 +1,511 @@
-/*Estilo para o modo claro*/
+/* ============================================= */
+/* ========== ESTILOS GERAIS ========== */
+/* ============================================= */
+
+/* Estilo do corpo da página no modo claro (padrão) */
 body {
-  background-color: #e2e2e2;
-  color: #333333;
+  background-color: #e2e2e2; /* Fundo cinza claro */
+  color: #333333; /* Texto escuro */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave entre modos */
 }
 
-/*Estilo para o modo escuro*/
+/* Estilo do corpo da página no modo escuro */
 body.dark-mode {
-  background: #000000;
-  color: #f0f0f0;
+  background: #000000; /* Fundo preto */
+  color: #f0f0f0; /* Texto claro */
 }
 
-/*Estilo da div que contém o toggle do tema*/
-.theme-toggle-wrapper:before {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333333;
-  background-color: #1a000000;
-  padding: 8px;
-  border-radius: 30px;
+/* ============================================= */
+/* ========== HEADER E BARRA DE NAVEGAÇÃO (MOBILE) ========== */
+/* ============================================= */
+
+/* Estilo do logotipo para mobile */
+.navbar-brand {
+  display: inline-block; /* Garante que o link se comporte como bloco para dimensões */
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
-/*Estilo do switch (botão)*/
+/* Estilo da IMAGEM do logotipo para mobile */
+.navbar-brand img {
+  object-fit: contain; /* Garante que a imagem caiba sem distorcer */
+  width: 40px;
+  height: 40px;
+}
+
+/* Estilo geral do botão "hambúrguer" (toggler) para mobile */
+.navbar-toggler {
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Sem borda */
+  position: relative; /* Posição relativa para referência */
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
+/* Remove a borda/outline de foco do botão hambúrguer */
+.navbar-toggler:focus {
+  outline: none; /* Remove o outline padrão */
+  box-shadow: none; /* Remove a sombra padrão que alguns navegadores adicionam */
+}
+
+/* Estilo do ícone dentro do botão "hambúrguer" para mobile */
+.navbar-toggler-icon {
+  display: block; /* Ocupa a linha inteira */
+  position: relative; /* Posição relativa para pseudo-elementos */
+  background: none; /* Sem fundo (usamos pseudo-elementos) */
+  border: none; /* Sem borda */
+  width: 30px;
+  height: 20px;
+}
+
+/* Estilo das linhas do ícone "hambúrguer" (antes e depois) */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: ''; /* Necessário para pseudo-elementos */
+  display: block; /* Ocupa a linha inteira */
+  position: absolute; /* Posicionamento absoluto em relação ao pai */
+  left: 0; /* Alinhado à esquerda */
+  border-radius: 8px; /* Cantos arredondados */
+  background-color: #333333; /* Cor das linhas (modo claro) */
+  transition: background 0.3s; /* Transição suave da cor */
+  width: 30px;
+  height: 4px;
+}
+
+/* Posição da linha superior do ícone */
+.navbar-toggler-icon::before {
+  top: 0;
+}
+
+/* Posição da linha inferior do ícone */
+.navbar-toggler-icon::after {
+  top: 10px;
+}
+
+/* ============================================= */
+/* ========== MENU MOBILE (DROPDOWN) =========== */
+/* ============================================= */
+
+/* Estilo do container do menu dropdown para mobile */
+.navbar-collapse {
+  background-color: #333333; /* Fundo cinza escuro (modo claro) */
+  border-radius: 24px; /* Bordas arredondadas */
+  border-top-right-radius: 0px; /* Canto superior direito reto */
+  z-index: 1000; /* Fica sobre outros elementos */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  position: fixed; /* Posicionamento fixo */
+  width: 160px;
+  padding: 15px 20px 10px;
+  top: 65px; /* Posição fixa abaixo do ícone do hambúrguer */
+  /*transform: translateX(-85px); /* Move para a esquerda para alinhar com o botão */
+}
+
+/* Ajuste para smartphones pequenos (até 575.98px) */
+@media (max-width: 575.98px) {
+  .navbar-collapse.show {
+    width: 140px; /* Largura menor para telas pequenas */
+    transform: translateX(-40px); /* Ajuste da posição horizontal */
+    top: 65px; /* Mantém a mesma distância vertical */
+  }
+}
+
+/* Ajuste para smartphones médios (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .navbar-collapse.show {
+    width: 150px; /* Largura média para telas médias */
+    transform: translateX(-50px); /* Ajuste da posição horizontal */
+    margin-right: 10px;
+    top: 65px; /* Mantém a mesma distância vertical */
+  }
+}
+
+/* Ajuste para tablets (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .navbar-collapse.show {
+    width: 160px; /* Largura padrão para tablets */
+    transform: translateX(-90px); /* Ajuste da posição horizontal */
+    top: 75px; /* Mantém a mesma distância vertical */
+  }
+}
+
+/* Mostra o menu quando a classe .show é adicionada (Bootstrap) */
+.navbar-collapse.show {
+  display: block;
+}
+
+/* Estilo da lista de links dentro do menu para mobile */
+.navbar-nav {
+  gap: 12px; /* Espaçamento vertical entre os itens */
+  display: flex; /* Ativa o Flexbox */
+  flex-direction: column; /* Itens em coluna */
+}
+
+/* Estilo dos itens individuais da lista para mobile */
+.navbar-nav .nav-item {
+  text-align: right; /* Alinha o texto à direita */
+}
+
+/* Estilo dos links dentro do menu para mobile */
+.navbar-nav .nav-link {
+  color: #f0f0f0; /* Cor do texto (claro) */
+  font-size: 1.25rem; /* Tamanho da fonte */
+  font-weight: 400; /* Peso da fonte (normal) */
+  padding: 2px 0; /* Pequeno espaçamento vertical */
+  transition: color 0.3s ease, font-weight 0.3s ease; /* Transição suave da cor e peso da fonte */
+}
+
+/* Estilo do menu item ativo/selecionado - APENAS PARA MOBILE */
+@media (max-width: 991.98px) {
+  .navbar-collapse.show .navbar-nav .nav-item .nav-link.active {
+    font-weight: 800 !important; /* Negrito extra */
+    color: #ffffff !important; /* Cor branca para destaque no modo claro */
+  }
+
+  /* Modo escuro */
+  body.dark-mode .navbar-collapse.show .navbar-nav .nav-item .nav-link.active {
+    font-weight: 800 !important; /* Negrito extra */
+    color: #333333 !important; /* Cor escura para destaque no modo escuro */
+  }
+}
+
+/* Estilo do container das opções de idioma para mobile */
+.navbar-nav .lang-switch {
+  display: flex; /* Ativa o Flexbox */
+  justify-content: right; /* Alinha à direita os links de idioma */
+  margin-top: 5px; /* Espaço acima das opções de idioma */
+  gap: 15px; /* Espaço entre os links de idioma */
+}
+
+/* Estilo dos links de idioma para mobile */
+.navbar-nav .lang-switch .nav-link {
+  font-size: 1.1rem; /* Tamanho da fonte um pouco menor */
+  padding: 3px 0; /* Espaçamento vertical */
+  margin: 0; /* Sem margem externa */
+}
+
+/* Linguagem ativa - SEMPRE VISÍVEL EM TODOS OS TAMANHOS */
+.navbar-nav .lang-switch .nav-link.active {
+  font-weight: 800 !important; /* Negrito extra */
+  color: #ffffff !important; /* Cor branca para destaque no modo claro */
+}
+
+/* Linguagem ativa no modo escuro */
+body.dark-mode .navbar-nav .lang-switch .nav-link.active {
+  font-weight: 800 !important; /* Negrito extra */
+  color: #333333 !important; /* Cor escura para destaque no modo escuro */
+}
+
+/* ============================================= */
+/* =========== ESTILOS MODO ESCURO (MOBILE) ============ */
+/* ============================================= */
+
+/* Cor das linhas do ícone no modo escuro */
+body.dark-mode .navbar-toggler-icon::before,
+body.dark-mode .navbar-toggler-icon::after {
+  background-color: #f0f0f0; /* Cor clara */
+}
+
+/* Fundo do menu dropdown no modo escuro */
+body.dark-mode .navbar-collapse {
+  background-color: #f0f0f0; /* Fundo branco/claro no modo escuro (inversão de cores) */
+}
+
+/* Cor dos links do menu no modo escuro */
+body.dark-mode .navbar-nav .nav-link {
+  color: #333333 !important; /* Cor escura para o texto */
+}
+
+/* Cor do hover e link ativo no modo escuro - APENAS PARA MOBILE */
+@media (max-width: 991.98px) {
+  body.dark-mode .navbar-nav .nav-link:hover,
+  body.dark-mode .navbar-nav .nav-link:focus,
+  body.dark-mode .navbar-nav .nav-link.active {
+    color: #333333 !important; /* Cor escura para hover/ativo no modo escuro */
+    font-weight: 700; /* Negrito */
+  }
+}
+
+/* Cor do hover e link ativo no modo claro - APENAS PARA MOBILE */
+@media (max-width: 991.98px) {
+  body.light-mode .navbar-nav .nav-link:hover,
+  body.light-mode .navbar-nav .nav-link:focus,
+  body.light-mode .navbar-nav .nav-link.active {
+    color: #ffffff !important; /* Cor branca para hover/ativo no modo claro */
+    font-weight: 700; /* Negrito */
+  }
+}
+
+/* Estilo do menu item ativo/selecionado no modo escuro - APENAS PARA MOBILE */
+@media (max-width: 991.98px) {
+  body.dark-mode .navbar-nav .nav-link.active,
+  body.dark-mode .navbar-nav .nav-link[aria-current='page'] {
+    font-weight: 700; /* Negrito */
+    text-decoration: none; /* Sem sublinhado */
+    color: #333333 !important; /* Cor escura para destaque no modo escuro */
+  }
+}
+
+/* Estilo do menu item ativo/selecionado no modo claro - APENAS PARA MOBILE */
+@media (max-width: 991.98px) {
+  body.light-mode .navbar-nav .nav-link.active,
+  body.light-mode .navbar-nav .nav-link[aria-current='page'] {
+    font-weight: 700; /* Negrito */
+    text-decoration: none; /* Sem sublinhado */
+    color: #ffffff !important; /* Cor branca para destaque no modo claro */
+  }
+}
+
+/* ============================================= */
+/* ========= SEÇÃO INTRO - ESTILOS PRINCIPAIS (MOBILE) ======== */
+/* ============================================= */
+
+/* Container principal da seção de introdução - define o fundo e layout base */
+#intro-section {
+  margin-top: 100px; /* Espaço acima da seção */
+  background-color: #000000; /* Fundo preto sólido para contraste (modo escuro) */
+  max-width: 100%;
+  transition: background-color 0.3s, color 0.3s; /* Transição suave entre modos */
+}
+
+/* Seção de introdução no modo claro */
+body.light-mode #intro-section {
+  background-color: #e2e2e2; /* Fundo cinza claro para o modo claro */
+}
+
+/* Bloco que contém os textos da introdução */
+.intro-text-block {
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 1200px; /* Limita a largura máxima para telas grandes */
+  padding: 0 30px; /* Espaço lateral dentro do bloco */
+  margin: 0; /* Centraliza o bloco horizontalmente */
+}
+
+/* Estilos gerais para os títulos H1 na seção intro */
+#intro-section h1 {
+  color: #ffffff; /* Texto branco para contraste com fundo preto (modo escuro) */
+  font-family: 'Arial Black', 'Helvetica Neue', sans-serif; /* Fonte negrito e impactante */
+  font-weight: 900; /* Peso extra-negrito para maior impacto */
+  line-height: 1; /* Altura da linha ajustada para ficar mais compacto */
+  margin: 0; /* Remove margens padrão */
+  text-transform: uppercase; /* Todo o texto em maiúsculas */
+  width: 100%; /* Ocupa toda a largura disponível */
+  transition: color 0.3s; /* Transição suave da cor */
+}
+
+/* Títulos H1 no modo claro */
+body.light-mode #intro-section h1 {
+  color: #333333; /* Texto escuro para contraste com fundo claro */
+}
+
+/* Estilo da primeira linha: "[HELLO" */
+#intro-section h1 .first-line {
+  font-size: 6.5rem; /* Tamanho grande para destaque */
+  margin-bottom: 30px; /* Espaço entre HELLO e WORLD */
+  margin-left: 24px; /* Leve recuo da margem esquerda */
+  text-align: left; /* Alinhamento à esquerda */
+  position: relative; /* Para posicionamento de elementos relacionados */
+}
+
+/* Estilo da segunda linha: "WORLD !)" */
+#intro-section h1 .second-line {
+  display: block; /* Faz ocupar linha inteira */
+  font-size: 6.5rem; /* Tamanho grande para destaque */
+  text-align: right; /* Alinhamento à direita */
+  margin-right: 10%; /* Recuo da margem direita para efeito visual */
+}
+
+/* Estilo do texto secundário "I'm a Full Stack Developer" */
+.role-text {
+  font-size: 1.4rem; /* Tamanho menor que o título principal */
+  font-weight: 400; /* Peso normal (não negrito) */
+  color: #ffffff; /* Texto branco (modo escuro) */
+  font-family: 'Segoe UI', Arial, sans-serif; /* Fonte mais leve que o título */
+  top: 0px; /* Distância do topo, alinhado com o meio do HELLO */
+  right: 2%; /* Distância da margem direita */
+  text-transform: none; /* Mantém caixa mista (não força maiúsculas) */
+  transition: color 0.3s; /* Transição suave da cor */
+}
+
+/* Texto secundário no modo claro */
+body.light-mode .role-text {
+  color: #333333; /* Texto escuro para contraste com fundo claro */
+}
+
+/* Texto descritivo abaixo dos títulos principais */
+.tagline {
+  color: #ffffff; /* Texto branco (modo escuro) */
+  font-size: 1.1rem; /* Tamanho médio */
+  font-style: italic; /* Estilo itálico para diferenciar */
+  margin-top: 40px; /* Espaço acima para separar dos títulos */
+  width: 100%; /* Ocupa toda a largura disponível */
+  transition: color 0.3s; /* Transição suave da cor */
+}
+
+/* Tagline no modo claro */
+body.light-mode .tagline {
+  color: #333333; /* Texto escuro para contraste com fundo claro */
+}
+
+/* Estilo da Imagem */
+.intro-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 350px;
+  filter: contrast(1.1) saturate(0.9) brightness(1.05); /* Mais próximo da imagem de referência */
+}
+
+/* ============================================= */
+/* ========= TOGGLE DE TEMA (CLARO/ESCURO) ======== */
+/* ============================================= */
+
+/* Estilo e Posição do Theme Toggle */
+.theme-toggle-wrapper {
+  position: absolute; /* Posicionamento preciso na tela */
+  bottom: 40px; /* Distância do fundo */
+  left: 20px; /* Distância da esquerda */
+  display: flex; /* Layout flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 6px; /* Espaço entre os elementos */
+  background-color: transparent; /* Fundo transparente */
+  padding: 5px; /* Espaçamento interno */
+  border-radius: 20px; /* Cantos arredondados */
+  z-index: 10; /* Fica acima de outros elementos */
+  opacity: 0.7; /* Semi-transparente */
+}
+
+/* Textos "LIGHT" e "DARK" no toggle */
+.theme-toggle-wrapper span {
+  color: #f0f0f0; /* Cor clara/branca */
+  font-size: 0.65rem; /* Tamanho pequeno */
+  font-weight: 400; /* Peso normal */
+  text-transform: uppercase; /* Tudo em maiúsculas */
+}
+
+/* Container do switch toggle */
 .theme-switch {
-  position: relative;
-  display: inline-block;
-  width: 62px;
-  height: 32px;
+  width: 34px; /* Largura do switch */
+  height: 18px; /* Altura do switch */
+  position: relative; /* Para posicionar elementos dentro */
+  display: inline-block; /* Permite definir dimensões */
 }
 
-/*Esconde a checkbox do input*/
+/* Esconde o input checkbox real */
 .theme-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  display: none; /* Oculta o checkbox nativo */
 }
 
-/*Estilo do toggle (Light mode)*/
-.slider {
-  position: absolute;
-  cursor: pointer;
+/* Parte deslizante do toggle (fundo) */
+.theme-switch .slider {
+  background-color: transparent; /* Fundo transparente */
+  border: 1px solid #888; /* Borda cinza */
+  border-radius: 34px; /* Totalmente arredondado */
+  position: absolute; /* Posicionamento absoluto */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  border: 1.5px solid #333333;
-  background-color: transparent;
-  border-radius: 34px;
-  transition: 0.4s;
+  cursor: pointer; /* Cursor de mão ao passar por cima */
+  transition: 0.4s; /* Animação suave */
 }
 
-/*Estilo da bola interna do switch (Light mode)*/
-.slider:before {
-  position: absolute;
-  content: '';
-  height: 22px;
-  width: 22px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #333333;
-  border-radius: 50%;
-  transition: 0.4s;
+/* Círculo interno do toggle (indicador) */
+.theme-switch .slider::before {
+  width: 14px; /* Largura do círculo */
+  height: 14px; /* Altura do círculo */
+  background: #ccc; /* Cor cinza clara */
+  content: ''; /* Necessário para pseudo-elementos */
+  position: absolute; /* Posicionamento preciso */
+  top: 1px; /* Distância do topo */
+  left: 1px; /* Distância da esquerda */
+  border-radius: 50%; /* Forma circular */
+  transition: 0.3s; /* Animação suave */
 }
 
-/*Estilo do toggle (Dark mode)*/
-input:checked + .slider {
-  border: 1.5px solid #f0f0f0;
-  background-color: #00000048;
+/* Efeito quando o checkbox está marcado - movimento do círculo */
+.theme-switch input:checked + .slider::before {
+  transform: translateX(16px); /* Move o círculo para a direita */
 }
 
-/*Estilo da bola interna do switch (Dark mode)*/
-input:checked + .slider:before {
-  transform: translateX(30px);
-  background-color: #f0f0f0;
-}
+/* ============================================= */
+/* ======== BOTÕES DE SKILLS (SOFTWARE) ======== */
+/* ============================================= */
 
-/*Software Skills Buttons*/
+/* Estilo dos botões para mostrar habilidades/ferramentas de software */
 .software-button {
-  background-color: #333333;
-  border: none;
-  border-radius: 17px;
-  width: 68px;
-  height: 46px;
+  background-color: #333333; /* Fundo escuro */
+  border: none; /* Sem borda */
+  border-radius: 17px; /* Bordas arredondadas */
+  width: 68px; /* Largura fixa */
+  height: 46px; /* Altura fixa */
+  display: inline-flex; /* Permite centralizar o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  margin: 5px; /* Espaçamento entre botões */
+  transition: transform 0.2s, opacity 0.2s; /* Efeito suave ao passar o mouse */
+}
+
+/* Efeito hover nos botões de software */
+.software-button:hover {
+  opacity: 0.9; /* Leve transparência */
+  transform: translateY(-2px); /* Leve movimento para cima */
+}
+
+/* ============================================= */
+/* ======== ESTILOS RESPONSIVE (MOBILE) ======== */
+/* ============================================= */
+
+/* Ajustes para tablets e dispositivos médios */
+@media (max-width: 992px) {
+  /* Ajustes para os títulos em telas menores */
+  #intro-section h1 .first-line,
+  #intro-section h1 .second-line {
+    font-size: 4rem; /* Fonte menor para caber em telas menores */
+    text-align: center; /* Centraliza em telas pequenas */
+    margin-left: 0; /* Remove margens laterais */
+    margin-right: 0; /* Remove margens laterais */
+  }
+
+  /* Ajustes para o texto secundário em telas menores */
+  .role-text {
+    position: static; /* Posicionamento normal (não absoluto) */
+    display: block; /* Exibe como bloco */
+    font-size: 1.2rem; /* Ligeiramente menor */
+    margin: 15px 0; /* Espaçamento vertical */
+    text-align: center; /* Centralizado */
+    right: auto; /* Desativa posicionamento à direita */
+  }
+
+  /* Esconde elementos apenas em dispositivos móveis */
+  .d-none-mobile {
+    display: none; /* Oculta completamente */
+  }
+
+  /* Exibe versão mobile de certos elementos */
+  .role-text-mobile {
+    display: block; /* Torna visível em mobile */
+    font-size: 1.2rem; /* Tamanho adequado para mobile */
+    color: #ffffff; /* Texto branco */
+    margin: 15px 0; /* Espaçamento vertical */
+    text-align: center; /* Centralizado */
+  }
+}
+
+/* Ajustes para smartphones e telas muito pequenas */
+@media (max-width: 576px) {
+  /* Títulos ainda menores para telas pequenas */
+  #intro-section h1 .first-line,
+  #intro-section h1 .second-line {
+    font-size: 3rem; /* Tamanho reduzido */
+  }
+
+  /* Texto secundário em telas muito pequenas */
+  .role-text-mobile {
+    font-size: 1rem; /* Tamanho reduzido */
+  }
+
+  /* Tagline em telas muito pequenas */
+  .tagline {
+    font-size: 0.9rem; /* Tamanho reduzido */
+  }
 }

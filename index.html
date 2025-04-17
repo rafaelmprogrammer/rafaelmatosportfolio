@@ -11,8 +11,13 @@
       name="keywords"
       content="Full-Stack Developer, Web Developer, Front-End, Back-End, JavaScript, HTML5, CSS3, React, Node.js, Web Development, Programming, Software Engineer"
     />
+    <link
+      rel="icon"
+      href="./assets/images/logo/logo_placeholder.png"
+      type="image/x-icon"
+    />
     <title>Rafael Matos | Portfolio</title>
-    <!--Put here the final preferred version of the page-->
+    <!--Put here the final preferred version of the page - PREENCHER-->
     <link rel="canonical" href="" />
     <!--Including Bootstrap-->
     <link
@@ -23,30 +28,43 @@
     />
     <!--Including External file of CSS-->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
   </head>
   <body>
     <!--Header with navbar-->
     <header>
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container-fluid">
-          <!--Logo-->
-          <a class="navbar-brand" href="#intro-section"
-            ><img
+      <nav
+        class="navbar navbar-expand-lg navbar-dark"
+        aria-label="Main navigation"
+      >
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand me-auto" href="#intro-section">
+            <img
               src="./assets/images/logo/logo_placeholder.png"
               alt="Rafael Matos Logo"
-          /></a>
-          <!--Hamburguer menu-->
+            />
+          </a>
+
+          <!-- Toggle mobile menu -->
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavbar"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <!--Items NavBar-->
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+
+          <!-- Navbar links aligned to right -->
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="mainNavbar"
+          >
+            <ul class="navbar-nav text-end">
               <li class="nav-item">
                 <a class="nav-link" href="#about-section" data-translate="about"
                   >about</a
@@ -76,11 +94,22 @@
                   >contact</a
                 >
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" data-lang="en">en</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" data-lang="pt">pt</a>
+              <!-- Language switchers -->
+              <li class="nav-item lang-switch">
+                <a
+                  class="nav-link active"
+                  href="#"
+                  data-lang="en"
+                  aria-label="Switch to English"
+                  >en</a
+                >
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-lang="pt"
+                  aria-label="Switch to Portuguese"
+                  >pt</a
+                >
               </li>
             </ul>
           </div>
@@ -92,23 +121,27 @@
     <main>
       <!--Section Intro-->
       <section id="intro-section">
-        <!--First Text-->
-        <pre data-translate="hello">
-[HELLO   I'm a Full Stack Developer 
-    WORLD !]
-                Writing code that creates experiences
-      </pre
-        >
-        <!--First Image-->
-        <img
-          style="width: 500px; height: auto"
-          src="./assets/profile/imagem_inicial.png"
-          alt="Greek Image by midoriya"
-          title="Greek Image by midoriya"
-        />
+        <!-- Text Block -->
+        <div class="intro-text-block">
+          <h1>
+            <span class="first-line">[HELLO</span>
+            <span class="second-line">WORLD !)</span>
+          </h1>
+          <span class="role-text">I´m a Full Stack Developer</span>
 
-        <!--Toggle Dark Mode-->
-        <!-- Rounded switch -->
+          <p class="tagline">Writing code that creates experiences</p>
+        </div>
+
+        <!-- Image -->
+        <div class="intro-image">
+          <img
+            src="./assets/profile/imagem_inicial.png"
+            alt="Greek digital art with futuristic style"
+            title="Greek Image by midoriya"
+          />
+        </div>
+
+        <!-- Toggle Dark Mode -->
         <div class="theme-toggle-wrapper">
           <span class="light-theme" data-translate="light">LIGHT</span>
           <label class="theme-switch">
@@ -123,7 +156,7 @@
       <section id="about-section">
         <!--Second text-->
         <h1 data-translate="aboutTitle">&lt;/I am Rafael&gt;</h1>
-        <aside>
+        <figure>
           <img
             style="width: 298px; height: auto"
             src="./assets/profile/2_image.png"
@@ -131,7 +164,7 @@
             alt="Greek Image by midoriya"
             title="Greek Image by midoriya"
           />
-        </aside>
+        </figure>
         <p data-translate="aboutText1">
           I'm a Junior Full Stack Developer with a passion for technology,
           problem solving and creating responsive, dynamic websites and
@@ -180,9 +213,13 @@
             <br />Freelancer <br />Full-Stack
           </li>
         </ul>
-        <aside>
-          <img src="./assets/profile/3_image.png" alt="" />
-        </aside>
+        <figure>
+          <img
+            src="./assets/profile/3_image.png"
+            alt=""
+            title="Greek Image by midoriya"
+          />
+        </figure>
       </section>
       <!--Section Skills-->
       <section id="curriculum-section">
@@ -299,14 +336,14 @@
       <section id="contact-section">
         <p class="text-start" data-translate="startProject">Start a Project?</p>
         <button data-translate="letsDoThis">Let's do this</button>
-        <aside>
+        <figure>
           <img
             src="./assets/profile/glass-sculpture-of-hera.png"
             alt="Greek Image by midoriya"
             title="Greek Image by midoriya"
             style="width: 252px; height: 241px"
           />
-        </aside>
+        </figure>
       </section>
 
       <!--Footer-->

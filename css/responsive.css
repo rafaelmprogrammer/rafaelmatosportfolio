@@ -1,0 +1,265 @@
+/* ============================================= */
+/* ========== EFEITOS RESPONSIVOS PARA DISPOSITIVOS MAIORES QUE MOBILE =========== */
+/* ============================================= */
+
+/* ============================================= */
+/* ========== HEADER RESPONSIVO =========== */
+/* ============================================= */
+
+/* Estilos base para o header */
+header {
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+/* Ajustes para o logo em mobile */
+.navbar-brand {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Ajustes para o botão hambúrguer em mobile */
+.navbar-toggler {
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
+.navbar-toggler-icon {
+  width: 30px;
+  height: 20px;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  width: 30px;
+  height: 4px;
+}
+
+.navbar-toggler-icon::after {
+  top: 10px;
+}
+
+/* Ajustes para o menu dropdown em mobile */
+.navbar-collapse {
+  position: absolute;
+  top: 70px;
+  right: 15px;
+  width: 160px;
+  padding: 15px 20px 10px;
+}
+
+/* Ajustes para tablets (768px e acima) */
+@media (min-width: 768px) {
+  .navbar-brand {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .navbar-brand img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .navbar-toggler {
+    margin-right: 20px;
+    margin-top: 25px;
+  }
+
+  .navbar-collapse {
+    top: 80px;
+    right: 20px;
+    width: 170px;
+  }
+}
+
+/* Ajustes para desktops (992px e acima) */
+@media (min-width: 992px) {
+  header {
+    padding: 0 20px;
+    background: transparent !important;
+  }
+
+  .navbar {
+    background: transparent !important;
+    padding: 0;
+  }
+
+  .navbar-brand {
+    margin-top: 25px;
+    margin-left: 0;
+  }
+
+  .navbar-brand img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-collapse {
+    position: static;
+    top: auto;
+    right: auto;
+    width: auto;
+    background-color: transparent !important;
+    box-shadow: none;
+    padding: 0;
+    display: block !important;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-item {
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 15px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  /* REMOVER COMPLETAMENTE O ESTILO ACTIVE PARA LINKS DE MENU EM TELAS GRANDES */
+  .navbar-nav .nav-item:not(.lang-switch) .nav-link.active,
+  .navbar-nav .nav-item:not(.lang-switch) .nav-link[aria-current='page'] {
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Modo claro - Links pretos */
+  body.light-mode .navbar-nav .nav-link {
+    color: #333333 !important;
+  }
+
+  body.light-mode .navbar-nav .nav-link:hover {
+    color: #000000 !important;
+  }
+
+  /* Modo claro - Links de idioma */
+  body.light-mode .navbar-nav .lang-switch .nav-link.active {
+    color: #000000 !important;
+  }
+
+  /* Modo escuro - Links brancos */
+  body.dark-mode .navbar-nav .nav-link {
+    color: #ffffff !important;
+  }
+
+  body.dark-mode .navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+  }
+
+  /* Modo escuro - Links de idioma */
+  body.dark-mode .navbar-nav .lang-switch .nav-link.active {
+    color: #ffffff !important;
+  }
+
+  /* Adiciona negrito apenas no hover para links do menu */
+  .navbar-nav .nav-item:not(.lang-switch) .nav-link:hover {
+    font-weight: 700;
+  }
+
+  /* Força a cor correta mesmo após o clique */
+  body.light-mode .navbar-nav .nav-item:not(.lang-switch) .nav-link.active {
+    color: #333333 !important;
+  }
+
+  body.dark-mode .navbar-nav .nav-item:not(.lang-switch) .nav-link.active {
+    color: #ffffff !important;
+  }
+
+  /* Mantém o negrito apenas na opção de idioma selecionada */
+  .navbar-nav .lang-switch .nav-link.active {
+    font-weight: 700;
+  }
+
+  .navbar-nav .lang-switch {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    height: 100%;
+    gap: 5px;
+  }
+
+  .navbar-nav .lang-switch .nav-link {
+    padding: 10px 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Ajustes para telas grandes (1200px e acima) */
+@media (min-width: 1200px) {
+  header {
+    padding: 0 40px;
+  }
+
+  .navbar-nav {
+    gap: 30px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 20px;
+  }
+}
+
+/* Efeito de digitação (typewriter) - Só aplica em telas grandes (desktop) */
+@media (min-width: 992px) {
+  /* Estilo base para o elemento com efeito de máquina de escrever */
+  .typewriter {
+    font-family: 'Courier New', monospace; /* Fonte monoespaçada (estilo de máquina de escrever) */
+    color: #f8dcdc; /* Cor rosada clara */
+    overflow: hidden; /* Esconde o texto que ultrapassa a largura */
+    border-right: 2px solid #f8dcdc; /* Cursor piscante (barra vertical) */
+    white-space: nowrap; /* Impede a quebra de linha do texto */
+    animation: typing 3.5s steps(40, end),
+      /* Animação de digitação: 3.5 segundos, 40 passos discretos */ blink-caret
+        0.75s step-end infinite; /* Animação do cursor piscante: 0.75 segundos, infinito */
+    width: 100%; /* Largura total */
+    font-size: 2rem; /* Tamanho da fonte */
+  }
+
+  /* Keyframes para a animação de digitação - controla a largura do elemento */
+  @keyframes typing {
+    from {
+      width: 0;
+    } /* Começa com 0% de largura (nenhum texto visível) */
+    to {
+      width: 100%;
+    } /* Termina com 100% de largura (todo o texto visível) */
+  }
+
+  /* Keyframes para a animação do cursor piscante - alterna a cor da borda */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    } /* Cursor invisível */
+    50% {
+      border-color: #f8dcdc;
+    } /* Cursor visível (no meio da animação) */
+  }
+}

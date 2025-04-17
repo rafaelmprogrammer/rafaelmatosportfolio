@@ -24,6 +24,19 @@ async function updatePageLanguage(lang) {
     await loadTranslations(lang);
   }
 
+  // Destacar o idioma ativo
+  document
+    .querySelectorAll('.navbar-nav .nav-link[data-lang]')
+    .forEach((link) => {
+      // Remover a classe active de todos os links de idioma
+      link.classList.remove('active');
+
+      // Adicionar a classe active apenas ao idioma selecionado
+      if (link.getAttribute('data-lang') === lang) {
+        link.classList.add('active');
+      }
+    });
+
   // Atualiza os links do menu
   document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
     const key = link.getAttribute('data-translate');
@@ -33,7 +46,9 @@ async function updatePageLanguage(lang) {
   });
 
   // Atualiza o texto da seção de introdução
-  const introPre = document.querySelector('#intro-section pre');
+  const introPre = document.querySelector(
+    '#intro-section .hello .role .world .tagline'
+  );
   if (introPre) {
     introPre.textContent = translations[lang].hello;
   }
@@ -140,6 +155,15 @@ async function updatePageLanguage(lang) {
 async function initializeLanguage() {
   // Verifica se há uma preferência de idioma salva
   const savedLanguage = localStorage.getItem('language') || 'en';
+
+  // Destaca o idioma padrão/salvo inicialmente
+  document
+    .querySelectorAll('.navbar-nav .nav-link[data-lang]')
+    .forEach((link) => {
+      if (link.getAttribute('data-lang') === savedLanguage) {
+        link.classList.add('active');
+      }
+    });
 
   // Carrega as traduções iniciais
   await loadTranslations(savedLanguage);
