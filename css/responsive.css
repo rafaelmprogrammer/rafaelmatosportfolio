@@ -114,8 +114,10 @@ header {
     box-shadow: none;
     padding: 0;
     display: block !important;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
   }
-
   .navbar-nav {
     flex-direction: row;
     gap: 20px;

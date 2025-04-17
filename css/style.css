@@ -87,44 +87,45 @@ body.dark-mode {
 /* ============================================= */
 
 /* Estilo do container do menu dropdown para mobile */
+/* Estilo base — MOBILE FIRST */
 .navbar-collapse {
-  background-color: #333333; /* Fundo cinza escuro (modo claro) */
-  border-radius: 24px; /* Bordas arredondadas */
-  border-top-right-radius: 0px; /* Canto superior direito reto */
-  z-index: 1000; /* Fica sobre outros elementos */
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15); /* Sombra suave */
-  position: fixed; /* Posicionamento fixo */
-  width: 160px;
+  background-color: #333333;
+  border-radius: 24px;
+  border-top-right-radius: 0px;
+  z-index: 1000;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  width: 140px;
   padding: 15px 20px 10px;
-  top: 65px; /* Posição fixa abaixo do ícone do hambúrguer */
-  /*transform: translateX(-85px); /* Move para a esquerda para alinhar com o botão */
+  top: 65px;
+
+  /* Animação e estado inicial escondido */
+  transform: translateX(-40px); /* Ajuste inicial para mobile pequeno */
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease-out, opacity;
 }
 
-/* Ajuste para smartphones pequenos (até 575.98px) */
-@media (max-width: 575.98px) {
-  .navbar-collapse.show {
-    width: 140px; /* Largura menor para telas pequenas */
-    transform: translateX(-40px); /* Ajuste da posição horizontal */
-    top: 65px; /* Mantém a mesma distância vertical */
+/* Quando o menu está ativo */
+.navbar-collapse.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Smartphones médios (>=576px) */
+@media (min-width: 576px) {
+  .navbar-collapse {
+    width: 150px;
+    transform: translateX(-50px); /* Ajuste para centralizar melhor */
   }
 }
 
-/* Ajuste para smartphones médios (576px - 767.98px) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .navbar-collapse.show {
-    width: 150px; /* Largura média para telas médias */
-    transform: translateX(-50px); /* Ajuste da posição horizontal */
-    margin-right: 10px;
-    top: 65px; /* Mantém a mesma distância vertical */
-  }
-}
-
-/* Ajuste para tablets (768px - 991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .navbar-collapse.show {
-    width: 160px; /* Largura padrão para tablets */
-    transform: translateX(-90px); /* Ajuste da posição horizontal */
-    top: 75px; /* Mantém a mesma distância vertical */
+/* Tablets (>=768px) */
+@media (min-width: 768px) {
+  .navbar-collapse {
+    width: 160px;
+    transform: translateX(-90px);
+    top: 75px;
   }
 }
 
