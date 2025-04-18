@@ -260,6 +260,93 @@ body.dark-mode .navbar-nav .nav-link {
 /* ========= SEÇÃO INTRO - ESTILOS PRINCIPAIS (MOBILE) ======== */
 /* ============================================= */
 
+/* Estilo do pre para o texto de introdução */
+#intro-pre {
+  white-space: pre;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.05;
+  padding-left: 30px;
+  margin-top: 80px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Estilo dos spans para o texto de introdução */
+#intro-pre span {
+  display: inline-block;
+}
+
+#intro-pre .hello-role {
+  display: flex;
+  align-items: flex-end; /* alinha a role com a base do HELLO */
+  gap: 20px; /* espaço entre eles */
+}
+
+#intro-pre .world {
+  display: block;
+  text-indent: 3.2ch; /* ajusta até o W ficar abaixo do L */
+}
+
+#intro-pre .tagline {
+  margin-top: 10px; /* ou 0, ou um valor menor */
+  display: block;
+  text-indent: 12ch; /* ajusta até o W ficar abaixo do L */
+  font-size: 12px; /* tamanho da fonte */
+  font-weight: 500; /* peso da fonte */
+}
+#intro-pre .hello,
+#intro-pre .world {
+  font-weight: 500;
+  font-size: 60px;
+  vertical-align: middle;
+}
+
+#intro-pre .role,
+#intro-pre .tagline {
+  font-weight: 500;
+  font-size: 12px;
+  vertical-align: bottom;
+  margin-left: 20px;
+}
+
+/* Pequenas telas (extra small) */
+@media (max-width: 576px) {
+  #intro-pre {
+    padding-left: 20px;
+  }
+
+  #intro-pre .hello,
+  #intro-pre .world {
+    font-size: 48px;
+  }
+
+  #intro-pre .role,
+  #intro-pre .tagline {
+    font-size: 10px;
+  }
+}
+
+/* Tablets médios */
+@media (min-width: 768px) {
+  #intro-pre .hello {
+    font-size: 80px;
+  }
+
+  #intro-pre .world {
+    font-size: 80px;
+    text-indent: 4ch;
+  }
+
+  #intro-pre .role,
+  #intro-pre .tagline {
+    font-size: 18px;
+    text-indent: 10ch;
+  }
+}
+
 /* Container principal da seção de introdução - define o fundo e layout base */
 #intro-section {
   margin-top: 100px; /* Espaço acima da seção */
@@ -336,7 +423,6 @@ body.light-mode .role-text {
 .tagline {
   color: #ffffff; /* Texto branco (modo escuro) */
   font-size: 1.1rem; /* Tamanho médio */
-  font-style: italic; /* Estilo itálico para diferenciar */
   margin-top: 40px; /* Espaço acima para separar dos títulos */
   width: 100%; /* Ocupa toda a largura disponível */
   transition: color 0.3s; /* Transição suave da cor */
@@ -349,7 +435,8 @@ body.light-mode .tagline {
 
 /* Estilo da Imagem */
 .intro-image img {
-  display: block;
+  display: flex;
+  justify-self: center;
   width: 100%;
   height: auto;
   max-width: 350px;

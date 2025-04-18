@@ -14,6 +14,14 @@ header {
   transition: background-color 0.3s;
 }
 
+header .container {
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Ajustes para o logo em mobile */
 .navbar-brand {
   margin-top: 15px;
@@ -57,6 +65,13 @@ header {
 
 /* Ajustes para tablets (768px e acima) */
 @media (min-width: 768px) {
+  header .container {
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .navbar-brand {
     margin-top: 20px;
     margin-left: 20px;
@@ -74,7 +89,7 @@ header {
 
   .navbar-collapse {
     top: 80px;
-    right: 20px;
+    right: -20px;
     width: 170px;
   }
 }
@@ -84,6 +99,14 @@ header {
   header {
     padding: 0 20px;
     background: transparent !important;
+  }
+
+  header .container {
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .navbar {
@@ -215,8 +238,12 @@ header {
 
 /* Ajustes para telas grandes (1200px e acima) */
 @media (min-width: 1200px) {
-  header {
-    padding: 0 40px;
+  header .container {
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .navbar-nav {
@@ -225,43 +252,5 @@ header {
 
   .navbar-nav .nav-link {
     padding: 10px 20px;
-  }
-}
-
-/* Efeito de digitação (typewriter) - Só aplica em telas grandes (desktop) */
-@media (min-width: 992px) {
-  /* Estilo base para o elemento com efeito de máquina de escrever */
-  .typewriter {
-    font-family: 'Courier New', monospace; /* Fonte monoespaçada (estilo de máquina de escrever) */
-    color: #f8dcdc; /* Cor rosada clara */
-    overflow: hidden; /* Esconde o texto que ultrapassa a largura */
-    border-right: 2px solid #f8dcdc; /* Cursor piscante (barra vertical) */
-    white-space: nowrap; /* Impede a quebra de linha do texto */
-    animation: typing 3.5s steps(40, end),
-      /* Animação de digitação: 3.5 segundos, 40 passos discretos */ blink-caret
-        0.75s step-end infinite; /* Animação do cursor piscante: 0.75 segundos, infinito */
-    width: 100%; /* Largura total */
-    font-size: 2rem; /* Tamanho da fonte */
-  }
-
-  /* Keyframes para a animação de digitação - controla a largura do elemento */
-  @keyframes typing {
-    from {
-      width: 0;
-    } /* Começa com 0% de largura (nenhum texto visível) */
-    to {
-      width: 100%;
-    } /* Termina com 100% de largura (todo o texto visível) */
-  }
-
-  /* Keyframes para a animação do cursor piscante - alterna a cor da borda */
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    } /* Cursor invisível */
-    50% {
-      border-color: #f8dcdc;
-    } /* Cursor visível (no meio da animação) */
   }
 }

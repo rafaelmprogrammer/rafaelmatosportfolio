@@ -147,4 +147,22 @@ document.addEventListener('DOMContentLoaded', () => {
       langLink.classList.add('active');
     }
   }
+
+  // ✅ ADIÇÃO: INSERE O TEXTO COM FORMATAÇÃO NO <pre> USANDO span e classes
+  const introPre = document.getElementById('intro-pre');
+  if (introPre) {
+    const hello = `[HELLO`;
+    const world = `WORLD!)`;
+    const devRole = `I'm a Full Stack Developer`;
+    const tagline = `Writing code that creates experiences`;
+
+    introPre.innerHTML = `
+    <div class="hello-role">
+      <span class="hello">${hello}</span>
+      <span class="role">${devRole}</span>
+    </div>
+    <span class="world">${world}</span>
+    <span class="tagline">${tagline}</span>
+  `;
+  }
 });
