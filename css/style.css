@@ -19,6 +19,63 @@ body.dark-mode {
 /* ========== HEADER E BARRA DE NAVEGAÇÃO (MOBILE) ========== */
 /* ============================================= */
 
+/* Estilos base para o header */
+header {
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+header .container {
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ajustes para o logo em mobile */
+.navbar-brand {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Ajustes para o botão hambúrguer em mobile */
+.navbar-toggler {
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
+.navbar-toggler-icon {
+  width: 30px;
+  height: 20px;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  width: 30px;
+  height: 4px;
+}
+
+.navbar-toggler-icon::after {
+  top: 10px;
+}
+
+/* Ajustes para o menu dropdown em mobile */
+.navbar-collapse {
+  position: absolute;
+  top: 70px;
+  right: 15px;
+  width: 160px;
+  padding: 15px 20px 10px;
+}
+
 /* Estilo do logotipo para mobile */
 .navbar-brand {
   display: inline-block; /* Garante que o link se comporte como bloco para dimensões */
@@ -72,11 +129,6 @@ body.dark-mode {
   height: 4px;
 }
 
-/* Posição da linha superior do ícone */
-.navbar-toggler-icon::before {
-  top: 0;
-}
-
 /* Posição da linha inferior do ícone */
 .navbar-toggler-icon::after {
   top: 10px;
@@ -87,14 +139,12 @@ body.dark-mode {
 /* ============================================= */
 
 /* Estilo do container do menu dropdown para mobile */
-/* Estilo base — MOBILE FIRST */
 .navbar-collapse {
   background-color: #333333;
   border-radius: 24px;
   border-top-right-radius: 0px;
   z-index: 1000;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-  position: fixed;
   width: 140px;
   padding: 15px 20px 10px;
   top: 65px;
@@ -110,27 +160,6 @@ body.dark-mode {
 .navbar-collapse.show {
   opacity: 1;
   pointer-events: auto;
-}
-
-/* Smartphones médios (>=576px) */
-@media (min-width: 576px) {
-  .navbar-collapse {
-    width: 150px;
-    transform: translateX(-50px); /* Ajuste para centralizar melhor */
-  }
-}
-
-/* Tablets (>=768px) */
-@media (min-width: 768px) {
-  .navbar-collapse {
-    width: 160px;
-    transform: translateX(-90px);
-    top: 75px;
-  }
-}
-
-/* Mostra o menu quando a classe .show é adicionada (Bootstrap) */
-.navbar-collapse.show {
   display: block;
 }
 
@@ -153,20 +182,6 @@ body.dark-mode {
   font-weight: 400; /* Peso da fonte (normal) */
   padding: 2px 0; /* Pequeno espaçamento vertical */
   transition: color 0.3s ease, font-weight 0.3s ease; /* Transição suave da cor e peso da fonte */
-}
-
-/* Estilo do menu item ativo/selecionado - APENAS PARA MOBILE */
-@media (max-width: 991.98px) {
-  .navbar-collapse.show .navbar-nav .nav-item .nav-link.active {
-    font-weight: 800 !important; /* Negrito extra */
-    color: #ffffff !important; /* Cor branca para destaque no modo claro */
-  }
-
-  /* Modo escuro */
-  body.dark-mode .navbar-collapse.show .navbar-nav .nav-item .nav-link.active {
-    font-weight: 800 !important; /* Negrito extra */
-    color: #333333 !important; /* Cor escura para destaque no modo escuro */
-  }
 }
 
 /* Estilo do container das opções de idioma para mobile */
@@ -216,231 +231,119 @@ body.dark-mode .navbar-nav .nav-link {
   color: #333333 !important; /* Cor escura para o texto */
 }
 
-/* Cor do hover e link ativo no modo escuro - APENAS PARA MOBILE */
-@media (max-width: 991.98px) {
-  body.dark-mode .navbar-nav .nav-link:hover,
-  body.dark-mode .navbar-nav .nav-link:focus,
-  body.dark-mode .navbar-nav .nav-link.active {
-    color: #333333 !important; /* Cor escura para hover/ativo no modo escuro */
-    font-weight: 700; /* Negrito */
-  }
-}
-
-/* Cor do hover e link ativo no modo claro - APENAS PARA MOBILE */
-@media (max-width: 991.98px) {
-  body.light-mode .navbar-nav .nav-link:hover,
-  body.light-mode .navbar-nav .nav-link:focus,
-  body.light-mode .navbar-nav .nav-link.active {
-    color: #ffffff !important; /* Cor branca para hover/ativo no modo claro */
-    font-weight: 700; /* Negrito */
-  }
-}
-
-/* Estilo do menu item ativo/selecionado no modo escuro - APENAS PARA MOBILE */
-@media (max-width: 991.98px) {
-  body.dark-mode .navbar-nav .nav-link.active,
-  body.dark-mode .navbar-nav .nav-link[aria-current='page'] {
-    font-weight: 700; /* Negrito */
-    text-decoration: none; /* Sem sublinhado */
-    color: #333333 !important; /* Cor escura para destaque no modo escuro */
-  }
-}
-
-/* Estilo do menu item ativo/selecionado no modo claro - APENAS PARA MOBILE */
-@media (max-width: 991.98px) {
-  body.light-mode .navbar-nav .nav-link.active,
-  body.light-mode .navbar-nav .nav-link[aria-current='page'] {
-    font-weight: 700; /* Negrito */
-    text-decoration: none; /* Sem sublinhado */
-    color: #ffffff !important; /* Cor branca para destaque no modo claro */
-  }
-}
-
 /* ============================================= */
 /* ========= SEÇÃO INTRO - ESTILOS PRINCIPAIS (MOBILE) ======== */
 /* ============================================= */
 
-/* Estilo do pre para o texto de introdução */
-#intro-pre {
-  white-space: pre;
-  text-align: left;
+/* Container principal da seção de introdução */
+#intro-section {
+  margin-top: 50px;
+  background-color: #000000;
+  max-width: 100%;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 20px 15px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  line-height: 1.05;
-  padding-left: 30px;
-  margin-top: 80px;
-  overflow: hidden;
-  width: 100%;
-}
-
-/* Estilo dos spans para o texto de introdução */
-#intro-pre span {
-  display: inline-block;
-}
-
-#intro-pre .hello-role {
-  display: flex;
-  align-items: flex-end; /* alinha a role com a base do HELLO */
-  gap: 20px; /* espaço entre eles */
-}
-
-#intro-pre .world {
-  display: block;
-  text-indent: 3.2ch; /* ajusta até o W ficar abaixo do L */
-}
-
-#intro-pre .tagline {
-  margin-top: 10px; /* ou 0, ou um valor menor */
-  display: block;
-  text-indent: 12ch; /* ajusta até o W ficar abaixo do L */
-  font-size: 12px; /* tamanho da fonte */
-  font-weight: 500; /* peso da fonte */
-}
-#intro-pre .hello,
-#intro-pre .world {
-  font-weight: 500;
-  font-size: 60px;
-  vertical-align: middle;
-}
-
-#intro-pre .role,
-#intro-pre .tagline {
-  font-weight: 500;
-  font-size: 12px;
-  vertical-align: bottom;
-  margin-left: 20px;
-}
-
-/* Pequenas telas (extra small) */
-@media (max-width: 576px) {
-  #intro-pre {
-    padding-left: 20px;
-  }
-
-  #intro-pre .hello,
-  #intro-pre .world {
-    font-size: 48px;
-  }
-
-  #intro-pre .role,
-  #intro-pre .tagline {
-    font-size: 10px;
-  }
-}
-
-/* Tablets médios */
-@media (min-width: 768px) {
-  #intro-pre .hello {
-    font-size: 80px;
-  }
-
-  #intro-pre .world {
-    font-size: 80px;
-    text-indent: 4ch;
-  }
-
-  #intro-pre .role,
-  #intro-pre .tagline {
-    font-size: 18px;
-    text-indent: 10ch;
-  }
-}
-
-/* Container principal da seção de introdução - define o fundo e layout base */
-#intro-section {
-  margin-top: 100px; /* Espaço acima da seção */
-  background-color: #000000; /* Fundo preto sólido para contraste (modo escuro) */
-  max-width: 100%;
-  transition: background-color 0.3s, color 0.3s; /* Transição suave entre modos */
+  align-items: center;
+  color: white;
 }
 
 /* Seção de introdução no modo claro */
 body.light-mode #intro-section {
-  background-color: #e2e2e2; /* Fundo cinza claro para o modo claro */
+  background-color: #e2e2e2;
+  color: #333333;
+}
+
+/* Container para conteúdo responsivo */
+.intro-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Bloco que contém os textos da introdução */
 .intro-text-block {
-  width: 100%; /* Ocupa toda a largura disponível */
-  max-width: 1200px; /* Limita a largura máxima para telas grandes */
-  padding: 0 30px; /* Espaço lateral dentro do bloco */
-  margin: 0; /* Centraliza o bloco horizontalmente */
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-/* Estilos gerais para os títulos H1 na seção intro */
-#intro-section h1 {
-  color: #ffffff; /* Texto branco para contraste com fundo preto (modo escuro) */
-  font-family: 'Arial Black', 'Helvetica Neue', sans-serif; /* Fonte negrito e impactante */
-  font-weight: 900; /* Peso extra-negrito para maior impacto */
-  line-height: 1; /* Altura da linha ajustada para ficar mais compacto */
-  margin: 0; /* Remove margens padrão */
-  text-transform: uppercase; /* Todo o texto em maiúsculas */
-  width: 100%; /* Ocupa toda a largura disponível */
-  transition: color 0.3s; /* Transição suave da cor */
+/* Estilo do pre para o texto de introdução */
+#intro-pre {
+  white-space: pre;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
 }
 
-/* Títulos H1 no modo claro */
-body.light-mode #intro-section h1 {
-  color: #333333; /* Texto escuro para contraste com fundo claro */
+/* Estilo dos spans */
+#intro-pre .hello-role {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
 }
 
-/* Estilo da primeira linha: "[HELLO" */
-#intro-section h1 .first-line {
-  font-size: 6.5rem; /* Tamanho grande para destaque */
-  margin-bottom: 30px; /* Espaço entre HELLO e WORLD */
-  margin-left: 24px; /* Leve recuo da margem esquerda */
-  text-align: left; /* Alinhamento à esquerda */
-  position: relative; /* Para posicionamento de elementos relacionados */
+#intro-pre .hello {
+  font-size: 60px;
+  font-weight: 500;
+  margin: 0;
+  display: inline-block;
+  text-align: left;
 }
 
-/* Estilo da segunda linha: "WORLD !)" */
-#intro-section h1 .second-line {
-  display: block; /* Faz ocupar linha inteira */
-  font-size: 6.5rem; /* Tamanho grande para destaque */
-  text-align: right; /* Alinhamento à direita */
-  margin-right: 10%; /* Recuo da margem direita para efeito visual */
+#intro-pre .role {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 25px; /* Ajustado para alinhar verticalmente com HELLO */
+  display: inline-block;
+  text-align: right;
 }
 
-/* Estilo do texto secundário "I'm a Full Stack Developer" */
-.role-text {
-  font-size: 1.4rem; /* Tamanho menor que o título principal */
-  font-weight: 400; /* Peso normal (não negrito) */
-  color: #ffffff; /* Texto branco (modo escuro) */
-  font-family: 'Segoe UI', Arial, sans-serif; /* Fonte mais leve que o título */
-  top: 0px; /* Distância do topo, alinhado com o meio do HELLO */
-  right: 2%; /* Distância da margem direita */
-  text-transform: none; /* Mantém caixa mista (não força maiúsculas) */
-  transition: color 0.3s; /* Transição suave da cor */
+#intro-pre .world {
+  font-size: 60px;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 6px;
+  text-align: right;
+  margin-left: auto; /* Empurra para a direita */
+  display: block;
 }
 
-/* Texto secundário no modo claro */
-body.light-mode .role-text {
-  color: #333333; /* Texto escuro para contraste com fundo claro */
+#intro-pre .tagline {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: right;
+  margin-top: 8px;
+  display: block;
 }
 
-/* Texto descritivo abaixo dos títulos principais */
-.tagline {
-  color: #ffffff; /* Texto branco (modo escuro) */
-  font-size: 1.1rem; /* Tamanho médio */
-  margin-top: 40px; /* Espaço acima para separar dos títulos */
-  width: 100%; /* Ocupa toda a largura disponível */
-  transition: color 0.3s; /* Transição suave da cor */
-}
 
-/* Tagline no modo claro */
-body.light-mode .tagline {
-  color: #333333; /* Texto escuro para contraste com fundo claro */
-}
+
 
 /* Estilo da Imagem */
-.intro-image img {
+.intro-image {
+  margin-top: 30px;
   display: flex;
-  justify-self: center;
+  justify-content: center;
+}
+
+.intro-image img {
+  display: block;
   width: 100%;
   height: auto;
-  max-width: 350px;
-  filter: contrast(1.1) saturate(0.9) brightness(1.05); /* Mais próximo da imagem de referência */
+  max-width: 280px; /* Menor para mobile */
+  filter: contrast(1.1) saturate(0.9) brightness(1.05);
 }
 
 /* ============================================= */
@@ -537,63 +440,4 @@ body.light-mode .tagline {
 .software-button:hover {
   opacity: 0.9; /* Leve transparência */
   transform: translateY(-2px); /* Leve movimento para cima */
-}
-
-/* ============================================= */
-/* ======== ESTILOS RESPONSIVE (MOBILE) ======== */
-/* ============================================= */
-
-/* Ajustes para tablets e dispositivos médios */
-@media (max-width: 992px) {
-  /* Ajustes para os títulos em telas menores */
-  #intro-section h1 .first-line,
-  #intro-section h1 .second-line {
-    font-size: 4rem; /* Fonte menor para caber em telas menores */
-    text-align: center; /* Centraliza em telas pequenas */
-    margin-left: 0; /* Remove margens laterais */
-    margin-right: 0; /* Remove margens laterais */
-  }
-
-  /* Ajustes para o texto secundário em telas menores */
-  .role-text {
-    position: static; /* Posicionamento normal (não absoluto) */
-    display: block; /* Exibe como bloco */
-    font-size: 1.2rem; /* Ligeiramente menor */
-    margin: 15px 0; /* Espaçamento vertical */
-    text-align: center; /* Centralizado */
-    right: auto; /* Desativa posicionamento à direita */
-  }
-
-  /* Esconde elementos apenas em dispositivos móveis */
-  .d-none-mobile {
-    display: none; /* Oculta completamente */
-  }
-
-  /* Exibe versão mobile de certos elementos */
-  .role-text-mobile {
-    display: block; /* Torna visível em mobile */
-    font-size: 1.2rem; /* Tamanho adequado para mobile */
-    color: #ffffff; /* Texto branco */
-    margin: 15px 0; /* Espaçamento vertical */
-    text-align: center; /* Centralizado */
-  }
-}
-
-/* Ajustes para smartphones e telas muito pequenas */
-@media (max-width: 576px) {
-  /* Títulos ainda menores para telas pequenas */
-  #intro-section h1 .first-line,
-  #intro-section h1 .second-line {
-    font-size: 3rem; /* Tamanho reduzido */
-  }
-
-  /* Texto secundário em telas muito pequenas */
-  .role-text-mobile {
-    font-size: 1rem; /* Tamanho reduzido */
-  }
-
-  /* Tagline em telas muito pequenas */
-  .tagline {
-    font-size: 0.9rem; /* Tamanho reduzido */
-  }
 }
