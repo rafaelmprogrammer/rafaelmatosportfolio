@@ -166,3 +166,48 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   }
 });
+
+const swiper = new Swiper('.mySwiper', {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  initialSlide: 1,
+  coverflowEffect: {
+    rotate: 30,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
+// Get the button:
+let mybutton = document.getElementById('myBtn');
+let lastScrollPosition = 0; // Guarda a última posição do scroll
+
+window.addEventListener('scroll', () => {
+  const currentScrollPosition = window.scrollY;
+
+  // Verifica se o utilizador está a fazer scroll up
+  if (
+    currentScrollPosition < lastScrollPosition &&
+    currentScrollPosition > 20
+  ) {
+    mybutton.style.display = 'block'; // Mostra o botão
+  } else {
+    mybutton.style.display = 'none'; // Esconde o botão
+  }
+
+  // Atualiza a última posição do scroll
+  lastScrollPosition = currentScrollPosition;
+});
+
+// Quando o utilizador clica no botão, faz scroll para o topo
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
