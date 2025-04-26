@@ -1,22 +1,75 @@
+/*REVER*/
+
 /*X-Small devices (portrait phones, less than 576px)*/
 /*No media query for `xs` since this is the default in Bootstrap*/
 
+@media (min-width: 424px) {
+  .container {
+    max-width: var(--container-sm);
+  }
+  .intro-image img,
+  #contact-section figure img {
+    width: 90%; /* Ocupa toda a largura disponível */
+    max-width: 600px; /* Define um limite máximo */
+  }
+
+  .swiper-slide img {
+    width: 100%; /* Ocupa toda a largura do slide */
+    max-width: 100%; /* Garante que não ultrapasse o slide */
+  }
+}
+
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
+  .container {
+    max-width: var(--container-sm);
+  }
+  .intro-image img,
+  #contact-section figure img {
+    width: 90%; /* Ocupa toda a largura disponível */
+    max-width: 600px; /* Define um limite máximo */
+  }
+
+  .swiper-slide img {
+    width: 100%; /* Ocupa toda a largura do slide */
+    max-width: 100%; /* Garante que não ultrapasse o slide */
+  }
 }
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
+  .container {
+    max-width: var(--container-md);
+  }
+  .intro-image img,
+  #contact-section figure img {
+    width: 70%; /* Ocupa 80% da largura do contêiner */
+    max-width: 90vh; /* Define um limite máximo */
+  }
 }
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
+  .container {
+    max-width: var(--container-lg);
+  }
+  .intro-image img,
+  #contact-section figure img {
+    width: 70%; /* Ocupa 70% da largura do contêiner */
+    max-width: 1000px; /* Define um limite máximo */
+  }
 }
 
 /*X-Large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
+  .container {
+    max-width: var(--container-xl);
+  }
 }
 
 /*XX-Large devices (larger desktops, 1400px and up)*/
 @media (min-width: 1400px) {
+  .container {
+    max-width: var(--container-xxl);
+  }
 }
