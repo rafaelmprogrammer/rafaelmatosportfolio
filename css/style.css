@@ -333,8 +333,9 @@ body.dark-mode .navbar-nav .nav-link {
   color: var(--text-light); /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 0; /* Some padding */
-  width: 48px;
-  height: 48px;
+  width: 70%; /* Ocupa 90% da largura do contêiner */
+  max-width: 48px; /* Define um limite máximo */
+  height: auto; /* Mantém a proporção */
   justify-content: center;
   align-items: center;
 }
@@ -564,6 +565,9 @@ body.light-mode #about-section h1 {
 #about-section figure {
   justify-content: end;
   padding-left: 60px;
+  width: 90%; /* Ocupa 90% da largura do contêiner */
+  max-width: 600px; /* Define um limite máximo */
+  height: auto; /* Mantém a proporção */
 }
 
 #about-section p {
@@ -610,6 +614,12 @@ body.light-mode #education-section h2 {
 
 body.light-mode #education-section ul li {
   color: var(--primary-color); /* Cor clara para o modo escuro */
+}
+
+#education-section figure img {
+  width: 60%; /* Ocupa 90% da largura do contêiner */
+  max-width: 600px; /* Define um limite máximo */
+  height: auto; /* Mantém a proporção */
 }
 
 /* ============================================= */
@@ -858,8 +868,8 @@ body.light-mode #contact-section button {
 }
 
 #contact-section figure img {
-  width: 70%; /* Ocupa toda a largura do contêiner */
-  max-width: 90vw; /* Define um limite máximo relativo ao viewport */
+  width: 90%; /* Ocupa 90% da largura do contêiner */
+  max-width: 600px; /* Define um limite máximo */
   height: auto; /* Mantém a proporção */
 }
 
@@ -886,7 +896,7 @@ footer .nav-item .nav-link {
 
 .redes-footer img {
   width: 48px;
-  height: 48px;
+  height: 50px;
   padding: 10px;
   align-self: center;
 }
@@ -915,8 +925,8 @@ footer .footer-p a {
   cursor: pointer;
   color: var(--primary-color);
   font-family: var(--font-family-primary); /* Fonte Roboto */
-  font-weight: 400;
-  font-size: 0.8em;
+  font-weight: 600;
+  font-size: 1em;
   text-decoration: none;
 }
 
