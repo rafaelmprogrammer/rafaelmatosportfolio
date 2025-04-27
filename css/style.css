@@ -642,7 +642,7 @@ body.dark-mode #curriculum-section {
   font-family: var(--font-family-primary); /* Fonte Roboto */
   font-weight: 500; /* Peso normal */
   font-size: 1.8em; /* Tamanho grande */
-  color: var(--background-light);
+  color: var(--text-dark);
 }
 
 body.dark-mode #curriculum-section h2 {
@@ -677,16 +677,23 @@ body.dark-mode #curriculum-section a {
 }
 
 .container-software .background-software-img {
-  background-color: var(--primary-color); /* Fundo escuro */
+  background-color: var(--secondary-color); /* Fundo escuro */
   border-radius: 1em; /* Bordas arredondadas */
   align-content: center;
   width: 3em;
   height: 2.5em;
 }
 
+body.light-mode .container-software .background-software-img {
+  background-color: var(--primary-color); /* Fundo claro */
+}
 .software-img {
   width: 28px;
   height: 28px;
+}
+
+body.light-mode .software-img {
+  filter: brightness(0) invert(100%); /* Inverte as cores da imagem */
 }
 
 /* ============================================= */
@@ -709,7 +716,7 @@ body.dark-mode #curriculum-section a {
   font-family: var(--font-family-primary); /* Fonte Roboto */
   font-weight: 500; /* Peso normal */
   font-size: 2.5em; /* Tamanho grande */
-  color: var(--background-light);
+  color: var(--text-dark);
 }
 
 body.dark-mode #projects-section h2 {
@@ -838,7 +845,7 @@ body.light-mode .card-footer {
   font-size: 2.5em;
   width: 50%;
   height: auto;
-  color: var(--background-light);
+  color: var(--text-dark);
 }
 
 body.dark-mode #contact-section p {

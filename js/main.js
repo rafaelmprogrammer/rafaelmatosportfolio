@@ -1,213 +1,210 @@
-//DARK AND LIGHT MODE
-const themeToggle = document.getElementById('theme-toggle');
-
-//verificar se há preferência guardada no localStorage para o tema
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'dark') {
-  document.body.classList.add('dark-mode');
-  themeToggle.checked = true;
-} else {
-  document.body.classList.add('light-mode');
+// Utilitário para buscar elementos com segurança
+function getElement(selector) {
+  // Retorna o primeiro elemento que corresponde ao seletor CSS fornecido
+  return document.querySelector(selector);
 }
 
-//Listen if the toggle changed
-themeToggle.addEventListener('change', () => {
-  if (themeToggle.checked) {
-    document.body.classList.add('dark-mode');
-    document.body.classList.remove('light-mode');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    document.body.classList.remove('dark-mode');
-    document.body.classList.add('light-mode');
-    localStorage.setItem('theme', 'light');
-  }
-});
+// Função para alternar o tema (claro/escuro)
+function toggleTheme(isDarkMode) {
+  // Adiciona ou remove a classe 'dark-mode' com base no valor de isDarkMode
+  document.body.classList.toggle('dark-mode', isDarkMode);
+  // Adiciona ou remove a classe 'light-mode' com base no valor de isDarkMode
+  document.body.classList.toggle('light-mode', !isDarkMode);
+  // Salva o tema atual no localStorage para persistência
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+}
 
-// Header scroll behavior
-document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('header');
+// Configurar o tema inicial com base no localStorage
+function initializeTheme() {
+  // Verifica se o tema salvo no localStorage é 'dark'
+  const savedTheme = localStorage.getItem('theme') === 'dark';
+  // Aplica o tema salvo
+  toggleTheme(savedTheme);
+}
 
-  // Adiciona classe 'scrolled' ao header quando o usuário rola a página
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
+// Gerenciar o botão de alternância de tema
+function setupThemeToggle() {
+  // Obtém o elemento do botão de alternância de tema
+  const themeToggle = getElement('#theme-toggle');
+  if (!themeToggle) return; // Sai da função se o botão não existir
+
+  // Define o estado inicial do botão com base na classe do body
+  themeToggle.checked = document.body.classList.contains('dark-mode');
+  // Adiciona um evento para alternar o tema ao mudar o estado do botão
+  themeToggle.addEventListener('change', () => {
+    toggleTheme(themeToggle.checked);
+  });
+}
+
+// Atualizar o estado ativo do menu com base na rolagem
+function updateActiveMenuItem() {
+  // Seleciona todas as seções que possuem um ID
+  const sections = document.querySelectorAll('section[id]');
+  // Calcula a posição atual de rolagem com um ajuste de 100px
+  const scrollPosition = window.scrollY + 100;
+
+  sections.forEach((section) => {
+    // Obtém a posição superior e a altura da seção
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute('id');
+    // Seleciona o link correspondente no menu de navegação
+    const link = getElement(`.navbar-nav .nav-link[href="#${sectionId}"]`);
+
+    // Adiciona ou remove a classe 'active' com base na posição de rolagem
+    if (
+      scrollPosition >= sectionTop &&
+      scrollPosition < sectionTop + sectionHeight
+    ) {
+      link?.classList.add('active');
     } else {
-      header.classList.remove('scrolled');
+      link?.classList.remove('active');
     }
   });
+}
 
-  // Verifica a posição inicial da página
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  }
-});
+// Configurar o comportamento do menu com base na rolagem
+function setupMenuHighlighting() {
+  // Adiciona um evento de rolagem com debounce para melhorar o desempenho
+  window.addEventListener('scroll', debounce(updateActiveMenuItem, 100));
+  // Atualiza o estado ativo do menu ao carregar a página
+  updateActiveMenuItem();
+}
 
-// Menu item highlighting based on scroll position
-document.addEventListener('DOMContentLoaded', () => {
-  // Get all sections
-  const sections = document.querySelectorAll('section[id]');
-  let isScrolling = false;
+// Função debounce para limitar a frequência de execução
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    // Cancela o timeout anterior
+    clearTimeout(timeout);
+    // Define um novo timeout para executar a função após o tempo especificado
+    timeout = setTimeout(() => func(...args), wait);
+  };
+}
 
-  // Debounce function to limit how often the scroll handler fires
-  function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  }
+// Configurar o botão "voltar ao topo"
+function setupScrollToTopButton() {
+  // Obtém o botão "voltar ao topo"
+  const myButton = getElement('#myBtn');
+  if (!myButton) return; // Sai da função se o botão não existir
 
-  // Function to update active menu item
-  function updateActiveMenuItem() {
-    if (isScrolling) return;
+  let lastScrollPosition = 0;
 
-    // Get current scroll position with a small offset
-    const scrollPosition = window.scrollY + 100;
-
-    // Find the current section
-    let currentSection = null;
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-
-      if (
-        scrollPosition >= sectionTop &&
-        scrollPosition < sectionTop + sectionHeight
-      ) {
-        currentSection = sectionId;
-      }
-    });
-
-    // Update menu items
-    document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
-      // Não remover a classe active dos links de idioma
-      if (!link.closest('.lang-switch')) {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('#')) {
-          const sectionId = href.substring(1);
-          if (sectionId === currentSection) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        }
-      }
-    });
-  }
-
-  // Create debounced version of updateActiveMenuItem
-  const debouncedUpdate = debounce(updateActiveMenuItem, 100);
-
-  // Update on scroll
+  // Adiciona um evento de rolagem para exibir ou ocultar o botão
   window.addEventListener('scroll', () => {
-    isScrolling = true;
-    debouncedUpdate();
-    setTimeout(() => {
-      isScrolling = false;
-    }, 150);
+    const currentScrollPosition = window.scrollY;
+    // Exibe o botão se a rolagem for para cima e estiver além de 20px
+    myButton.style.display =
+      currentScrollPosition < lastScrollPosition && currentScrollPosition > 20
+        ? 'block'
+        : 'none';
+    lastScrollPosition = currentScrollPosition;
   });
 
-  // Update on page load
-  updateActiveMenuItem();
+  // Adiciona um evento de clique para rolar suavemente até o topo
+  myButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
-  // Gerenciar os links de idioma
+// Configurar o texto formatado no <pre>
+function setupIntroText() {
+  // Obtém o elemento <pre> com o ID 'intro-pre'
+  const introPre = getElement('#intro-pre');
+  if (!introPre) return; // Sai da função se o elemento não existir
+
+  // Define o conteúdo HTML formatado no elemento <pre>
+  introPre.innerHTML = `
+    <div class="hello-role">
+      <span class="hello">HELLO</span>
+      <span class="role">I'm a Full Stack Developer</span>
+    </div>
+    <span class="world">WORLD!</span>
+    <span class="tagline">Writing code that creates experiences</span>
+  `;
+}
+
+// Configurar a lógica de idiomas
+function setupLanguageSwitch() {
+  // Seleciona todos os links de alternância de idioma
   const langLinks = document.querySelectorAll('.lang-switch .nav-link');
+  // Obtém o idioma salvo no localStorage ou define 'en' como padrão
+  const savedLanguage = localStorage.getItem('language') || 'en';
+
+  // Aplica a tradução inicial
+  applyTranslations(savedLanguage);
 
   langLinks.forEach((link) => {
+    const lang = link.getAttribute('data-lang');
+    // Define o link ativo com base no idioma salvo
+    link.classList.toggle('active', lang === savedLanguage);
+
+    // Adiciona um evento de clique para alternar o idioma
     link.addEventListener('click', (e) => {
       e.preventDefault();
-
-      // Remover a classe active de todos os links de idioma
-      langLinks.forEach((l) => l.classList.remove('active'));
-
-      // Adicionar a classe active ao link clicado
-      link.classList.add('active');
-
-      // Aqui você pode adicionar a lógica para mudar o idioma
-      const lang = link.getAttribute('data-lang');
-      console.log(`Mudando para o idioma: ${lang}`);
-
-      // Salvar a preferência de idioma no localStorage
-      localStorage.setItem('language', lang);
+      localStorage.setItem('language', lang); // Salva o idioma no localStorage
+      langLinks.forEach((l) => l.classList.remove('active')); // Remove a classe 'active' de todos os links
+      link.classList.add('active'); // Adiciona a classe 'active' ao link clicado
+      applyTranslations(lang); // Aplica a tradução ao clicar
     });
   });
+}
 
-  // Verificar se há uma preferência de idioma salva
-  const savedLanguage = localStorage.getItem('language');
-  if (savedLanguage) {
-    const langLink = document.querySelector(
-      `.lang-switch .nav-link[data-lang="${savedLanguage}"]`
-    );
-    if (langLink) {
-      langLink.classList.add('active');
-    }
-  }
+// Função para aplicar traduções
+function applyTranslations(lang) {
+  // Objeto de traduções para diferentes idiomas
+  const translations = {
+    en: {
+      introText:
+        "<span class='hello'>[HELLO</span> <span class='role'>I am a Full Stack Developer</span> <span class='world'>WORLD!)</span> <span class='tagline'>Writing code that creates experiences</span>",
+    },
+    pt: {
+      introText:
+        "<span class='hello'>[OLÁ</span> <span class='role'>Eu sou um Desenvolvedor Full Stack</span> <span class='world'>MUNDO!)</span> <span class='tagline'>Escrevendo código que cria experiências</span>",
+    },
+  };
 
-  // ✅ ADIÇÃO: INSERE O TEXTO COM FORMATAÇÃO NO <pre> USANDO span e classes
+  // Atualiza o conteúdo do elemento <pre> com base no idioma selecionado
   const introPre = document.getElementById('intro-pre');
   if (introPre) {
-    const hello = `[HELLO`;
-    const world = `WORLD!)`;
-    const devRole = `I'm a Full Stack Developer`;
-    const tagline = `Writing code that creates experiences`;
-
-    introPre.innerHTML = `
-    <div class="hello-role">
-      <span class="hello">${hello}</span>
-      <span class="role">${devRole}</span>
-    </div>
-    <span class="world">${world}</span>
-    <span class="tagline">${tagline}</span>
-  `;
+    introPre.innerHTML = translations[lang]?.introText || '';
   }
-});
-
-const swiper = new Swiper('.mySwiper', {
-  effect: 'coverflow',
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: 'auto',
-  initialSlide: 1,
-  coverflowEffect: {
-    rotate: 30,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
-
-// Get the button:
-let mybutton = document.getElementById('myBtn');
-let lastScrollPosition = 0; // Guarda a última posição do scroll
-
-window.addEventListener('scroll', () => {
-  const currentScrollPosition = window.scrollY;
-
-  // Verifica se o utilizador está a fazer scroll up
-  if (
-    currentScrollPosition < lastScrollPosition &&
-    currentScrollPosition > 20
-  ) {
-    mybutton.style.display = 'block'; // Mostra o botão
-  } else {
-    mybutton.style.display = 'none'; // Esconde o botão
-  }
-
-  // Atualiza a última posição do scroll
-  lastScrollPosition = currentScrollPosition;
-});
-
-// Quando o utilizador clica no botão, faz scroll para o topo
-function topFunction() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Inicializar o Swiper
+function initializeSwiper() {
+  // Verifica se o elemento Swiper existe antes de inicializar
+  const swiperElement = getElement('.mySwiper');
+  if (!swiperElement) return;
+
+  // Configura o Swiper com as opções fornecidas
+  new Swiper('.mySwiper', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    initialSlide: 1,
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+}
+
+// Inicializar todas as funcionalidades ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+  initializeTheme(); // Configura o tema inicial
+  setupThemeToggle(); // Configura o botão de alternância de tema
+  setupMenuHighlighting(); // Configura o destaque do menu com base na rolagem
+  setupScrollToTopButton(); // Configura o botão "voltar ao topo"
+  setupIntroText(); // Configura o texto formatado no <pre>
+  setupLanguageSwitch(); // Configura a lógica de alternância de idiomas
+  initializeSwiper(); // Inicializa o Swiper
+});

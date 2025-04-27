@@ -17,6 +17,23 @@ async function loadTranslations(lang) {
   }
 }
 
+// Função para buscar as traduções
+async function fetchTranslations(lang) {
+  const response = await fetch(`./translations/${lang}.json`);
+  return response.json();
+}
+
+// Função para aplicar as traduções
+async function applyTranslations(lang) {
+  const translations = await fetchTranslations(lang);
+
+  // Atualizar o conteúdo do intro-pre
+  const introPre = document.getElementById('intro-pre');
+  if (introPre) {
+    introPre.innerHTML = translations.introText || '';
+  }
+}
+
 // Função para atualizar o texto da página
 async function updatePageLanguage(lang) {
   // Carrega as traduções se ainda não estiverem carregadas
