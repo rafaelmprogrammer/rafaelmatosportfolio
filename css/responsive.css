@@ -65,7 +65,12 @@
 
   /* Estilo e Posição do Theme Toggle */
   .theme-toggle-wrapper {
-    top: 750px;
+    top: 720px;
+  }
+
+  /* Textos "LIGHT" e "DARK" no toggle */
+  .theme-toggle-wrapper span {
+    font-size: 0.6em; /* Tamanho pequeno */
   }
 
   /*Education*/
@@ -340,9 +345,13 @@
 
   /* Estilo e Posição do Theme Toggle */
   .theme-toggle-wrapper {
-    top: 850px;
+    top: 860px;
   }
 
+  /* Textos "LIGHT" e "DARK" no toggle */
+  .theme-toggle-wrapper span {
+    font-size: 0.7em; /* Tamanho pequeno */
+  }
   .intro-image img,
   #contact-section figure img {
     width: 90%; /* Ocupa toda a largura disponível */
@@ -590,10 +599,214 @@
   .container {
     max-width: var(--container-md);
   }
+
+  /*Intro Section*/
+  /* Container principal da seção de introdução */
+  #intro-section {
+    display: grid; /* Usar grid layout */
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    align-items: center; /* Alinhar verticalmente */
+    justify-content: center; /* Centralizar horizontalmente */
+    gap: 20px; /* Espaçamento entre as colunas */
+    padding: 20px; /* Espaçamento interno */
+    margin-left: 10px;
+  }
+
+  /* Bloco que contém os textos da introdução */
+  .intro-text-block {
+    text-align: left;
+    padding: 0 80px;
+  }
+
+  /* Estilo do pre para o texto de introdução */
+  #intro-pre {
+    text-align: left;
+  }
+
+  #intro-pre .hello {
+    padding: 0;
+    font-size: 5em; /* Tamanho grande */
+  }
+
+  #intro-pre .world {
+    text-indent: 3ch; /* Indentação para o texto */
+    font-size: 5em; /* Tamanho grande */
+  }
+
+  #intro-pre .role {
+    text-indent: 22ch; /* Indentação para o texto */
+    padding: 0;
+    font-size: 1.3em;
+  }
+
+  #intro-pre .tagline {
+    text-indent: 14ch; /* Indentação para o texto */
+    font-size: 1.3em;
+  }
+
+  /* Estilo e Posição do Theme Toggle */
+  .theme-toggle-wrapper {
+    top: 940px;
+  }
+
   .intro-image img,
   #contact-section figure img {
     width: 70%; /* Ocupa 80% da largura do contêiner */
     max-width: 90vh; /* Define um limite máximo */
+    align-self: center; /* Centraliza a imagem */
+    justify-self: center; /* Centraliza a imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+  }
+
+  /* ============================================= */
+  /* ============ SECTION ABOUT ================== */
+  /* ============================================= */
+
+  #about-section {
+    margin-left: 30px;
+  }
+  #about-section figure {
+    padding-left: 90px;
+    margin: 0 auto; /* Centraliza a imagem */
+    width: 80%; /* Ocupa 90% da largura do contêiner */
+  }
+
+  #about-section p {
+    font-size: 1.2em; /* Tamanho pequeno */
+    padding: 0 10px 0 0;
+  }
+
+  /*Education Section*/
+  #education-section {
+    padding: 20px; /* Espaçamento interno */
+  }
+
+  #education-section h2:nth-of-type(1),
+  #education-section ul:nth-of-type(1) {
+    grid-column: 1; /* Colocar o primeiro h2 e ul na primeira coluna (à esquerda) */
+    text-align: right; /* Alinhar o texto à direita */
+  }
+
+  #education-section h2:nth-of-type(2),
+  #education-section ul:nth-of-type(2) {
+    grid-column: 2; /* Colocar o segundo h2 e ul na segunda coluna (à direita) */
+    text-align: left; /* Alinhar o texto à esquerda */
+    align-self: end;
+  }
+
+  #education-section ul {
+    margin: 0; /* Remover margens externas */
+    padding: 0; /* Remover padding */
+    list-style: none; /* Remover marcadores */
+  }
+
+  #education-section ul li {
+    line-height: 1.8; /* Ajustar espaçamento entre linhas */
+    font-size: 1.2em; /* Tamanho do texto */
+    margin-bottom: 15px; /* Espaçamento entre os itens */
+  }
+  #education-section figure {
+    grid-column: 1;
+    display: flex; /* Ativar flexbox */
+    justify-content: center; /* Centralizar a imagem */
+    align-items: center; /* Alinhar verticalmente */
+    margin: 0; /* Remover margens externas */
+  }
+
+  #education-section figure img {
+    width: 100%; /* Ajustar largura da imagem */
+    max-width: 300px; /* Limitar tamanho máximo */
+    height: auto; /* Manter proporção */
+  }
+
+  /* ============================================= */
+  /* ============ CURRICULUM SECTION ============= */
+  /* ============================================= */
+  #curriculum-section {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    color: var(--primary-color);
+    font-family: var(--font-family-secondary);
+    font-weight: 500;
+    font-size: 0.9em; /* Tamanho pequeno */
+    text-align: center;
+  }
+
+  #curriculum-section h2 {
+    font-family: var(--font-family-primary); /* Fonte Roboto */
+    font-weight: 500; /* Peso normal */
+    font-size: 2em; /* Tamanho grande */
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+
+  .container-software {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas para os ícones */
+    gap: 10px;
+    justify-content: center;
+    align-items: center; /* Centralizar verticalmente */
+    margin: 16px 16px; /* Centraliza o contêiner */
+    padding: 0 20px; /* Espaçamento interno */
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    max-width: 100%; /* Limitar tamanho máximo */
+  }
+
+  .frameworks {
+    margin-bottom: 20px;
+  }
+
+  /*Projects Section*/
+  #projects-section {
+    margin-left: 30px;
+  }
+  .card {
+    height: 210px;
+    width: 100%;
+    padding: 0px;
+    border-radius: 17px;
+    cursor: pointer;
+  }
+
+  .card-footer .badge {
+    font-size: 0.7em;
+  }
+  /* ============================================= */
+  /* ============ CONTACTS SECTION =============== */
+  /* ============================================= */
+
+  #contact-section {
+    margin-left: 30px;
+  }
+  #contact-section button {
+    min-width: 160px;
+    height: auto;
+    min-height: 40px;
+    font-size: 1.1em;
+  }
+
+  /* ============================================= */
+  /* ============  FOOTER ======================== */
+  /* ============================================= */
+
+  footer {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+    background-color: var(--text-light);
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    color: var(--primary-color);
+  }
+
+  footer .nav-item .nav-link {
+    padding: 20px 20px 12px !important; /* Adiciona espaçamento interno */
+  }
+
+  .redes-footer img {
+    width: 54px;
+    height: auto;
   }
 }
 
