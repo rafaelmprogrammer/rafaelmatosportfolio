@@ -472,12 +472,6 @@ body.light-mode #intro-pre .tagline {
   text-transform: uppercase; /* Tudo em maiúsculas */
 }
 
-/*NÃO ESTÁ A FUNCIONAR*/
-/* Quando o toggle está ativo (checkbox marcado) */
-.theme-switch input:checked ~ .theme-toggle-wrapper span {
-  font-weight: 600; /* Define o peso da fonte como 600 */
-}
-
 /* Container do switch toggle */
 .theme-switch {
   width: 34px; /* Largura do switch */
@@ -694,6 +688,17 @@ body.light-mode .container-software .background-software-img {
 
 body.light-mode .software-img {
   filter: brightness(0) invert(100%); /* Inverte as cores da imagem */
+}
+
+
+/* Estilo das Chavetas */
+.braces {
+  display: none; /* Esconder por padrão */
+}
+
+.braces img {
+  width: 20px;
+  height: auto;
 }
 
 /* ============================================= */
