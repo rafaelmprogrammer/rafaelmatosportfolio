@@ -3,7 +3,7 @@
 /*X-Small devices (portrait phones, less than 576px)*/
 /*No media query for `xs` since this is the default in Bootstrap*/
 
-@media (min-width: 424px) {
+@media (min-width: 424px) and (max-width: 575px) {
   .container {
     max-width: var(--container-sm);
   }
@@ -173,6 +173,7 @@
     flex-direction: column; /* Organizar os itens verticalmente */
     justify-content: center; /* Centralizar verticalmente */
     text-align: center;
+    margin: 0 auto;;
   }
 
   .languages-frameworks ul {
@@ -232,7 +233,7 @@
   /*Projects Section*/
   .card {
     height: 210px;
-    width: 280px;
+    width: 100%;
     padding: 0px;
     border-radius: 17px;
     cursor: pointer;
@@ -303,6 +304,8 @@
     width: 100%; /* Ocupa toda a largura do slide */
     max-width: 100%; /* Garante que não ultrapasse o slide */
   }
+
+
 }
 
 /*Medium devices (tablets, 768px and up)*/
