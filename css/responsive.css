@@ -289,7 +289,7 @@
   }
 
   footer .nav-item .nav-link {
-    padding: 16px 16px 10px !important; /* Adiciona espaçamento interno */
+    padding: 16px 16px 0px !important; /* Adiciona espaçamento interno */
   }
 
   .redes-footer img {
@@ -306,14 +306,15 @@
   }
 
   footer .nav-item {
-    margin: 10px 0; /* Espaçamento entre os itens do menu */
+    margin: 0px; /* Espaçamento entre os itens do menu */
   }
 
   .redes-footer {
     display: flex; /* Ativar flexbox */
+    align-items: center;
     justify-content: center; /* Centralizar os ícones */
     gap: 15px; /* Espaçamento entre os ícones */
-    margin-top: 20px; /* Espaçamento superior */
+    margin: 0px; /* Espaçamento superior */
   }
 
   .redes-footer img {
@@ -847,6 +848,10 @@
     width: 54px;
     height: auto;
   }
+
+  footer .footer-p {
+    font-size: 0.9em;
+  }
 }
 
 /*Large devices (desktops, 992px and up)*/
@@ -907,6 +912,7 @@
   .navbar-nav .nav-link {
     color: var(--text-dark); /* Letras pretas no modo claro */
     transition: color 0.3s ease; /* Transição suave para mudança de cor */
+    font-size: 1.1em;
   }
 
   body.dark-mode .navbar-nav .nav-link {
@@ -927,6 +933,7 @@
     transform: translateY(-70%); /* Ajusta o alinhamento vertical */
     gap: 20px; /* Espaçamento entre as opções de idioma */
     margin: 0px;
+    font-size: 1.1em;
   }
 
   .navbar-nav .lang-switch .nav-link {
@@ -1134,6 +1141,11 @@
     padding: 20px; /* Espaçamento interno */
   }
 
+  .card-body .card-footer .badge {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+
   /*CONTACT SECTION*/
 
   #contact-section {
@@ -1152,10 +1164,18 @@
     transition: color 0.3s ease, text-decoration;
   }
 
+  footer .nav-item .nav-link {
+    font-size: 1.1em;
+  }
+
   body.light-mode footer .nav-item .nav-link:hover {
     color: var(--secondary-color); /* Cor ao passar o mouse */
     font-weight: 700; /* Negrito extra */
     transition: color 0.3s ease, text-decoration;
+  }
+
+  footer .footer-p {
+    font-size: 1em;
   }
 }
 
@@ -1457,6 +1477,12 @@
     margin-top: 100px;
     margin-bottom: 90px;
     padding: 20px; /* Espaçamento interno */
+  }
+
+  .card-body .card-footer .badge {
+    width: 30%;
+    padding: 8px 0px !important;
+    font-size: 0.9em !important;
   }
 
   /*CONTACT SECTION*/
@@ -1852,7 +1878,6 @@
     transition: color 0.3s ease, text-decoration;
   }
 }
-
 
 /* Badges para telas menores (até 575px) */
 @media (max-width: 575px) {

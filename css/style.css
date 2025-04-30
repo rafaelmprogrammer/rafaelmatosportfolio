@@ -753,17 +753,24 @@ body.dark-mode #projects-section h2 {
   transition: transform 0.5s;
   width: 70%; /* Usa 90% da largura do contêiner */
   max-width: 300px; /* Define um limite máximo */
-  height: auto; /* Ajusta a altura automaticamente */
 }
 
+/* Ajustar as imagens dentro do swiper-slide */
 .swiper-slide img {
-  width: 100%; /* Ocupa toda a largura do slide */
-  max-width: 100%; /* Garante que não ultrapasse o slide */
-  height: auto; /* Mantém a proporção */
-  object-fit: cover; /* Ajusta a imagem para cobrir o slide */
-  border-radius: 17px; /* Mantém os cantos arredondados */
+  width: 90%; /* Aumenta a largura da imagem para 90% do slide */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: contain; /* Garante que a imagem se ajuste ao slide sem cortar */
+  max-width: 100%; /* Garante que a imagem não ultrapasse o slide */
+  max-height: 100%; /* Garante que a imagem não ultrapasse a altura do slide */
+  border-radius: 17px; /* Bordas arredondadas */
 }
 
+#projects-section img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
 .swiper-slide a {
   text-decoration: none;
 }

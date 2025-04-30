@@ -243,6 +243,8 @@ window.addEventListener('scroll', () => {
   });
 });
 
+
+
 // Inicializar todas as funcionalidades ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
   initializeTheme(); // Configura o tema inicial
