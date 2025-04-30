@@ -65,6 +65,7 @@ body {
   padding: 0;
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
+  overflow-x: hidden;
 }
 
 /* Estilo do corpo da página no modo escuro */
@@ -532,6 +533,10 @@ body.light-mode .theme-switch .slider::before {
   transform: translateX(2px); /* Move o círculo para a direita */
 }
 
+#side-nav {
+  display: none;
+}
+
 /* ============================================= */
 /* ============ SECTION ABOUT ================== */
 /* ============================================= */
@@ -690,7 +695,6 @@ body.light-mode .software-img {
   filter: brightness(0) invert(100%); /* Inverte as cores da imagem */
 }
 
-
 /* Estilo das Chavetas */
 .braces {
   display: none; /* Esconder por padrão */
@@ -804,6 +808,48 @@ body.dark-mode #projects-section h2 {
   font-weight: 500;
   line-height: normal;
   padding: 5px;
+}
+
+/* Garantir que as imagens dentro do swiper-slide sejam responsivas */
+.swiper-slide img {
+  max-width: 100%; /* A imagem não ultrapassa a largura do card */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: contain; /* Garante que a imagem se ajuste ao contêiner sem cortar */
+  display: block; /* Remove espaços extras ao redor da imagem */
+  margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+/* Ajustar o card-body para garantir que as imagens e etiquetas se adaptem */
+.card-body {
+  position: relative; /* Necessário para posicionar as etiquetas sobre a imagem */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente o conteúdo */
+  align-items: center; /* Centraliza horizontalmente o conteúdo */
+  height: 100%; /* Garante que o card-body ocupe toda a altura disponível */
+  padding: 10px; /* Adiciona espaçamento interno */
+}
+
+/* Ajustar as etiquetas para sobrepor a imagem */
+.card-body .card-footer {
+  position: absolute; /* Posiciona as etiquetas sobre a imagem */
+  bottom: 10px; /* Ajusta a posição das etiquetas na parte inferior */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Centraliza as etiquetas */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Permite que as etiquetas quebrem linha, se necessário */
+  gap: 5px; /* Espaçamento entre as etiquetas */
+  z-index: 2; /* Garante que as etiquetas fiquem acima da imagem */
+  padding: 5px 10px; /* Adiciona espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Estilo das etiquetas */
+.card-body .card-footer .badge {
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 3px; /* Bordas arredondadas */
+  font-size: 0.8em; /* Tamanho do texto */
 }
 
 /*Bolinhas para passar slider*/

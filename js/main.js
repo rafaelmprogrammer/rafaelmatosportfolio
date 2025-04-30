@@ -198,6 +198,51 @@ function initializeSwiper() {
   });
 }
 
+// Seleciona todas as "bolas" e as seções
+const navDots = document.querySelectorAll('.nav-dot');
+const sections = document.querySelectorAll('section');
+
+// Adiciona evento de clique para rolar até a seção correspondente
+navDots.forEach((dot) => {
+  dot.addEventListener('click', (e) => {
+    e.preventDefault();
+    const sectionId = dot.getAttribute('data-section');
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+
+      // Atualiza manualmente a classe 'active' após o clique
+      navDots.forEach((d) => d.classList.remove('active'));
+      dot.classList.add('active');
+    }
+  });
+});
+
+// Atualiza a bola ativa com base na seção visível
+window.addEventListener('scroll', () => {
+  let currentSection = '';
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const scrollPosition = window.scrollY + window.innerHeight / 2; // Ajuste para considerar o centro da tela
+
+    if (
+      scrollPosition >= sectionTop &&
+      scrollPosition < sectionTop + sectionHeight
+    ) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  navDots.forEach((dot) => {
+    dot.classList.remove('active');
+    if (dot.getAttribute('data-section') === currentSection) {
+      dot.classList.add('active');
+    }
+  });
+});
+
 // Inicializar todas as funcionalidades ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
   initializeTheme(); // Configura o tema inicial

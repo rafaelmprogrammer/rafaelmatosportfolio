@@ -8,6 +8,10 @@
     max-width: var(--container-sm);
   }
 
+  #side-nav {
+    display: none;
+  }
+
   /*Intro Section*/
 
   /* Container principal da seção de introdução */
@@ -292,6 +296,35 @@
     width: 54px;
     height: auto;
   }
+
+  footer {
+    display: flex; /* Ativar flexbox */
+    flex-direction: column; /* Organizar os itens verticalmente */
+    align-items: center; /* Centralizar os itens horizontalmente */
+    text-align: center; /* Centralizar o texto */
+    padding: 20px; /* Ajustar o espaçamento interno */
+  }
+
+  footer .nav-item {
+    margin: 10px 0; /* Espaçamento entre os itens do menu */
+  }
+
+  .redes-footer {
+    display: flex; /* Ativar flexbox */
+    justify-content: center; /* Centralizar os ícones */
+    gap: 15px; /* Espaçamento entre os ícones */
+    margin-top: 20px; /* Espaçamento superior */
+  }
+
+  .redes-footer img {
+    width: 40px; /* Ajustar o tamanho dos ícones */
+    height: auto; /* Manter proporção */
+  }
+
+  footer p {
+    font-size: 0.8em; /* Reduzir o tamanho do texto */
+    margin-top: 10px; /* Espaçamento superior */
+  }
 }
 
 /*Small devices (landscape phones, 576px and up)*/
@@ -300,6 +333,9 @@
     max-width: var(--container-sm);
   }
 
+  #side-nav {
+    display: none;
+  }
   /*Intro Section*/
   /* Container principal da seção de introdução */
   #intro-section {
@@ -599,6 +635,9 @@
   .container {
     max-width: var(--container-md);
   }
+  #side-nav {
+    display: none;
+  }
 
   /*Intro Section*/
   /* Container principal da seção de introdução */
@@ -812,13 +851,311 @@
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Impede que o conteúdo transborde horizontalmente */
+  }
+
   .container {
     max-width: var(--container-lg);
   }
-  .intro-image img,
-  #contact-section figure img {
-    width: 70%; /* Ocupa 70% da largura do contêiner */
+
+  .navbar {
+    display: flex; /* Ativa o flexbox para a navbar */
+    justify-content: space-between; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    position: relative; /* Permite posicionar as opções de idioma */
+  }
+
+  .navbar-brand {
+    display: flex; /* Garante que o logotipo seja tratado como um item flex */
+    align-items: center; /* Alinha o logotipo verticalmente ao centro */
+  }
+  .navbar-collapse {
+    display: flex; /* Garante que o menu seja exibido */
+    flex-direction: row; /* Alinha os itens horizontalmente */
+    justify-content: center;
+    background-color: transparent; /* Remove o fundo */
+    box-shadow: none; /* Remove a sombra */
+    position: static; /* Remove o posicionamento absoluto */
+    transform: none; /* Remove transformações */
+    opacity: 1; /* Garante visibilidade */
+    pointer-events: auto; /* Permite interação */
+    margin-top: 35px;
+  }
+
+  body.dark-mode .navbar-collapse {
+    background-color: transparent;
+  }
+
+  .navbar-nav {
+    gap: 20px; /* Espaçamento entre os itens */
+    flex-direction: row; /* Alinha os itens horizontalmente */
+    display: flex; /* Garante que os itens sejam exibidos em linha */
+    justify-content: center; /* Centraliza os itens do menu */
+    flex-grow: 1; /* Faz o menu ocupar o espaço disponível */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    transform: translateY(-40%); /* Ajusta o alinhamento vertical */
+  }
+
+  .navbar-toggler {
+    display: none; /* Esconde o botão "hambúrguer" */
+  }
+
+  .navbar-nav .nav-link {
+    color: var(--text-dark); /* Letras pretas no modo claro */
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
+  }
+
+  body.dark-mode .navbar-nav .nav-link {
+    color: var(--text-light); /* Letras brancas no modo escuro */
+  }
+
+  /* Hover nos itens da navbar */
+  .navbar-nav .nav-link:hover {
+    color: var(--primary-color); /* Cor ao passar o mouse */
+    font-weight: 700; /* Negrito extra */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transição suave */
+  }
+
+  .navbar-nav .lang-switch {
+    position: absolute; /* Posiciona as opções de idioma fora do fluxo normal */
+    right: 40px; /* Alinha as opções de idioma à direita */
+    top: 70%; /* Centraliza verticalmente */
+    transform: translateY(-70%); /* Ajusta o alinhamento vertical */
+    gap: 20px; /* Espaçamento entre as opções de idioma */
+    margin: 0px;
+  }
+
+  .navbar-nav .lang-switch .nav-link {
+    padding: 0; /* Remove padding extra */
+    color: var(--text-dark); /* Cor no modo claro */
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
+  }
+
+  body.dark-mode .navbar-nav .lang-switch .nav-link {
+    color: var(--text-light); /* Cor no modo escuro */
+  }
+
+  /* Linguagem ativa - SEMPRE VISÍVEL EM TODOS OS TAMANHOS */
+  .navbar-nav .lang-switch .nav-link.active {
+    font-weight: 700; /* Negrito extra */
+    color: var(--text-dark); /* Cor branca para destaque no modo claro */
+  }
+
+  /* Linguagem ativa no modo escuro */
+  body.dark-mode .navbar-nav .lang-switch .nav-link.active {
+    color: var(--secondary-color); /* Cor escura para destaque no modo escuro */
+  }
+
+  /*INTRO SECTION*/
+  #intro-section {
+    position: relative; /* Permite posicionar elementos dentro da seção */
+    display: flex; /* Usa Flexbox para organizar os elementos */
+    align-items: center; /* Alinha verticalmente os itens */
+    justify-content: flex-start; /* Alinha o texto à esquerda */
+    padding: 20px; /* Espaçamento interno */
+    overflow: visible; /* Garante que a imagem não ultrapasse os limites */
+    margin-bottom: 150px; /* Ajuste o valor conforme necessário */
+  }
+
+  .intro-text-block {
+    position: relative; /* Garante que o texto fique acima da imagem */
+    z-index: 2; /* Coloca o texto acima da imagem */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 30px; /* Espaçamento interno */
+    color: var(--text-light); /* Cor do texto */
+  }
+
+  .intro-image {
+    position: absolute; /* Posiciona a imagem atrás do texto */
+    top: 0;
+    right: -10%;
+    z-index: 1; /* Coloca a imagem atrás do texto */
+    width: 75%; /* Ajusta a largura da imagem */
+    height: 120%; /* Faz a imagem ocupar toda a altura da seção */
+    object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+  }
+
+  .intro-image img {
+    width: 50%; /* Ocupa 70% da largura do contêiner */
     max-width: 1000px; /* Define um limite máximo */
+  }
+
+  .theme-toggle-wrapper {
+    display: flex; /* Garante que o elemento esteja visível */
+    position: absolute; /* Posiciona o toggle no local desejado */
+    top: 400px; /* Ajuste conforme necessário */
+    right: 20px; /* Ajuste conforme necessário */
+    z-index: 1000; /* Garante que esteja acima de outros elementos */
+    opacity: 1; /* Garante que esteja visível */
+  }
+
+  /*Botão de scroll to the top*/
+  #myBtn {
+    display: none !important; /* Esconde o botão em dispositivos com largura mínima de 992px */
+  }
+
+  /* Menu lateral */
+  #side-nav {
+    position: fixed;
+    top: 50%; /* Centraliza verticalmente */
+    right: 130px; /* Alinha à direita */
+    transform: translateY(-50%); /* Ajusta o alinhamento vertical */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre as bolas */
+    z-index: 1000; /* Garante que esteja acima de outros elementos */
+  }
+
+  .nav-dot {
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--secondary-color); /* Borda branca */
+    border-radius: 50%; /* Torna as bolas circulares */
+    background-color: transparent; /* Fundo transparente */
+    cursor: pointer;
+    transition: 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-dot.active {
+    background-color: var(--secondary-color); /* Preenche a bola ativa */
+    transform: scale(1); /* Aumenta o tamanho da bola ativa */
+  }
+
+  body.light-mode .nav-dot {
+    border: 2px solid var(--primary-color); /* Borda branca */
+  }
+
+  body.light-mode .nav-dot.active {
+    background-color: var(--primary-color); /* Preenche a bola ativa */
+  }
+
+  /*ABOUT SECTION*/
+  #about-section {
+    display: grid; /* Usar grid layout */
+    grid-template-columns: 2fr 2fr; /* Imagem ocupa 1 parte, texto ocupa 2 partes */
+    grid-template-rows: auto auto; /* Duas linhas automáticas */
+    align-items: center; /* Alinhar verticalmente */
+    gap: 20px; /* Espaçamento entre imagem e texto */
+    margin-top: 150px; /* Ajuste conforme necessário */
+    margin-bottom: 150px;
+  }
+
+  #about-section figure {
+    grid-column: 1; /* Colocar a imagem na primeira coluna */
+    grid-row: span 2;
+    display: flex; /* Ativar flexbox */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    margin: 0 auto; /* Remover margens externas */
+    padding: 0; /* Remover padding interno */
+    width: 100%;
+  }
+
+  #about-section figure img {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: none; /* Remove qualquer limite de largura */
+    height: auto; /* Mantém a proporção */
+    object-fit: contain; /* Garante que a imagem se ajuste ao contêiner */
+  }
+
+  #about-section p {
+    grid-column: 2; /* Colocar o texto na segunda coluna */
+    font-size: 1.2em; /* Ajustar tamanho do texto */
+    padding: 0 50px 0 0; /* Espaçamento interno */
+    text-align: left; /* Alinhar o texto à esquerda */
+  }
+
+  /*curriculum-section*/
+  #education-section {
+    margin-top: 150px;
+    padding: 20px;
+  }
+
+  #education-section h2:nth-of-type(1),
+  #education-section ul:nth-of-type(1) {
+    padding-left: 50px;
+  }
+
+  #education-section h2:nth-of-type(2),
+  #education-section ul:nth-of-type(2) {
+    grid-column: 2; /* Colocar o segundo h2 e ul na segunda coluna (à direita) */
+    text-align: left; /* Alinhar o texto à esquerda */
+    align-self: end;
+    padding-right: 50px;
+  }
+
+  #education-section ul li {
+    line-height: 2; /* Ajustar espaçamento entre linhas */
+  }
+
+  #education-section figure img {
+    width: 100%; /* Ajustar largura da imagem */
+    max-width: 350px; /* Limitar tamanho máximo */
+    height: auto; /* Manter proporção */
+  }
+
+  /*CURRICULIUM SECTION*/
+  .container-software {
+    padding: 20px 70px;
+    justify-items: center; /* Centralizar horizontalmente os itens em cada coluna */
+    align-items: center; /* Centralizar verticalmente os itens em cada coluna */
+  }
+
+  .frameworks {
+    text-align: left; /* Alinhar o texto à esquerda */
+    margin: 0; /* Remover margens automáticas */
+    justify-content: flex-start; /* Alinhar os itens horizontalmente à esquerda */
+    margin-bottom: 30px;
+  }
+
+  .languages {
+    text-align: right;
+    margin: 0;
+    justify-content: flex-end; /* Alinhar os itens horizontalmente à direita */
+  }
+
+  .languages h3 {
+    text-align: center !important;
+    margin-left: 200px !important;
+  }
+
+  .languages ul {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  /*PROJECTS SECTION*/
+  #projects-section h2 {
+    margin-top: 150px;
+    margin-bottom: 90px;
+    padding: 20px; /* Espaçamento interno */
+  }
+
+  /*CONTACT SECTION*/
+
+  #contact-section {
+    margin-top: 150px;
+  }
+
+  #contact-section figure img {
+    width: 60%; /* Ocupa 70% da largura do contêiner */
+    max-width: 1000px; /* Define um limite máximo */
+  }
+
+  /*FOOTER*/
+  footer .nav-item .nav-link:hover {
+    color: var(--primary-color); /* Cor ao passar o mouse */
+    font-weight: 700; /* Negrito extra */
+    transition: color 0.3s ease, text-decoration;
+  }
+
+  body.light-mode footer .nav-item .nav-link:hover {
+    color: var(--secondary-color); /* Cor ao passar o mouse */
+    font-weight: 700; /* Negrito extra */
+    transition: color 0.3s ease, text-decoration;
   }
 }
 
@@ -827,11 +1164,740 @@
   .container {
     max-width: var(--container-xl);
   }
+  .navbar {
+    display: flex; /* Ativa o flexbox para a navbar */
+    justify-content: space-between; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    position: relative; /* Permite posicionar as opções de idioma */
+  }
+
+  .navbar-brand {
+    display: flex; /* Garante que o logotipo seja tratado como um item flex */
+    align-items: center; /* Alinha o logotipo verticalmente ao centro */
+  }
+  .navbar-collapse {
+    display: flex; /* Garante que o menu seja exibido */
+    flex-direction: row; /* Alinha os itens horizontalmente */
+    justify-content: center;
+    background-color: transparent; /* Remove o fundo */
+    box-shadow: none; /* Remove a sombra */
+    position: static; /* Remove o posicionamento absoluto */
+    transform: none; /* Remove transformações */
+    opacity: 1; /* Garante visibilidade */
+    pointer-events: auto; /* Permite interação */
+    margin-top: 35px;
+  }
+
+  body.dark-mode .navbar-collapse {
+    background-color: transparent;
+  }
+
+  .navbar-nav {
+    gap: 20px; /* Espaçamento entre os itens */
+    flex-direction: row; /* Alinha os itens horizontalmente */
+    display: flex; /* Garante que os itens sejam exibidos em linha */
+    justify-content: center; /* Centraliza os itens do menu */
+    flex-grow: 1; /* Faz o menu ocupar o espaço disponível */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    transform: translateY(-40%); /* Ajusta o alinhamento vertical */
+  }
+
+  .navbar-toggler {
+    display: none; /* Esconde o botão "hambúrguer" */
+  }
+
+  .navbar-nav .nav-link {
+    color: var(--text-dark); /* Letras pretas no modo claro */
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
+    font-size: 1em;
+  }
+
+  body.dark-mode .navbar-nav .nav-link {
+    color: var(--text-light); /* Letras brancas no modo escuro */
+  }
+
+  /* Hover nos itens da navbar */
+  .navbar-nav .nav-link:hover {
+    color: var(--primary-color); /* Cor ao passar o mouse */
+    font-weight: 700; /* Negrito extra */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transição suave */
+  }
+
+  .navbar-nav .lang-switch {
+    position: absolute; /* Posiciona as opções de idioma fora do fluxo normal */
+    right: 40px; /* Alinha as opções de idioma à direita */
+    top: 70%; /* Centraliza verticalmente */
+    transform: translateY(-70%); /* Ajusta o alinhamento vertical */
+    gap: 20px; /* Espaçamento entre as opções de idioma */
+    margin: 0px;
+  }
+
+  .navbar-nav .lang-switch .nav-link {
+    padding: 0; /* Remove padding extra */
+    color: var(--text-dark); /* Cor no modo claro */
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
+    font-size: 1em;
+  }
+
+  body.dark-mode .navbar-nav .lang-switch .nav-link {
+    color: var(--text-light); /* Cor no modo escuro */
+  }
+
+  /* Linguagem ativa - SEMPRE VISÍVEL EM TODOS OS TAMANHOS */
+  .navbar-nav .lang-switch .nav-link.active {
+    font-weight: 700; /* Negrito extra */
+    color: var(--text-dark); /* Cor branca para destaque no modo claro */
+  }
+
+  /* Linguagem ativa no modo escuro */
+  body.dark-mode .navbar-nav .lang-switch .nav-link.active {
+    color: var(--secondary-color); /* Cor escura para destaque no modo escuro */
+  }
+
+  /*INTRO SECTION*/
+  #intro-section {
+    position: relative; /* Permite posicionar elementos dentro da seção */
+    display: flex; /* Usa Flexbox para organizar os elementos */
+    align-items: center; /* Alinha verticalmente os itens */
+    justify-content: flex-start; /* Alinha o texto à esquerda */
+    padding: 20px; /* Espaçamento interno */
+    overflow: visible; /* Garante que a imagem não ultrapasse os limites */
+    margin-bottom: 160px; /* Ajuste o valor conforme necessário */
+  }
+
+  .intro-text-block {
+    position: relative; /* Garante que o texto fique acima da imagem */
+    z-index: 2; /* Coloca o texto acima da imagem */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 40px; /* Espaçamento interno */
+    color: var(--text-light); /* Cor do texto */
+  }
+
+  .intro-image {
+    position: absolute; /* Posiciona a imagem atrás do texto */
+    top: 0;
+    right: -10%;
+    z-index: 1; /* Coloca a imagem atrás do texto */
+    width: 80%; /* Ajusta a largura da imagem */
+    height: 120%; /* Faz a imagem ocupar toda a altura da seção */
+    object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+  }
+
+  .intro-image img {
+    width: 50%; /* Ocupa 70% da largura do contêiner */
+    max-width: 1000px; /* Define um limite máximo */
+  }
+
+  .theme-toggle-wrapper {
+    display: flex; /* Garante que o elemento esteja visível */
+    position: absolute; /* Posiciona o toggle no local desejado */
+    top: 450px; /* Ajuste conforme necessário */
+    right: 20px; /* Ajuste conforme necessário */
+    z-index: 1000; /* Garante que esteja acima de outros elementos */
+    opacity: 1; /* Garante que esteja visível */
+  }
+
+  /*Botão de scroll to the top*/
+  #myBtn {
+    display: none; /* Esconde o botão em dispositivos com largura mínima de 992px */
+  }
+
+  /* Menu lateral */
+  #side-nav {
+    position: fixed;
+    top: 50%; /* Centraliza verticalmente */
+    right: 150px; /* Alinha à direita */
+    transform: translateY(-50%); /* Ajusta o alinhamento vertical */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre as bolas */
+    z-index: 1000; /* Garante que esteja acima de outros elementos */
+  }
+
+  .nav-dot {
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--secondary-color); /* Borda branca */
+    border-radius: 50%; /* Torna as bolas circulares */
+    background-color: transparent; /* Fundo transparente */
+    cursor: pointer;
+    transition: 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-dot.active {
+    background-color: var(--secondary-color); /* Preenche a bola ativa */
+    transform: scale(1); /* Aumenta o tamanho da bola ativa */
+  }
+
+  body.light-mode .nav-dot {
+    border: 2px solid var(--primary-color); /* Borda branca */
+  }
+
+  body.light-mode .nav-dot.active {
+    background-color: var(--primary-color); /* Preenche a bola ativa */
+  }
+
+  /*ABOUT SECTION*/
+  #about-section {
+    display: grid; /* Usar grid layout */
+    grid-template-columns: 2fr 2fr; /* Imagem ocupa 1 parte, texto ocupa 2 partes */
+    grid-template-rows: auto auto; /* Duas linhas automáticas */
+    align-items: center; /* Alinhar verticalmente */
+    gap: 20px; /* Espaçamento entre imagem e texto */
+    margin-top: 160px; /* Ajuste conforme necessário */
+    margin-bottom: 130px;
+  }
+
+  #about-section figure {
+    grid-column: 1; /* Colocar a imagem na primeira coluna */
+    grid-row: span 2;
+    display: flex; /* Ativar flexbox */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    margin: 0 auto; /* Remover margens externas */
+    padding: 0; /* Remover padding interno */
+    width: 100%;
+  }
+
+  #about-section figure img {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: none; /* Remove qualquer limite de largura */
+    height: auto; /* Mantém a proporção */
+    object-fit: contain; /* Garante que a imagem se ajuste ao contêiner */
+  }
+
+  #about-section p {
+    padding: 0 70px 0 0; /* Espaçamento interno */
+  }
+
+  #about-section p:first-of-type {
+    align-self: end; /* Posiciona o primeiro parágrafo na base da coluna */
+  }
+
+  #about-section p:last-of-type {
+    align-self: start; /* Posiciona o segundo parágrafo no topo da coluna */
+  }
+
+  /*curriculum-section*/
+  #education-section {
+    margin-top: 100px;
+    padding: 20px;
+  }
+
+  #education-section h2:nth-of-type(1),
+  #education-section ul:nth-of-type(1) {
+    padding-left: 80px;
+  }
+
+  #education-section h2:nth-of-type(2),
+  #education-section ul:nth-of-type(2) {
+    padding-right: 180px;
+  }
+
+  #education-section ul li {
+    line-height: 2; /* Ajustar espaçamento entre linhas */
+  }
+
+  #education-section figure img {
+    width: 100%; /* Ajustar largura da imagem */
+    max-width: 350px; /* Limitar tamanho máximo */
+    height: auto; /* Manter proporção */
+  }
+
+  /*CURRICULIUM SECTION*/
+  .container-software {
+    padding: 20px 70px;
+    justify-items: center; /* Centralizar horizontalmente os itens em cada coluna */
+    align-items: center; /* Centralizar verticalmente os itens em cada coluna */
+  }
+
+  #curriculum-section {
+    font-size: 1.2em;
+  }
+  .frameworks {
+    text-align: left; /* Alinhar o texto à esquerda */
+    margin: 0; /* Remover margens automáticas */
+    justify-content: flex-start; /* Alinhar os itens horizontalmente à esquerda */
+    margin-bottom: 30px;
+  }
+  .frameworks h3 {
+    margin-top: 20px !important;
+  }
+
+  .frameworks ul {
+    font-size: 0.8em;
+  }
+
+  .languages {
+    text-align: right;
+    margin: 0;
+    justify-content: flex-end; /* Alinhar os itens horizontalmente à direita */
+  }
+
+  .languages h3 {
+    text-align: center !important;
+    margin-left: 0px;
+    margin-top: 20px !important;
+  }
+
+  .languages ul {
+    grid-template-columns: 3fr 1fr;
+    font-size: 0.8em;
+  }
+
+  .languages-frameworks {
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente (se necessário) */
+    margin: 50px auto; /* Garante que a div esteja centralizada no contêiner pai */
+    text-align: center; /* Centralizar o texto dentro da div */
+  }
+
+  /*PROJECTS SECTION*/
+  #projects-section h2 {
+    margin-top: 100px;
+    margin-bottom: 90px;
+    padding: 20px; /* Espaçamento interno */
+  }
+
+  /*CONTACT SECTION*/
+  #contact-section {
+    margin-top: 150px;
+  }
+
+  #contact-section p {
+    font-size: 3em; /* Tamanho pequeno */
+    margin: 24px !important;
+  }
+
+  #contact-section button {
+    min-width: 180px;
+    height: auto;
+    min-height: 40px;
+    font-size: 1.2em;
+    margin: 24px !important;
+  }
+
+  #contact-section figure img {
+    width: 60%; /* Ocupa 70% da largura do contêiner */
+    max-width: 1000px; /* Define um limite máximo */
+  }
+
+  /*FOOTER*/
+  footer .nav-item .nav-link:hover {
+    color: var(--primary-color); /* Cor ao passar o mouse */
+    font-weight: 700; /* Negrito extra */
+    transition: color 0.3s ease, text-decoration;
+  }
+
+  footer .nav-item .nav-link {
+    font-size: 1em !important;
+  }
+
+  body.light-mode footer .nav-item .nav-link:hover {
+    color: var(--secondary-color); /* Cor ao passar o mouse */
+    font-weight: 700; /* Negrito extra */
+    transition: color 0.3s ease, text-decoration;
+  }
 }
 
 /*XX-Large devices (larger desktops, 1400px and up)*/
 @media (min-width: 1400px) {
   .container {
-    max-width: var(--container-xxl);
+    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura da viewport */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 0 20px; /* Adiciona espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+  }
+
+  body {
+    overflow-x: hidden; /* Impede que o conteúdo transborde horizontalmente */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .navbar {
+    display: flex; /* Ativa o flexbox para a navbar */
+    justify-content: space-between; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    position: relative; /* Permite posicionar as opções de idioma */
+  }
+
+  .navbar-brand {
+    display: flex; /* Garante que o logotipo seja tratado como um item flex */
+    align-items: center; /* Alinha o logotipo verticalmente ao centro */
+  }
+  .navbar-collapse {
+    display: flex; /* Garante que o menu seja exibido */
+    flex-direction: row; /* Alinha os itens horizontalmente */
+    justify-content: center;
+    background-color: transparent; /* Remove o fundo */
+    box-shadow: none; /* Remove a sombra */
+    position: static; /* Remove o posicionamento absoluto */
+    transform: none; /* Remove transformações */
+    opacity: 1; /* Garante visibilidade */
+    pointer-events: auto; /* Permite interação */
+    margin-top: 35px;
+  }
+
+  body.dark-mode .navbar-collapse {
+    background-color: transparent;
+  }
+
+  .navbar-nav {
+    gap: 20px; /* Espaçamento entre os itens */
+    flex-direction: row; /* Alinha os itens horizontalmente */
+    display: flex; /* Garante que os itens sejam exibidos em linha */
+    justify-content: center; /* Centraliza os itens do menu */
+    flex-grow: 1; /* Faz o menu ocupar o espaço disponível */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    transform: translateY(-40%); /* Ajusta o alinhamento vertical */
+  }
+
+  .navbar-toggler {
+    display: none; /* Esconde o botão "hambúrguer" */
+  }
+
+  .navbar-nav .nav-link {
+    color: var(--text-dark); /* Letras pretas no modo claro */
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
+    font-size: 1.2em;
+  }
+
+  body.dark-mode .navbar-nav .nav-link {
+    color: var(--text-light); /* Letras brancas no modo escuro */
+  }
+
+  /* Hover nos itens da navbar */
+  .navbar-nav .nav-link:hover {
+    color: var(--primary-color); /* Cor ao passar o mouse */
+    font-weight: 700; /* Negrito extra */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transição suave */
+  }
+
+  .navbar-nav .lang-switch {
+    position: absolute; /* Posiciona as opções de idioma fora do fluxo normal */
+    right: 40px; /* Alinha as opções de idioma à direita */
+    top: 70%; /* Centraliza verticalmente */
+    transform: translateY(-70%); /* Ajusta o alinhamento vertical */
+    gap: 20px; /* Espaçamento entre as opções de idioma */
+    margin: 0px;
+  }
+
+  .navbar-nav .lang-switch .nav-link {
+    padding: 0; /* Remove padding extra */
+    color: var(--text-dark); /* Cor no modo claro */
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
+    font-size: 1.2em;
+  }
+
+  body.dark-mode .navbar-nav .lang-switch .nav-link {
+    color: var(--text-light); /* Cor no modo escuro */
+  }
+
+  /* Linguagem ativa - SEMPRE VISÍVEL EM TODOS OS TAMANHOS */
+  .navbar-nav .lang-switch .nav-link.active {
+    font-weight: 700; /* Negrito extra */
+    color: var(--text-dark); /* Cor branca para destaque no modo claro */
+  }
+
+  /* Linguagem ativa no modo escuro */
+  body.dark-mode .navbar-nav .lang-switch .nav-link.active {
+    color: var(--secondary-color); /* Cor escura para destaque no modo escuro */
+  }
+
+  /*INTRO SECTION*/
+  #intro-section {
+    position: relative; /* Permite posicionar elementos dentro da seção */
+    display: flex; /* Usa Flexbox para organizar os elementos */
+    align-items: center; /* Alinha verticalmente os itens */
+    justify-content: flex-start; /* Alinha o texto à esquerda */
+    padding: 20px; /* Espaçamento interno */
+    overflow: visible; /* Garante que a imagem não ultrapasse os limites */
+    margin-bottom: 250px; /* Ajuste o valor conforme necessário */
+  }
+
+  .intro-text-block {
+    position: relative; /* Garante que o texto fique acima da imagem */
+    z-index: 2; /* Coloca o texto acima da imagem */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 90px; /* Espaçamento interno */
+    color: var(--text-light); /* Cor do texto */
+  }
+
+  .intro-image {
+    position: absolute; /* Posiciona a imagem atrás do texto */
+    top: 40%;
+    right: 0;
+    z-index: 1; /* Coloca a imagem atrás do texto */
+    width: 70%; /* Ajusta a largura da imagem */
+    max-width: 100%;
+    height: 100%; /* Ajusta a altura para ocupar toda a seção */
+    max-height: 20vh; /* Limita a altura máxima à altura da viewport */
+    object-fit: contain; /* Garante que a imagem se ajuste ao contêiner sem cortar */
+  }
+
+  .intro-image img {
+    width: 50%; /* Ocupa 70% da largura do contêiner */
+    max-width: 1000px; /* Define um limite máximo */
+  }
+
+  .theme-toggle-wrapper {
+    display: flex; /* Garante que o elemento esteja visível */
+    position: absolute; /* Posiciona o toggle no local desejado */
+    top: 550px; /* Ajuste conforme necessário */
+    right: 20px; /* Ajuste conforme necessário */
+    z-index: 1000; /* Garante que esteja acima de outros elementos */
+    opacity: 1; /* Garante que esteja visível */
+  }
+
+  /*Botão de scroll to the top*/
+  #myBtn {
+    display: none !important; /* Esconde o botão em dispositivos com largura mínima de 992px */
+  }
+
+  /* Menu lateral */
+  #side-nav {
+    position: fixed;
+    top: 50%; /* Centraliza verticalmente */
+    right: 40px; /* Alinha à direita */
+    transform: translateY(-50%); /* Ajusta o alinhamento vertical */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre as bolas */
+    z-index: 1000; /* Garante que esteja acima de outros elementos */
+  }
+
+  .nav-dot {
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--secondary-color); /* Borda branca */
+    border-radius: 50%; /* Torna as bolas circulares */
+    background-color: transparent; /* Fundo transparente */
+    cursor: pointer;
+    transition: 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-dot.active {
+    background-color: var(--secondary-color); /* Preenche a bola ativa */
+    transform: scale(1); /* Aumenta o tamanho da bola ativa */
+  }
+
+  body.light-mode .nav-dot {
+    border: 2px solid var(--primary-color); /* Borda branca */
+  }
+
+  body.light-mode .nav-dot.active {
+    background-color: var(--primary-color); /* Preenche a bola ativa */
+  }
+
+  /*ABOUT SECTION*/
+  #about-section {
+    display: grid; /* Usar grid layout */
+    grid-template-columns: 2fr 2fr; /* Imagem ocupa 1 parte, texto ocupa 2 partes */
+    grid-template-rows: auto auto; /* Duas linhas automáticas */
+    align-items: center; /* Alinhar verticalmente */
+    gap: 20px; /* Espaçamento entre imagem e texto */
+    margin-top: 160px; /* Ajuste conforme necessário */
+    margin-bottom: 130px;
+  }
+
+  #about-section figure {
+    grid-column: 1; /* Colocar a imagem na primeira coluna */
+    grid-row: span 2;
+    display: flex; /* Ativar flexbox */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    margin: 0 auto; /* Remover margens externas */
+    padding: 0; /* Remover padding interno */
+    width: 100%;
+  }
+
+  #about-section figure img {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: none; /* Remove qualquer limite de largura */
+    height: auto; /* Mantém a proporção */
+    object-fit: contain; /* Garante que a imagem se ajuste ao contêiner */
+  }
+
+  #about-section p {
+    padding: 0 70px 0 0; /* Espaçamento interno */
+  }
+
+  #about-section p:first-of-type {
+    align-self: end; /* Posiciona o primeiro parágrafo na base da coluna */
+  }
+
+  #about-section p:last-of-type {
+    align-self: start; /* Posiciona o segundo parágrafo no topo da coluna */
+  }
+
+  /*curriculum-section*/
+  #education-section {
+    margin-top: 100px;
+    padding: 20px;
+  }
+
+  #education-section h2:nth-of-type(1),
+  #education-section ul:nth-of-type(1) {
+    padding-left: 80px;
+  }
+
+  #education-section h2:nth-of-type(2),
+  #education-section ul:nth-of-type(2) {
+    padding-right: 200px;
+  }
+
+  #education-section ul li {
+    line-height: 2; /* Ajustar espaçamento entre linhas */
+  }
+
+  #education-section figure img {
+    width: 100%; /* Ajustar largura da imagem */
+    max-width: 350px; /* Limitar tamanho máximo */
+    height: auto; /* Manter proporção */
+  }
+
+  /*CURRICULIUM SECTION*/
+  .container-software {
+    padding: 20px 70px;
+    justify-items: center; /* Centralizar horizontalmente os itens em cada coluna */
+    align-items: center; /* Centralizar verticalmente os itens em cada coluna */
+  }
+
+  #curriculum-section {
+    font-size: 1.2em;
+  }
+  .frameworks {
+    text-align: left; /* Alinhar o texto à esquerda */
+    margin: 0; /* Remover margens automáticas */
+    justify-content: flex-start; /* Alinhar os itens horizontalmente à esquerda */
+    margin-bottom: 30px;
+  }
+  .frameworks h3 {
+    margin-top: 20px !important;
+  }
+
+  .frameworks ul {
+    font-size: 0.8em;
+  }
+
+  .languages {
+    text-align: right;
+    margin: 0;
+    justify-content: flex-end; /* Alinhar os itens horizontalmente à direita */
+  }
+
+  .languages h3 {
+    text-align: center !important;
+    margin-left: 0px;
+    margin-top: 20px !important;
+  }
+
+  .languages ul {
+    grid-template-columns: 3fr 1fr;
+    font-size: 0.8em;
+  }
+
+  .languages-frameworks {
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente (se necessário) */
+    margin: 50px auto; /* Garante que a div esteja centralizada no contêiner pai */
+    text-align: center; /* Centralizar o texto dentro da div */
+  }
+
+  /*PROJECTS SECTION*/
+  #projects-section h2 {
+    margin-top: 100px;
+    margin-bottom: 90px;
+    padding: 20px; /* Espaçamento interno */
+  }
+
+  /*CONTACT SECTION*/
+  #contact-section {
+    margin-top: 150px;
+  }
+
+  #contact-section p {
+    font-size: 3em; /* Tamanho pequeno */
+    margin: 24px !important;
+  }
+
+  #contact-section button {
+    min-width: 180px;
+    height: auto;
+    min-height: 40px;
+    font-size: 1.2em;
+    margin: 24px !important;
+  }
+
+  #contact-section figure img {
+    width: 50%; /* Ocupa 70% da largura do contêiner */
+    max-width: 1000px; /* Define um limite máximo */
+  }
+
+  /*FOOTER*/
+  footer .nav-item .nav-link:hover {
+    color: var(--primary-color); /* Cor ao passar o mouse */
+    font-weight: 700; /* Negrito extra */
+    transition: color 0.3s ease, text-decoration;
+  }
+
+  footer .nav-item .nav-link {
+    font-size: 1.2em !important;
+  }
+
+  body.light-mode footer .nav-item .nav-link:hover {
+    color: var(--secondary-color); /* Cor ao passar o mouse */
+    font-weight: 700; /* Negrito extra */
+    transition: color 0.3s ease, text-decoration;
+  }
+}
+
+
+/* Badges para telas menores (até 575px) */
+@media (max-width: 575px) {
+  .card-body .card-footer .badge {
+    padding: 3px 6px; /* Reduz o espaçamento interno */
+    font-size: 0.6em; /* Reduz o tamanho do texto */
+  }
+}
+
+/* Badges para telas pequenas (576px a 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .card-body .card-footer .badge {
+    padding: 4px 8px; /* Ajusta o espaçamento interno */
+    font-size: 0.7em; /* Ajusta o tamanho do texto */
+  }
+}
+
+/* Badges para telas médias (768px a 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .card-body .card-footer .badge {
+    padding: 5px 10px; /* Espaçamento interno padrão */
+    font-size: 0.8em; /* Tamanho do texto padrão */
+  }
+}
+
+/* Badges para telas grandes (992px a 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .card-body .card-footer .badge {
+    padding: 6px 12px; /* Aumenta o espaçamento interno */
+    font-size: 0.9em; /* Aumenta o tamanho do texto */
+  }
+}
+
+/* Badges para telas extra grandes (1200px a 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .card-body .card-footer .badge {
+    padding: 7px 14px; /* Aumenta o espaçamento interno */
+    font-size: 1em; /* Aumenta o tamanho do texto */
+  }
+}
+
+/* Badges para telas muito grandes (1400px e acima) */
+@media (min-width: 1400px) {
+  .card-body .card-footer .badge {
+    padding: 8px 16px; /* Espaçamento interno maior */
+    font-size: 1.1em; /* Tamanho do texto maior */
   }
 }
