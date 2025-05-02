@@ -35,93 +35,8 @@
     <link rel="stylesheet" href="./css/responsive.css" />
   </head>
   <body>
-    <!--Header with navbar-->
-    <header>
-      <nav
-        class="navbar navbar-expand-lg navbar-dark"
-        aria-label="Main navigation"
-      >
-        <div class="container">
-          <!-- Logo -->
-          <a class="navbar-brand me-auto" href="#intro-section">
-            <img
-              src="./assets/images/logo/logo_placeholder.png"
-              alt="Rafael Matos Logo"
-            />
-          </a>
-
-          <!-- Toggle mobile menu -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNavbar"
-            aria-controls="mainNavbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- Navbar links aligned to right -->
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="mainNavbar"
-          >
-            <ul class="navbar-nav ms-auto d-lg-flex align-items-right">
-              <li class="nav-item">
-                <a class="nav-link" href="#about-section" data-translate="about"
-                  >about</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="#curriculum-section"
-                  data-translate="curriculum"
-                  >curriculum</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="#projects-section"
-                  data-translate="projects"
-                  >projects</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="#contact-section"
-                  data-translate="contact"
-                  >contact</a
-                >
-              </li>
-              <!-- Language switchers -->
-              <li class="nav-item lang-switch d-flex">
-                <a
-                  class="nav-link active"
-                  href="?lang=en"
-                  data-lang="en"
-                  aria-label="Switch to English"
-                  >en</a
-                >
-                <a
-                  class="nav-link"
-                  href="?lang=pt"
-                  data-lang="pt"
-                  aria-label="Switch to Portuguese"
-                  >pt</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
     <!--Main content of the website-->
+    <div id="header"></div>
     <main>
       <div id="side-nav">
         <a
@@ -372,7 +287,7 @@
             <div class="swiper-wrapper">
               <!-- ---------- SLIDE 1 ---------- -->
               <div class="swiper-slide">
-                <a href="https://github.com/rafaelmprogrammer/company_site">
+                <a href="./companyWebsite.html">
                   <div class="card text-center">
                     <div
                       class="card-body d-flex flex-column justify-content-between"
@@ -394,9 +309,30 @@
 
               <!-- ---------- SLIDE 2 ---------- -->
               <div class="swiper-slide">
-                <a
-                  href="https://github.com/rafaelmprogrammer/bim_the_game_website"
-                >
+                <a href="./abletonSite.html">
+                  <div class="card text-center">
+                    <div
+                      class="card-body d-flex flex-column justify-content-between"
+                    >
+                      <img
+                        src="./assets/images/projects/abletonImage.png"
+                        alt="Ableton About Page"
+                      />
+
+                      <!-- Etiquetas -->
+                      <footer class="card-footer d-flex flex-wrap gap-2">
+                        <span class="badge col">HTML5</span>
+                        <span class="badge col">CSS</span>
+                        <span class="badge col">Bootstrap</span>
+                      </footer>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- ---------- SLIDE 3 ---------- -->
+              <div class="swiper-slide">
+                <a href="./binTheGame.html">
                   <div class="card text-center">
                     <div
                       class="card-body d-flex flex-column justify-content-between"
@@ -417,9 +353,9 @@
                 </a>
               </div>
 
-              <!-- ---------- SLIDE 3 ---------- -->
+              <!-- ---------- SLIDE 4 ---------- -->
               <div class="swiper-slide">
-                <a href="https://pmedroa.itch.io/lary-the-fairy">
+                <a href="./laryTheFairyGame.html">
                   <div class="card text-center">
                     <div
                       class="card-body d-flex flex-column justify-content-between"
@@ -466,84 +402,9 @@
           />
         </figure>
       </section>
-
-      <!--Footer-->
-      <footer>
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a
-              class="nav-link pt-2 px-2"
-              href="#about-section"
-              data-translate="about"
-              >about</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link pt-2 px-2"
-              href="#curriculum-section"
-              data-translate="curriculum"
-              >curriculum</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link pt-2 px-2"
-              href="#projects-section"
-              data-translate="projects"
-              >projects</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link pt-2 px-2"
-              href="#contact-section"
-              data-translate="contact"
-              >contact</a
-            >
-          </li>
-        </ul>
-        <ul class="nav justify-content-center redes-footer">
-          <li class="nav-item">
-            <a class="nav-link" href="#"
-              ><img
-                class="img-fluid"
-                src="./assets/images/icons/social/Social Icons-insta.svg"
-                alt="Instagram Icon"
-            /></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"
-              ><img
-                class="img-fluid"
-                src="./assets/images/icons/social/Social Icons-git.svg"
-                alt="GitHub Icon"
-            /></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"
-              ><img
-                class="img-fluid"
-                src="./assets/images/icons/social/Social Icons-ld.svg"
-                alt="LinkedIn Icon"
-            /></a>
-          </li>
-        </ul>
-        <p class="text-center py-2 footer-p">
-          2025 <span data-translate="programmingBy">Programming by</span>
-          <a href="https://www.linkedin.com/in/rafael-matos-8227ab317/" target="_blank"
-            >Rafael Matos</a
-          >
-          |
-          <span data-translate="webDesignBy">WebDesign by</span>
-          <a
-            href="https://www.instagram.com/design.viviana/profilecard/?igsh=MWFndmE0MnZpNm55aQ%3D%3D" target="_blank"
-            >Viviana Sousa</a
-          >
-        </p>
-      </footer>
     </main>
 
+    <div id="footer"></div>
     <!-- Scripts -->
     <!-- Bootstrap Bundle (includes Popper) -->
     <script

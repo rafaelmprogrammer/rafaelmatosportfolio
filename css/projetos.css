@@ -1,0 +1,346 @@
+#titulo-projeto {
+  font-size: 2.5rem; /* Tamanho do título */
+  font-weight: 500;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif; /* Fonte do título */
+}
+
+body.light-mode #titulo-projeto {
+  color: #000000; /* Título preto no modo claro */
+}
+
+#p-projeto {
+  font-family: 'Montserrat', sans-serif; /* Fonte do parágrafo */
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #f0f0f0; /* Texto cinza claro */
+}
+
+body.light-mode #p-projeto {
+  color: #333333; /* Texto preto no modo claro */
+}
+
+#a-projeto {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif; /* Fonte do link */
+  font-size: 0.7em;
+  font-weight: 400;
+  font-style: italic;
+  cursor: pointer;
+}
+
+body.light-mode #a-projeto {
+  color: #333333; /* Link preto no modo claro */
+}
+
+/* Tags */
+.badge-projeto {
+  font-family: 'Montserrat', sans-serif; /* Fonte das tags */
+  font-weight: 500;
+  font-style: italic;
+  font-size: 0.6rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  background-color: #f0f0f0; /* Fundo branco */
+  color: #333333; /* Texto preto */
+  border: 1px solid #f0f0f0; /* Borda cinza clara */
+}
+
+body.light-mode .badge-projeto {
+  background-color: #333333; /* Fundo preto no modo claro */
+  color: #fff; /* Texto branco no modo claro */
+  border: 1px solid #333333; /* Borda branca no modo claro */
+}
+
+/* Imagem do projeto */
+#imagem-projeto {
+  max-width: 100%;
+  height: auto;
+  border-radius: 23px; /* Bordas arredondadas */
+}
+
+.conteiner-imagem-projeto #imagem-projeto {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra na imagem */
+}
+
+@media (min-width: 424px) and (max-width: 575px) {
+  #titulo-projeto {
+    font-size: 2.5rem; /* Tamanho do título */
+  }
+
+  #p-projeto {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  #a-projeto {
+    font-size: 0.8em;
+    font-weight: 400;
+  }
+
+  /* Tags */
+  .badge-projeto {
+    font-weight: 500;
+    font-size: 0.7em;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Imagem do projeto */
+  #imagem-projeto {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  #titulo-projeto {
+    font-size: 2.5em; /* Tamanho do título */
+  }
+
+  #p-projeto {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+
+  #a-projeto {
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+
+  /* Tags */
+  .badge-projeto {
+    font-weight: 500;
+    font-size: 0.8em;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Imagem do projeto */
+  #imagem-projeto {
+    max-width: 80%;
+    height: auto;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  #titulo-projeto {
+    font-size: 2.5em; /* Tamanho do título */
+  }
+
+  #p-projeto {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+
+  #a-projeto {
+    font-size: 1em;
+    font-weight: 400;
+  }
+
+  /* Tags */
+  .badge-projeto {
+    font-weight: 500;
+    font-size: 0.9em;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Imagem do projeto */
+  #imagem-projeto {
+    max-width: 60%;
+    height: auto;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  #main-projeto {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de igual largura */
+    grid-template-rows: auto auto auto; /* Altura automática para as linhas */
+    grid-template-areas:
+      'titulo-projeto imagem-projeto'
+      'p-projeto imagem-projeto'
+      'tags-projeto a-projeto';
+    gap: 1em; /* Espaçamento entre as colunas */
+    padding: 2em; /* Espaçamento interno */
+    align-items: start;
+  }
+
+  #titulo-projeto {
+    grid-area: titulo-projeto; /* Definindo a área do grid */
+    font-size: 2.5em; /* Tamanho do título */
+    text-align: left !important; /* Alinha o texto à esquerda */
+  }
+
+  #p-projeto {
+    grid-area: p-projeto; /* Definindo a área do grid */
+    font-size: 1.2em;
+    line-height: 1.6;
+    text-align: left !important; /* Alinha o texto à esquerda */
+  }
+
+  /* Contêiner de tags */
+  .tags-container {
+    grid-area: tags-projeto; /* Posiciona na área definida */
+    display: flex;
+    flex-wrap: wrap; /* Permite que as tags quebrem linha, se necessário */
+    gap: 0.5rem; /* Espaçamento entre os badges */
+    justify-content: flex-start; /* Alinha as tags à esquerda */
+    margin-top: 0.5em !important; /* Espaçamento acima das tags */
+  }
+
+  /* Tags */
+  .badge-projeto {
+    display: inline-block; /* Exibindo como bloco em linha */
+    margin-right: 0.5rem; /* Espaçamento entre as tags */
+    font-weight: 500;
+    font-size: 1em;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Imagem do projeto */
+  #imagem-projeto {
+    grid-area: imagem-projeto; /* Definindo a área do grid */
+    max-width: 80%;
+    height: auto;
+    grid-column: 2;
+    justify-self: end !important;
+    align-self: flex-start !important;
+    margin-right: -100px;
+  }
+
+  #a-projeto {
+    grid-area: a-projeto; /* Definindo a área do grid */
+    font-size: 1.1em;
+    font-weight: 400;
+    text-align: right; /* Alinhando o texto à direita */
+    justify-self: end; /* Justificando o conteúdo à direita */
+    margin-top: 0 !important; /* Espaçamento acima do link */
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  #main-projeto {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de igual largura */
+    grid-template-rows: auto auto auto; /* Altura automática para as linhas */
+    grid-template-areas:
+      'titulo-projeto imagem-projeto'
+      'p-projeto imagem-projeto'
+      'tags-projeto a-projeto';
+    gap: 1em; /* Espaçamento entre as colunas */
+    padding: 2em; /* Espaçamento interno */
+    align-items: start;
+  }
+  #titulo-projeto {
+    font-size: 2.5em; /* Tamanho do título */
+    grid-area: titulo-projeto; /* Definindo a área do grid */
+    text-align: left !important; /* Alinha o texto à esquerda */
+  }
+
+  #p-projeto {
+    font-size: 1.3em;
+    line-height: 1.6;
+    grid-area: p-projeto; /* Definindo a área do grid */
+    text-align: left !important; /* Alinha o texto à esquerda */
+  }
+
+  #a-projeto {
+    font-size: 1.2em;
+    font-weight: 400;
+  }
+
+  /* Contêiner de tags */
+  .tags-container {
+    grid-area: tags-projeto; /* Posiciona na área definida */
+    display: flex;
+    flex-wrap: wrap; /* Permite que as tags quebrem linha, se necessário */
+    gap: 0.5rem; /* Espaçamento entre os badges */
+    justify-content: flex-start; /* Alinha as tags à esquerda */
+    margin-top: 0.5em !important; /* Espaçamento acima das tags */
+  }
+
+  /* Tags */
+  .badge-projeto {
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 0.5rem 1rem;
+    display: inline-block; /* Exibindo como bloco em linha */
+  }
+
+  /* Imagem do projeto */
+  #imagem-projeto {
+    max-width: 50%;
+    height: auto;
+  }
+}
+
+/*XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+  #main-projeto {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de igual largura */
+    grid-template-rows: auto auto auto; /* Altura automática para as linhas */
+    grid-template-areas:
+      'titulo-projeto imagem-projeto'
+      'p-projeto imagem-projeto'
+      'tags-projeto a-projeto';
+    gap: 1em; /* Espaçamento entre as colunas */
+    padding: 2em; /* Espaçamento interno */
+    align-items: start;
+  }
+
+  #titulo-projeto {
+    font-size: 2.5em; /* Tamanho do título */
+    margin-left: 100px;
+    align-self: center;
+    margin-bottom: 0 !important; /* Espaçamento acima do título */
+  }
+
+  #p-projeto {
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-left: 100px;
+    text-align: left !important; /* Alinha o texto à esquerda */
+    align-self: center;
+    margin-top: 0 !important; /* Espaçamento acima do parágrafo */
+    margin-bottom: 0 !important; /* Espaçamento acima do parágrafo */
+  }
+
+  #a-projeto {
+    font-size: 1.2em;
+    font-weight: 400;
+  }
+
+  /* Contêiner de tags */
+  .tags-container {
+    grid-area: tags-projeto; /* Posiciona na área definida */
+    display: flex;
+    flex-wrap: wrap; /* Permite que as tags quebrem linha, se necessário */
+    gap: 0.5rem; /* Espaçamento entre os badges */
+    justify-content: flex-start; /* Alinha as tags à esquerda */
+    margin-left: 80px;
+    margin-top: 0 !important; /* Espaçamento acima das tags */
+  }
+
+  /* Tags */
+  .badge-projeto {
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Imagem do projeto */
+  #imagem-projeto {
+    grid-area: imagem-projeto; /* Definindo a área do grid */
+    max-width: 85%;
+    height: auto;
+    grid-column: 2;
+    justify-self: end !important;
+    align-self: flex-start !important;
+    margin-right: -100px;
+  }
+}

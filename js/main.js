@@ -124,51 +124,66 @@ function setupIntroText() {
   `;
 }
 
-// Configurar a lógica de idiomas
+/* Configurar a lógica de idiomas*/
 function setupLanguageSwitch() {
-  // Seleciona todos os links de alternância de idioma
   const langLinks = document.querySelectorAll('.lang-switch .nav-link');
-  // Obtém o idioma salvo no localStorage ou define 'en' como padrão
   const savedLanguage = localStorage.getItem('language') || 'en';
 
-  // Aplica a tradução inicial
-  applyTranslations(savedLanguage);
+  console.log(`Idioma salvo no localStorage: ${savedLanguage}`);
+  updatePageLanguage(savedLanguage);
 
   langLinks.forEach((link) => {
     const lang = link.getAttribute('data-lang');
-    // Define o link ativo com base no idioma salvo
     link.classList.toggle('active', lang === savedLanguage);
 
-    // Adiciona um evento de clique para alternar o idioma
     link.addEventListener('click', (e) => {
       e.preventDefault();
+      console.log(`Alterando idioma para: ${lang}`);
       localStorage.setItem('language', lang); // Salva o idioma no localStorage
-      langLinks.forEach((l) => l.classList.remove('active')); // Remove a classe 'active' de todos os links
-      link.classList.add('active'); // Adiciona a classe 'active' ao link clicado
-      applyTranslations(lang); // Aplica a tradução ao clicar
+      console.log(
+        `Idioma atualizado no localStorage: ${localStorage.getItem('language')}`
+      );
+      langLinks.forEach((l) => l.classList.remove('active'));
+      link.classList.add('active');
+      updatePageLanguage(lang); // Atualiza o idioma
     });
   });
 }
 
-// Função para aplicar traduções
-function applyTranslations(lang) {
-  // Objeto de traduções para diferentes idiomas
-  const translations = {
-    en: {
-      introText:
-        "<span class='hello'>[HELLO</span> <span class='role'>I am a Full Stack Developer</span> <span class='world'>WORLD!)</span> <span class='tagline'>Writing code that creates experiences</span>",
-    },
-    pt: {
-      introText:
-        "<span class='hello'>[OLÁ</span> <span class='role'>Eu sou um Desenvolvedor Full Stack</span> <span class='world'>MUNDO!)</span> <span class='tagline'>Escrevendo código que cria experiências</span>",
-    },
-  };
+/* Função para aplicar traduções*/
+async function applyTranslations(lang) {
+  console.log(`Aplicando traduções para o idioma: ${lang}`);
+
+  // Verifica se as traduções foram carregadas
+  if (!translations[lang]) {
+    console.warn(
+      `Traduções para o idioma ${lang} não foram carregadas. Tentando carregar...`
+    );
+    const loaded = await loadTranslations(lang); // Tenta carregar as traduções
+    if (!loaded) {
+      console.error(`Falha ao carregar as traduções para o idioma: ${lang}`);
+      return;
+    }
+  }
 
   // Atualiza o conteúdo do elemento <pre> com base no idioma selecionado
   const introPre = document.getElementById('intro-pre');
   if (introPre) {
     introPre.innerHTML = translations[lang]?.introText || '';
   }
+
+  // Atualiza todos os elementos com data-translate
+  document.querySelectorAll('[data-translate]').forEach((element) => {
+    const key = element.getAttribute('data-translate');
+    if (key && translations[lang][key]) {
+      console.log(
+        `Traduzindo elemento: ${key} para ${translations[lang][key]}`
+      );
+      element.textContent = translations[lang][key];
+    } else {
+      console.warn(`Chave de tradução não encontrada: ${key}`);
+    }
+  });
 }
 
 // Inicializar o Swiper
@@ -243,15 +258,32 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// Função para carregar o header e footer dinamicamente
+async function loadHeaderAndFooter() {
+  try {
+    const headerHtml = await fetch('./components/header.html').then((res) =>
+      res.text()
+    );
+    const footerHtml = await fetch('./components/footer.html').then((res) =>
+      res.text()
+    );
 
+    document.getElementById('header').innerHTML = headerHtml;
+    document.getElementById('footer').innerHTML = footerHtml;
+
+    setupLanguageSwitch(); // Configura a lógica de alternância de idiomas após carregar o header
+  } catch (error) {
+    console.error('Erro ao carregar o header ou footer:', error);
+  }
+}
 
 // Inicializar todas as funcionalidades ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
+  loadHeaderAndFooter(); // Carrega o header e footer dinamicamente
   initializeTheme(); // Configura o tema inicial
   setupThemeToggle(); // Configura o botão de alternância de tema
   setupMenuHighlighting(); // Configura o destaque do menu com base na rolagem
   setupScrollToTopButton(); // Configura o botão "voltar ao topo"
   setupIntroText(); // Configura o texto formatado no <pre>
-  setupLanguageSwitch(); // Configura a lógica de alternância de idiomas
   initializeSwiper(); // Inicializa o Swiper
 });
