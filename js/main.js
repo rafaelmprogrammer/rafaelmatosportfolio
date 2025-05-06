@@ -111,17 +111,15 @@ function setupScrollToTopButton() {
 function setupIntroText() {
   // Obtém o elemento <pre> com o ID 'intro-pre'
   const introPre = getElement('#intro-pre');
-  if (!introPre) return; // Sai da função se o elemento não existir
-
-  // Define o conteúdo HTML formatado no elemento <pre>
-  introPre.innerHTML = `
-    <div class="hello-role">
-      <span class="hello">HELLO</span>
-      <span class="role">I'm a Full Stack Developer</span>
-    </div>
-    <span class="world">WORLD!</span>
-    <span class="tagline">Writing code that creates experiences</span>
-  `;
+  const lang = localStorage.getItem('language') || 'en'; // Define o idioma padrão como 'en'
+  if (introPre) {
+    console.log(
+      'Conteúdo carregado para introText:',
+      translations[lang]?.introText
+    );
+    introPre.innerHTML = translations[lang]?.introText || '';
+  }
+  
 }
 
 /* Configurar a lógica de idiomas*/

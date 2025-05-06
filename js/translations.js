@@ -40,6 +40,7 @@ async function applyTranslations(lang) {
 
   // Atualizar o conteúdo do intro-pre
   const introPre = document.getElementById('intro-pre');
+  //console.log(introPre.innerHTML);  Verifica o conteúdo antes e depois da tradução
   if (introPre) {
     introPre.innerHTML = translations[lang].introText || '';
   }

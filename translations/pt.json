@@ -28,5 +28,6 @@
   "abletonTitle": "Ableton About Page",
   "abletonDescription": "Lelelelele",
   "binGameTitle": "Bin The Game Website Showcase",
-  "binGameDescription": "ulaulaula"
+  "binGameDescription": "ulaulaula",
+  "introText": "<div class='hello-role'><span class='hello'>[OLÁ</span><span class='role'>Sou um Desenvolvedor Full Stack</span></div><span class='world'>MUNDO!</span><span class='tagline'>Escrevendo código que cria experiências</span>"
 }
