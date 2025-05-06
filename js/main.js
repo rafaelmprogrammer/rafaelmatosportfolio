@@ -119,7 +119,6 @@ function setupIntroText() {
     );
     introPre.innerHTML = translations[lang]?.introText || '';
   }
-  
 }
 
 /* Configurar a lógica de idiomas*/
@@ -177,7 +176,7 @@ async function applyTranslations(lang) {
       console.log(
         `Traduzindo elemento: ${key} para ${translations[lang][key]}`
       );
-      element.textContent = translations[lang][key];
+      element.innerHTML = translations[lang][key];
     } else {
       console.warn(`Chave de tradução não encontrada: ${key}`);
     }
@@ -282,6 +281,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setupThemeToggle(); // Configura o botão de alternância de tema
   setupMenuHighlighting(); // Configura o destaque do menu com base na rolagem
   setupScrollToTopButton(); // Configura o botão "voltar ao topo"
-  setupIntroText(); // Configura o texto formatado no <pre>
   initializeSwiper(); // Inicializa o Swiper
 });
