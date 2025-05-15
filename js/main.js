@@ -268,6 +268,14 @@ async function loadHeaderAndFooter() {
     document.getElementById('header').innerHTML = headerHtml;
     document.getElementById('footer').innerHTML = footerHtml;
 
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementById('logo-animado'),
+      renderer: 'svg',
+      loop: false,
+      autoplay: true,
+      path: 'data.json',
+    });
+
     setupLanguageSwitch(); // Configura a lógica de alternância de idiomas após carregar o header
   } catch (error) {
     console.error('Erro ao carregar o header ou footer:', error);

@@ -108,17 +108,37 @@ header .container {
   padding-right: var(--container-padding);
 }
 
-/* Ajustes para o logo em mobile */
+/* Ajustes para o logo em mobile*/
+#logo-animado {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  margin-left: 0;
+}
+
+#logo-animado svg {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+body.dark-mode #logo-animado svg {
+  filter: invert(1);
+}
+
+/* Estilo do logotipo para mobile */
 .navbar-brand {
+  display: inline-block; /* Garante que o link se comporte como bloco para dimensões */
   margin-top: var(--margin-base);
   margin-left: var(--margin-base);
 }
 
+/* Estilo da IMAGEM do logotipo para mobile */
 .navbar-brand img {
+  object-fit: contain; /* Garante que a imagem caiba sem distorcer */
   width: 40px;
-  height: auto;
+  height: 40px;
 }
-
 /* Ajustes para o botão hambúrguer em mobile */
 .navbar-toggler {
   margin-right: var(--container-padding);
@@ -155,20 +175,6 @@ header .container {
   border-radius: 24px;
   box-shadow: var(--box-shadow);
   z-index: 1000;
-}
-
-/* Estilo do logotipo para mobile */
-.navbar-brand {
-  display: inline-block; /* Garante que o link se comporte como bloco para dimensões */
-  margin-top: var(--margin-base);
-  margin-left: var(--margin-base);
-}
-
-/* Estilo da IMAGEM do logotipo para mobile */
-.navbar-brand img {
-  object-fit: contain; /* Garante que a imagem caiba sem distorcer */
-  width: 40px;
-  height: 40px;
 }
 
 /* Estilo geral do botão "hambúrguer" (toggler) para mobile */
@@ -228,10 +234,13 @@ header .container {
   box-shadow: var(--box-shadow);
   width: 140px;
   padding: 15px 20px 10px;
-  top: 65px;
+
+  position: absolute;
+  top: 50px;
+  right: var(--margin-base);
 
   /* Animação e estado inicial escondido */
-  transform: translateX(-40px); /* Ajuste inicial para mobile pequeno */
+  transform: translate(-40px, 45px);
   opacity: 0;
   pointer-events: none;
   transition: transform 0.2s ease-out, opacity;
@@ -453,7 +462,7 @@ body.light-mode #intro-pre .tagline {
 /* Estilo e Posição do Theme Toggle */
 .theme-toggle-wrapper {
   position: absolute;
-  top: 630px;
+  top: 700px;
   left: 20px;
   display: flex;
   align-items: center;
@@ -1016,4 +1025,3 @@ footer .footer-p {
 body.light-mode .footer-p {
   color: var(--text-light);
 }
-

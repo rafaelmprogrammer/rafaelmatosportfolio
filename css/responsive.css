@@ -46,12 +46,12 @@
   #intro-pre .role {
     text-indent: 28ch; /* Indentação para o texto */
     padding: 0;
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 
   #intro-pre .tagline {
-    text-indent: 18ch; /* Indentação para o texto */
-    font-size: 0.8em;
+    text-indent: 20ch; /* Indentação para o texto */
+    font-size: 0.7em;
   }
 
   /* Estilo da Imagem */
@@ -69,7 +69,7 @@
 
   /* Estilo e Posição do Theme Toggle */
   .theme-toggle-wrapper {
-    top: 720px;
+    top: 800px;
   }
 
   /* Textos "LIGHT" e "DARK" no toggle */
@@ -382,7 +382,7 @@
 
   /* Estilo e Posição do Theme Toggle */
   .theme-toggle-wrapper {
-    top: 860px;
+    top: 950px;
   }
 
   /* Textos "LIGHT" e "DARK" no toggle */
@@ -674,14 +674,14 @@
   }
 
   #intro-pre .role {
-    text-indent: 22ch; /* Indentação para o texto */
+    text-indent: 23ch; /* Indentação para o texto */
     padding: 0;
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   #intro-pre .tagline {
     text-indent: 14ch; /* Indentação para o texto */
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   /* Estilo e Posição do Theme Toggle */
@@ -1663,8 +1663,9 @@
   }
 
   .intro-image img {
-    width: 50%; /* Ocupa 70% da largura do contêiner */
+    width: 70%; /* Ocupa 70% da largura do contêiner */
     max-width: 1000px; /* Define um limite máximo */
+    margin-left: 200px;
   }
 
   .theme-toggle-wrapper {
@@ -1694,9 +1695,9 @@
   }
 
   .nav-dot {
-    width: 15px;
-    height: 15px;
-    border: 2px solid var(--secondary-color); /* Borda branca */
+    width: 20px;
+    height: 20px;
+    border: 4px solid var(--secondary-color); /* Borda branca */
     border-radius: 50%; /* Torna as bolas circulares */
     background-color: transparent; /* Fundo transparente */
     cursor: pointer;
@@ -1836,6 +1837,18 @@
     margin-top: 100px;
     margin-bottom: 90px;
     padding: 20px; /* Espaçamento interno */
+  }
+
+  .swiper-pagination-bullet {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--text-light);
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8px);
   }
 
   /*CONTACT SECTION*/
