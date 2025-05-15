@@ -88,8 +88,9 @@ body.light-mode .badge-projeto {
 
   /* Imagem do projeto */
   #imagem-projeto {
-    max-width: 90%;
+    max-width: 80%;
     height: auto;
+    border-radius: 23px; /* Bordas arredondadas */
   }
 }
 
@@ -150,6 +151,7 @@ body.light-mode .badge-projeto {
   #imagem-projeto {
     max-width: 60%;
     height: auto;
+    border-radius: 23px !important; /* Bordas arredondadas */
   }
 }
 
@@ -179,6 +181,7 @@ body.light-mode .badge-projeto {
     font-size: 1.2em;
     line-height: 1.6;
     text-align: left !important; /* Alinha o texto à esquerda */
+    margin-top: 0 !important;
   }
 
   /* Contêiner de tags */
@@ -203,12 +206,13 @@ body.light-mode .badge-projeto {
   /* Imagem do projeto */
   #imagem-projeto {
     grid-area: imagem-projeto; /* Definindo a área do grid */
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     grid-column: 2;
     justify-self: end !important;
     align-self: flex-start !important;
     margin-right: -100px;
+    border-radius: 23px; /* Bordas arredondadas */
   }
 
   #a-projeto {
@@ -246,6 +250,7 @@ body.light-mode .badge-projeto {
     line-height: 1.6;
     grid-area: p-projeto; /* Definindo a área do grid */
     text-align: left !important; /* Alinha o texto à esquerda */
+    margin-top: 0 !important;
   }
 
   #a-projeto {
@@ -269,12 +274,6 @@ body.light-mode .badge-projeto {
     font-size: 1.1em;
     padding: 0.5rem 1rem;
     display: inline-block; /* Exibindo como bloco em linha */
-  }
-
-  /* Imagem do projeto */
-  #imagem-projeto {
-    max-width: 50%;
-    height: auto;
   }
 }
 
@@ -336,11 +335,12 @@ body.light-mode .badge-projeto {
   /* Imagem do projeto */
   #imagem-projeto {
     grid-area: imagem-projeto; /* Definindo a área do grid */
-    max-width: 85%;
+    max-width: 90%;
     height: auto;
     grid-column: 2;
     justify-self: end !important;
     align-self: flex-start !important;
     margin-right: -100px;
+    border-radius: 23px; /* Bordas arredondadas */
   }
 }
