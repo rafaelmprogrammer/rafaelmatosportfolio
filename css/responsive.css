@@ -1609,7 +1609,10 @@
     align-items: center; /* Centralizar verticalmente (se necessário) */
     margin: 50px auto; /* Garante que a div esteja centralizada no contêiner pai */
     text-align: center; /* Centralizar o texto dentro da div */
+    margin-right: 300px;
+
   }
+
 
   /*PROJECTS SECTION*/
   #projects-section h2 {
@@ -2031,7 +2034,7 @@
     align-items: center; /* Centralizar verticalmente (se necessário) */
     margin: 50px auto; /* Garante que a div esteja centralizada no contêiner pai */
     text-align: center; /* Centralizar o texto dentro da div */
-    margin-right: 300px;
+    margin-right: 480px;
   }
 
     .languages {
