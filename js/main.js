@@ -113,11 +113,12 @@ function setupIntroText() {
   const introPre = getElement('#intro-pre');
   const lang = localStorage.getItem('language') || 'en'; // Define o idioma padrão como 'en'
   if (introPre) {
+    const rawContent = translations[lang]?.introText || ''; 
     console.log(
       'Conteúdo carregado para introText:',
-      translations[lang]?.introText
+      rawContent
     );
-    introPre.innerHTML = translations[lang]?.introText || '';
+    introPre.innerHTML = safeContent;
   }
 }
 
@@ -164,23 +165,23 @@ async function applyTranslations(lang) {
   }
 
   // Atualiza o conteúdo do elemento <pre> com base no idioma selecionado
-  const introPre = document.getElementById('intro-pre');
-  if (introPre) {
-    introPre.innerHTML = translations[lang]?.introText || '';
-  }
+const introPre = document.getElementById('intro-pre');
+if (introPre) {
+  const safeIntro = DOMPurify.sanitize(translations[lang]?.introText || '');
+  introPre.innerHTML = safeIntro;
+}
 
-  // Atualiza todos os elementos com data-translate
-  document.querySelectorAll('[data-translate]').forEach((element) => {
-    const key = element.getAttribute('data-translate');
-    if (key && translations[lang][key]) {
-      console.log(
-        `Traduzindo elemento: ${key} para ${translations[lang][key]}`
-      );
-      element.innerHTML = translations[lang][key];
-    } else {
-      console.warn(`Chave de tradução não encontrada: ${key}`);
-    }
-  });
+// Atualiza todos os elementos com data-translate
+document.querySelectorAll('[data-translate]').forEach((element) => {
+  const key = element.getAttribute('data-translate');
+  if (key && translations[lang][key]) {
+    const safeTranslation = DOMPurify.sanitize(translations[lang][key]);
+    element.innerHTML = safeTranslation;
+    console.log(`Traduzindo elemento: ${key} para ${translations[lang][key]}`);
+  } else {
+    console.warn(`Chave de tradução não encontrada: ${key}`);
+  }
+});
 }
 
 // Inicializar o Swiper
@@ -258,15 +259,20 @@ window.addEventListener('scroll', () => {
 // Função para carregar o header e footer dinamicamente
 async function loadHeaderAndFooter() {
   try {
-    const headerHtml = await fetch('./components/header.html').then((res) =>
-      res.text()
-    );
-    const footerHtml = await fetch('./components/footer.html').then((res) =>
-      res.text()
-    );
+    const [headerRes, footerRes] = await Promise.all([
+      fetch('./components/header.html'),
+      fetch('./components/footer.html'),
+    ]);
 
-    document.getElementById('header').innerHTML = headerHtml;
-    document.getElementById('footer').innerHTML = footerHtml;
+    const headerHtml = await headerRes.text();
+    const footerHtml = await footerRes.text();
+
+    // 🧼 Sanitiza antes de injetar
+    const sanitizedHeader = DOMPurify.sanitize(headerHtml);
+    const sanitizedFooter = DOMPurify.sanitize(footerHtml);
+
+    document.getElementById('header').innerHTML = sanitizedHeader;
+    document.getElementById('footer').innerHTML = sanitizedFooter;
 
     var animation = bodymovin.loadAnimation({
       container: document.getElementById('logo-animado'),
@@ -276,7 +282,7 @@ async function loadHeaderAndFooter() {
       path: 'data.json',
     });
 
-    setupLanguageSwitch(); // Configura a lógica de alternância de idiomas após carregar o header
+    setupLanguageSwitch();
   } catch (error) {
     console.error('Erro ao carregar o header ou footer:', error);
   }

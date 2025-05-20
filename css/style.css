@@ -112,7 +112,7 @@ header .container {
 #logo-animado {
   width: 100%;
   height: auto;
-  max-width: 200px;
+  max-width: 210px;
   margin-left: 0;
 }
 
@@ -236,7 +236,7 @@ body.dark-mode #logo-animado svg {
   padding: 15px 20px 10px;
 
   position: absolute;
-  top: 50px;
+  top: 55px;
   right: var(--margin-base);
 
   /* Animação e estado inicial escondido */
@@ -404,9 +404,11 @@ body.light-mode #myBtn img {
 #intro-pre .world {
   font-family: var(--font-family-primary); /* Fonte Roboto */
   font-weight: 500; /* Peso normal */
-  font-size: 3.75em; /* Tamanho grande */
+  font-size: 3em; /* Tamanho grande */
   padding: 5px;
   color: var(--primary-color);
+    text-align: center;
+
 }
 
 body.dark-mode #intro-pre .hello,
@@ -424,6 +426,7 @@ body.dark-mode #intro-pre .world {
   font-weight: 500;
   padding: 5px;
   color: var(--text-light);
+  text-align: center;
 }
 
 body.light-mode #intro-pre .role {
@@ -435,6 +438,8 @@ body.light-mode #intro-pre .role {
   font-weight: 500;
   padding-top: 5px;
   color: var(--text-light);
+    text-align: center;
+
 }
 
 body.light-mode #intro-pre .tagline {
@@ -530,7 +535,7 @@ body.light-mode #intro-pre .tagline {
 /*MODO CLARO DO TOGLLER*/
 /* Seção de introdução no modo claro */
 body.light-mode .theme-toggle-wrapper span {
-  color: var(--primary-color);
+  color: var(--background-dark);
 }
 
 body.light-mode .theme-switch .slider {

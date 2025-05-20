@@ -21,13 +21,15 @@
   "educationItem3": "Sept 2024 - Current\nTokio School\nFull Stack Developer, Computer Science",
   "myProjects": "</My Projects>",
   "companyTitle": "Company Site",
-  "companyDescription": "Description of the company site in English.",
+  "companyDescription": "For this project, I designed and developed a modern, responsive website for a fictional web development agency, showcasing both my UI/UX design skills and front-end development abilities. I created the layout and visual identity from scratch, focusing on clean typography, clear hierarchy, and a professional aesthetic. The site was built using HTML 5, CSS 3, and Bootstrap 5, with responsive behavior optimized for various screen sizes. Key features include a services section, animated transitions, and a contact form—all styled consistently to maintain a cohesive brand feel. This project demonstrates my ability to take a concept from initial design through to fully functional deployment.",
   "viewAllProjects": "View all projects",
   "laryGameTitle": "Lary The Fairy",
-  "laryGameDescription": "abshnkdnfkadbabhdc",
+  "laryGameDescription": "Lary the Fairy was developed as part of a Game Jam where I was a programmer creating the mechanics of a 3D platform game (movement, jumping, player death, camera, UI, etc.).",
   "abletonTitle": "Ableton About Page",
-  "abletonDescription": "Lalalalala",
+  "abletonDescription": "As part of a front-end development exercise, I recreated the Ableton about page to practice responsive design, HTML5 and CSS3. The project involved building a fully responsive layout using HTML, CSS (Flexbox and Grid), and Bootstrap 5 to match the visual style and user experience of the original site. I focused on replicating key UI components such as the fixed navigation, interactive elements, and seamless scroll behavior, while ensuring performance optimization and accessibility.",
   "binGameTitle": "Bin The Game Website Showcase",
-  "binGameDescription": "uleuleule",
-  "introText": "<div class='hello-role'><span class='hello'>[HELLO</span><span class='role'>I'm a Full Stack Developer</span></div><span class='world'>WORLD!)</span><span class='tagline'>Writing code that creates experiences</span>"
+  "binGameDescription": "The Bin The Game Showcase website is a responsive site where the main objective is to present the game Bin The Game, with a focus on showing the art of the game. During the development process, the necessary platforms were used to create an interface design that allowed for simple and clear navigation with visual consistency. This resulted in a platform that was light, scalable and easy to maintain.",
+  "introText": "<div class='hello-role'><span class='hello'>[HELLO</span><span class='role'>I'm a Full Stack Developer</span></div><span class='world'>WORLD!)</span><span class='tagline'>Writing code that creates experiences</span>", 
+  "portfolioTitle": "Personal Portfolio", 
+  "portfolioDescription": "This portfolio was developed to showcase my skills as a Full Stack Developer, highlighting personal projects, UI/UX experience, and proficiency with modern technologies such as HTML5, CSS3, Bootstrap, and JavaScript. The site is fully responsive, featuring a clean design and intuitive navigation, allowing visitors to easily explore my work, skills, and professional journey. The goal is to demonstrate not only technical ability but also attention to user experience and detail in every project presented."
 }

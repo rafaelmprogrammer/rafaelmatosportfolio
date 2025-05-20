@@ -21,13 +21,15 @@
   "educationItem3": "Set 2024 - Atual\nTokio School\nFull Stack Developer, Ciências da Computação",
   "myProjects": "</Os meus Projetos>",
   "companyTitle": "Projeto de Site para Empresa",
-  "companyDescription": "Descrição do site da empresa em português.",
+  "companyDescription": "Para este projeto, desenhei e desenvolvi um website moderno e responsivo para uma agência de desenvolvimento web fictícia, mostrando tanto as minhas capacidades de design UI/UX como as minhas capacidades de desenvolvimento front-end. Criei o layout e a identidade visual do do zero, concentrando-me numa tipografia limpa, numa hierarquia clara do e numa estética profissional. O site foi construído utilizando HTML 5, CSS 3 e Bootstrap 5, com um comportamento responsivo optimizado para vários tamanhos de ecrã. As principais caraterísticas incluem uma secção de serviços, transições animadas para e um formulário de contacto - tudo com um estilo consistente para manter uma sensação de marca coesa em. Este projeto demonstra a minha capacidade de levar um conceito desde o design inicial até à implementação totalmente funcional.",
   "viewAllProjects": "Ver mais do projeto",
   "laryGameTitle": "Lary The Fairy",
-  "laryGameDescription": "abshnkdnfkadbabhdc",
+  "laryGameDescription": "Lary the Fairy foi desenvolvido no âmbito de uma Game Jam onde fui programador criando as mecânicas de um jogo de plataforma em 3D (movimento, jump, morte do player, câmara, UI, etc.)",
   "abletonTitle": "Ableton About Page",
-  "abletonDescription": "Lelelelele",
+  "abletonDescription": "Como parte de um exercício de desenvolvimento de front-end, recriei a página sobre a Ableton para praticar o design reativo, HTML5 e CSS3. O projeto envolveu a criação de um layout totalmente responsivo utilizando HTML, CSS (Flexbox e Grid) e Bootstrap 5 para corresponder ao estilo visual e à experiência do utilizador do site original. Concentrei-me em replicar os principais componentes da interface do utilizador, como a navegação fixa, os elementos interactivos e o comportamento de deslocamento contínuo, assegurando simultaneamente a otimização do desempenho e a acessibilidade.",
   "binGameTitle": "Bin The Game Website Showcase",
-  "binGameDescription": "ulaulaula",
-  "introText": "<div class='hello-role'><span class='hello'>[OLÁ</span><span class='role'>Sou um Desenvolvedor Full Stack</span></div><span class='world'>MUNDO!)</span><span class='tagline'>Escrevendo código que cria experiências</span>"
+  "binGameDescription": "O website Bin The Game Showcase é um site responsivo onde o principal objetivo é apresentar o jogo Bin The Game, com foco em mostrar a arte do jogo. Durante o processo de desenvolvimento foram usadas as plataformas necessárias para criar um design de interface que permiti-se uma navegação simples e clara com consistência visual. Assim obteve-se uma plataforma leve, escalável e fácil de manter.",
+  "introText": "<div class='hello-role'><span class='hello'>[OLÁ</span><span class='role'>Sou um Desenvolvedor Full Stack</span></div><span class='world'>MUNDO!)</span><span class='tagline'>A escrever código que cria experiências</span>",
+  "portfolioTitle": "Portfólio Pessoal",
+  "portfolioDescription": "Este portfólio foi desenvolvido para apresentar as minhas competências como Full Stack Developer, destacando projetos próprios, experiência em UI/UX e domínio de tecnologias modernas como HTML5, CSS3, Bootstrap e JavaScript. O site é totalmente responsivo, com design limpo e navegação intuitiva, permitindo que visitantes explorem facilmente os meus trabalhos, habilidades e percurso profissional. O objetivo é demonstrar não só a capacidade técnica, mas também o cuidado com a experiência do utilizador e a atenção ao detalhe em cada projeto apresentado."
 }

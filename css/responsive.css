@@ -12,6 +12,28 @@
     display: none;
   }
 
+  #logo-animado {
+    width: 100%;
+    height: auto;
+    max-width: 310px;
+    margin-left: 0;
+  }
+
+  #logo-animado svg {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  body.dark-mode #logo-animado svg {
+    filter: invert(1);
+  }
+
+  /* Ajustes para o menu dropdown em mobile */
+  .navbar-collapse {
+    top: 85px;
+  }
+
   /*Intro Section*/
 
   /* Container principal da seção de introdução */
@@ -37,20 +59,18 @@
 
   #intro-pre .hello {
     padding: 0;
-  }
-
-  #intro-pre .world {
-    text-indent: 3ch; /* Indentação para o texto */
+    text-align: left;
+    margin-left: 15px;
   }
 
   #intro-pre .role {
-    text-indent: 28ch; /* Indentação para o texto */
+    text-indent: 20ch !important; /* Indentação para o texto */
     padding: 0;
     font-size: 0.7em;
   }
 
   #intro-pre .tagline {
-    text-indent: 20ch; /* Indentação para o texto */
+    text-indent: 10ch !important; /* Indentação para o texto */
     font-size: 0.7em;
   }
 
@@ -69,7 +89,7 @@
 
   /* Estilo e Posição do Theme Toggle */
   .theme-toggle-wrapper {
-    top: 800px;
+    top: 870px;
   }
 
   /* Textos "LIGHT" e "DARK" no toggle */
@@ -123,6 +143,28 @@
     max-width: 300px; /* Limitar tamanho máximo */
     height: auto; /* Manter proporção */
   }
+
+    #education-section figure img {
+    width: 100%; /* Ajustar largura da imagem */
+    max-width: 350px; /* Limitar tamanho máximo */
+    height: auto; /* Manter proporção */
+
+    animation: upDown 10s ease-in-out infinite;
+    display: inline-block; /* Importante para animar corretamente */
+    position: relative; /* Necessário para mover com top */
+  }
+
+   @keyframes upDown {
+   0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-400px); /* Sobe 50px */
+  }
+  100% {
+    transform: translateY(0); /* Volta à posição inicial */
+  }
+}
 
   /* ============================================= */
   /* ============ CURRICULUM SECTION ============= */
@@ -192,7 +234,7 @@
     margin: 0;
     padding: 0;
     font-size: 1.7em; /* Tamanho pequeno */
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
 
   .frameworks h3 {
@@ -337,6 +379,29 @@
   #side-nav {
     display: none;
   }
+
+  #logo-animado {
+    width: 100%;
+    height: auto;
+    max-width: 310px;
+    margin-left: 0;
+  }
+
+  #logo-animado svg {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  body.dark-mode #logo-animado svg {
+    filter: invert(1);
+  }
+
+  /* Ajustes para o menu dropdown em mobile */
+  .navbar-collapse {
+    top: 85px;
+  }
+
   /*Intro Section*/
   /* Container principal da seção de introdução */
   #intro-section {
@@ -666,21 +731,22 @@
   #intro-pre .hello {
     padding: 0;
     font-size: 5em; /* Tamanho grande */
+    text-align: left;
   }
 
   #intro-pre .world {
-    text-indent: 3ch; /* Indentação para o texto */
+    text-indent: 0ch; /* Indentação para o texto */
     font-size: 5em; /* Tamanho grande */
   }
 
   #intro-pre .role {
-    text-indent: 23ch; /* Indentação para o texto */
+    text-indent: 18ch; /* Indentação para o texto */
     padding: 0;
     font-size: 1.2em;
   }
 
   #intro-pre .tagline {
-    text-indent: 14ch; /* Indentação para o texto */
+    text-indent: 8ch; /* Indentação para o texto */
     font-size: 1.2em;
   }
 
@@ -753,11 +819,27 @@
     margin: 0; /* Remover margens externas */
   }
 
-  #education-section figure img {
+    #education-section figure img {
     width: 100%; /* Ajustar largura da imagem */
     max-width: 300px; /* Limitar tamanho máximo */
     height: auto; /* Manter proporção */
+
+    animation: upDown 10s ease-in-out infinite;
+    display: inline-block; /* Importante para animar corretamente */
+    position: relative; /* Necessário para mover com top */
   }
+
+   @keyframes upDown {
+   0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-450px); /* Sobe 50px */
+  }
+  100% {
+    transform: translateY(0); /* Volta à posição inicial */
+  }
+}
 
   /* ============================================= */
   /* ============ CURRICULUM SECTION ============= */
@@ -867,6 +949,23 @@
     max-width: var(--container-lg);
   }
 
+  #logo-animado {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin-left: 0;
+  }
+
+  #logo-animado svg {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  body.dark-mode #logo-animado svg {
+    filter: invert(1);
+  }
+
   .navbar {
     display: flex; /* Ativa o flexbox para a navbar */
     justify-content: space-between; /* Centraliza o conteúdo horizontalmente */
@@ -928,7 +1027,7 @@
 
   .navbar-nav .lang-switch {
     position: absolute; /* Posiciona as opções de idioma fora do fluxo normal */
-    right: 40px; /* Alinha as opções de idioma à direita */
+    right: -30px; /* Alinha as opções de idioma à direita */
     top: 70%; /* Centraliza verticalmente */
     transform: translateY(-70%); /* Ajusta o alinhamento vertical */
     gap: 20px; /* Espaçamento entre as opções de idioma */
@@ -1040,6 +1139,33 @@
     background-color: var(--primary-color); /* Preenche a bola ativa */
   }
 
+  /* Estilo do pre para o texto de introdução */
+  #intro-pre {
+    text-align: left;
+  }
+
+  #intro-pre .hello {
+    padding: 0;
+    font-size: 5em; /* Tamanho grande */
+    text-align: left;
+  }
+
+  #intro-pre .world {
+    text-indent: -5ch; /* Indentação para o texto */
+    font-size: 5em; /* Tamanho grande */
+  }
+
+  #intro-pre .role {
+    text-indent: -10ch; /* Indentação para o texto */
+    padding: 0;
+    font-size: 1em;
+  }
+
+  #intro-pre .tagline {
+    text-indent: -10ch; /* Indentação para o texto */
+    font-size: 1em;
+  }
+
   /*ABOUT SECTION*/
   #about-section {
     display: grid; /* Usar grid layout */
@@ -1112,6 +1238,16 @@
     align-items: center; /* Centralizar verticalmente os itens em cada coluna */
   }
 
+   .languages-frameworks {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  justify-content: center;
+  max-width: 1024px; /* ou outro valor razoável */
+  margin: 50px auto 0 auto; /* centraliza horizontalmente */
+  gap: 20px;
+}
+
   .frameworks {
     text-align: left; /* Alinhar o texto à esquerda */
     margin: 0; /* Remover margens automáticas */
@@ -1125,14 +1261,16 @@
     justify-content: flex-end; /* Alinhar os itens horizontalmente à direita */
   }
 
-  .languages h3 {
-    text-align: center !important;
-    margin-left: 200px !important;
-  }
+.languages h3 {
+  text-align: center;
+  margin: 0 0 24px 0;
+  padding-left: 250px; /* ajusta aqui conforme necessário */
+}
 
   .languages ul {
     grid-template-columns: 3fr 1fr;
   }
+
 
   /*PROJECTS SECTION*/
   #projects-section h2 {
@@ -1184,6 +1322,7 @@
   .container {
     max-width: var(--container-xl);
   }
+
   .navbar {
     display: flex; /* Ativa o flexbox para a navbar */
     justify-content: space-between; /* Centraliza o conteúdo horizontalmente */
@@ -1536,7 +1675,7 @@
   }
 
   body {
-    overflow-x: hidden; /* Impede que o conteúdo transborde horizontalmente */
+    overflow-x: visible; /* Impede que o conteúdo transborde horizontalmente */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -1551,6 +1690,7 @@
   .navbar-brand {
     display: flex; /* Garante que o logotipo seja tratado como um item flex */
     align-items: center; /* Alinha o logotipo verticalmente ao centro */
+    margin-left: 50px;
   }
   .navbar-collapse {
     display: flex; /* Garante que o menu seja exibido */
@@ -1650,10 +1790,37 @@
     color: var(--text-light); /* Cor do texto */
   }
 
+    /* Estilo do pre para o texto de introdução */
+  #intro-pre {
+    text-align: left;
+  }
+
+  #intro-pre .hello {
+    padding: 0;
+    font-size: 5em; /* Tamanho grande */
+    text-align: left;
+  }
+
+  #intro-pre .world {
+    text-indent: -12ch; /* Indentação para o texto */
+    font-size: 5em; /* Tamanho grande */
+  }
+
+  #intro-pre .role {
+    text-indent: -30ch; /* Indentação para o texto */
+    padding: 0;
+    font-size: 1.2em;
+  }
+
+  #intro-pre .tagline {
+    text-indent: -34ch; /* Indentação para o texto */
+    font-size: 1.2em;
+  }
+
   .intro-image {
     position: absolute; /* Posiciona a imagem atrás do texto */
     top: 40%;
-    right: 0;
+    right: -5%;
     z-index: 1; /* Coloca a imagem atrás do texto */
     width: 70%; /* Ajusta a largura da imagem */
     max-width: 100%;
@@ -1673,6 +1840,7 @@
     position: absolute; /* Posiciona o toggle no local desejado */
     top: 550px; /* Ajuste conforme necessário */
     right: 20px; /* Ajuste conforme necessário */
+    left: 50px;
     z-index: 1000; /* Garante que esteja acima de outros elementos */
     opacity: 1; /* Garante que esteja visível */
   }
@@ -1695,9 +1863,9 @@
   }
 
   .nav-dot {
-    width: 20px;
-    height: 20px;
-    border: 4px solid var(--secondary-color); /* Borda branca */
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--secondary-color); /* Borda branca */
     border-radius: 50%; /* Torna as bolas circulares */
     background-color: transparent; /* Fundo transparente */
     cursor: pointer;
@@ -1769,9 +1937,13 @@
     padding-left: 80px;
   }
 
+  #education-section ul {
+    padding-right: 400px;
+  }
+
   #education-section h2:nth-of-type(2),
   #education-section ul:nth-of-type(2) {
-    padding-right: 200px;
+    padding-right: 100px;
   }
 
   #education-section ul li {
@@ -1782,7 +1954,35 @@
     width: 100%; /* Ajustar largura da imagem */
     max-width: 350px; /* Limitar tamanho máximo */
     height: auto; /* Manter proporção */
+
+    animation: subirDescer 20s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+    display: inline-block; /* Importante para animar corretamente */
+    position: relative; /* Necessário para mover com top */
   }
+
+   @keyframes subirDescer {
+      0% {
+    transform: translate(-80%, 0%); /* canto inferior esquerdo */
+  }
+  20% {
+    transform: translate(100%, -150%); /* canto superior direito */
+  }
+  40% {
+    transform: translate(-80%, -150%); /* canto superior esquerdo */
+  }
+  60% {
+    transform: translate(100%, -140%); /* canto superior direito */
+  }
+  80% {
+    transform: translate(-80%, 0%); /* canto inferior esquerdo */
+  }
+  90% {
+    transform: translate(100%, 0%); /* canto inferior direito */
+  }
+  100%{
+    transform: translate(-80%, 0%); /* canto inferior esquerdo */
+  }
+}
 
   /*CURRICULIUM SECTION*/
   .container-software {
@@ -1800,6 +2000,7 @@
     justify-content: flex-start; /* Alinhar os itens horizontalmente à esquerda */
     margin-bottom: 30px;
   }
+
   .frameworks h3 {
     margin-top: 20px !important;
   }
@@ -1830,6 +2031,13 @@
     align-items: center; /* Centralizar verticalmente (se necessário) */
     margin: 50px auto; /* Garante que a div esteja centralizada no contêiner pai */
     text-align: center; /* Centralizar o texto dentro da div */
+    margin-right: 300px;
+  }
+
+    .languages {
+    text-align: right;
+    margin: 0;
+    justify-content: flex-end; /* Alinhar os itens horizontalmente à direita */
   }
 
   /*PROJECTS SECTION*/
@@ -1906,6 +2114,15 @@
     padding: 4px 8px; /* Ajusta o espaçamento interno */
     font-size: 0.7em; /* Ajusta o tamanho do texto */
   }
+  .navbar-toggler{
+    margin-right: 80px; 
+  }
+
+   /* Ajustes para o menu dropdown em mobile */
+   .navbar-collapse {
+    top: 85px;
+    right: 85px;
+  }
 }
 
 /* Badges para telas médias (768px a 991px) */
@@ -1914,6 +2131,17 @@
     padding: 5px 10px; /* Espaçamento interno padrão */
     font-size: 0.8em; /* Tamanho do texto padrão */
   }
+
+  .navbar-toggler{
+    margin-right: 100px; 
+  }
+
+   /* Ajustes para o menu dropdown em mobile */
+   .navbar-collapse {
+    top: 85px;
+    right: 100px;
+  }
+
 }
 
 /* Badges para telas grandes (992px a 1199px) */
@@ -1922,6 +2150,11 @@
     padding: 6px 12px; /* Aumenta o espaçamento interno */
     font-size: 0.9em; /* Aumenta o tamanho do texto */
   }
+
+  .navbar-nav{
+    margin-right: 90px; 
+  }
+
 }
 
 /* Badges para telas extra grandes (1200px a 1399px) */
@@ -1930,6 +2163,27 @@
     padding: 7px 14px; /* Aumenta o espaçamento interno */
     font-size: 1em; /* Aumenta o tamanho do texto */
   }
+
+  #logo-animado {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin-left: 0;
+  }
+
+  #logo-animado svg {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  body.dark-mode #logo-animado svg {
+    filter: invert(1);
+  }
+
+  .navbar-nav{
+    margin-right: 90px; 
+  }
 }
 
 /* Badges para telas muito grandes (1400px e acima) */
@@ -1937,5 +2191,31 @@
   .card-body .card-footer .badge {
     padding: 8px 16px; /* Espaçamento interno maior */
     font-size: 1.1em; /* Tamanho do texto maior */
+  }
+  /* Ajustes para o logo em mobile*/
+  #logo-animado {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin-left: 0;
+  }
+
+  #logo-animado svg {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  body.dark-mode #logo-animado svg {
+    filter: invert(1);
+  }
+
+  .navbar-nav{
+    margin-right: 90px; 
+  }
+
+  nav{
+    padding-top: 0!important;
+    margin-top: 0!important;
   }
 }
