@@ -1704,7 +1704,7 @@
   }
 
   body {
-    overflow-x: visible; /* Impede que o conteúdo transborde horizontalmente */
+    overflow-x: hidden; /* Impede que o conteúdo transborde horizontalmente */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -1830,7 +1830,7 @@
   }
 
   #intro-pre .world {
-    text-indent: -30ch; /* Indentação para o texto */
+    text-indent: 30ch; /* Indentação para o texto */
     font-size: 4em; /* Tamanho grande */
   }
 
