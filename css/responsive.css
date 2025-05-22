@@ -2323,7 +2323,7 @@
   }
 
   #intro-pre .world {
-    text-indent: -20ch; /* Indentação para o texto */
+    text-indent: -80ch; /* Indentação para o texto */
     font-size: 4em; /* Tamanho grande */
   }
 
@@ -2334,7 +2334,7 @@
   }
 
   #intro-pre .tagline {
-    text-indent: -60ch; /* Indentação para o texto */
+    text-indent: -93ch; /* Indentação para o texto */
     font-size: 1em;
   }
 }
