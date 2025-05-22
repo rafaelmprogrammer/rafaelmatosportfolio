@@ -2292,9 +2292,3 @@
 }
 
 
-@media (min-width: 2560px)
-{
-  #intro-pre .hello{
-    padding-left: 150px !important;
-  }
-}
