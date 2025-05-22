@@ -1432,6 +1432,32 @@
     color: var(--text-light); /* Cor do texto */
   }
 
+  /* Estilo do pre para o texto de introdução */
+  #intro-pre {
+    text-align: left;
+  }
+
+  #intro-pre .hello {
+    padding: 0;
+    font-size: 4em; /* Tamanho grande */
+  }
+
+  #intro-pre .world {
+    text-indent: -16ch; /* Indentação para o texto */
+    font-size: 4em; /* Tamanho grande */
+  }
+
+  #intro-pre .role {
+    text-indent: -36ch; /* Indentação para o texto */
+    padding: 0;
+    font-size: 1em;
+  }
+
+  #intro-pre .tagline {
+    text-indent: -45ch; /* Indentação para o texto */
+    font-size: 1em;
+  }
+
   .intro-image {
     position: absolute; /* Posiciona a imagem atrás do texto */
     top: 0;
@@ -1793,31 +1819,30 @@
     color: var(--text-light); /* Cor do texto */
   }
 
-    /* Estilo do pre para o texto de introdução */
+  /* Estilo do pre para o texto de introdução */
   #intro-pre {
     text-align: left;
   }
 
   #intro-pre .hello {
     padding: 0;
-    font-size: 5em; /* Tamanho grande */
-    text-align: left;
+    font-size: 4em; /* Tamanho grande */
   }
 
   #intro-pre .world {
-    text-indent: -12ch; /* Indentação para o texto */
-    font-size: 5em; /* Tamanho grande */
+    text-indent: -30ch; /* Indentação para o texto */
+    font-size: 4em; /* Tamanho grande */
   }
 
   #intro-pre .role {
-    text-indent: -30ch; /* Indentação para o texto */
+    text-indent: -85ch; /* Indentação para o texto */
     padding: 0;
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   #intro-pre .tagline {
-    text-indent: -34ch; /* Indentação para o texto */
-    font-size: 1.2em;
+    text-indent: -93ch; /* Indentação para o texto */
+    font-size: 1em;
   }
 
   .intro-image {
