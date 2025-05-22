@@ -1704,7 +1704,7 @@
   }
 
   body {
-    overflow-x: hidden; /* Impede que o conteúdo transborde horizontalmente */
+    overflow-x: visible; /* Impede que o conteúdo transborde horizontalmente */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
