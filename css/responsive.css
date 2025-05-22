@@ -1695,7 +1695,7 @@
 }
 
 /*XX-Large devices (larger desktops, 1400px and up)*/
-@media (min-width: 1400px) {
+@media (min-width: 1400px) and (min-width: 2560px) {
   .container {
     max-width: 100%; /* Garante que o contêiner não ultrapasse a largura da viewport */
     margin: 0 auto; /* Centraliza o contêiner */
@@ -2292,49 +2292,3 @@
 }
 
 
-@media screen and (min-width: 1500px){
-  /*INTRO SECTION*/
-  #intro-section {
-    position: relative; /* Permite posicionar elementos dentro da seção */
-    display: flex; /* Usa Flexbox para organizar os elementos */
-    align-items: center; /* Alinha verticalmente os itens */
-    justify-content: flex-start; /* Alinha o texto à esquerda */
-    padding: 20px; /* Espaçamento interno */
-    overflow: visible; /* Garante que a imagem não ultrapasse os limites */
-    margin-bottom: 250px; /* Ajuste o valor conforme necessário */
-  }
-
-  .intro-text-block {
-    position: relative; /* Garante que o texto fique acima da imagem */
-    z-index: 2; /* Coloca o texto acima da imagem */
-    text-align: left; /* Alinha o texto à esquerda */
-    padding: 90px; /* Espaçamento interno */
-    color: var(--text-light); /* Cor do texto */
-  }
-
-  /* Estilo do pre para o texto de introdução */
-  #intro-pre {
-    text-align: left;
-  }
-
-  #intro-pre .hello {
-    padding: 0;
-    font-size: 4em; /* Tamanho grande */
-  }
-
-  #intro-pre .world {
-    text-indent: -80ch; /* Indentação para o texto */
-    font-size: 4em; /* Tamanho grande */
-  }
-
-  #intro-pre .role {
-    text-indent: -50ch; /* Indentação para o texto */
-    padding: 0;
-    font-size: 1em;
-  }
-
-  #intro-pre .tagline {
-    text-indent: -93ch; /* Indentação para o texto */
-    font-size: 1em;
-  }
-}
