@@ -2063,6 +2063,7 @@
     max-width: 100%;
     text-align: center; /* Centralizar o texto dentro da div */
     padding: 20px;
+    padding-left: 200px;
   }
 
     .languages {
