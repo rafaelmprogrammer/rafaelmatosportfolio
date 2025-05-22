@@ -2032,9 +2032,9 @@
     max-width: 100%;
     text-align: center; /* Centralizar o texto dentro da div */
     padding: 20px;
-    padding-left: 200px;
+    padding-left: 280px;
   }
-  
+
   .frameworks {
     text-align: left; /* Alinhar o texto à esquerda */
     margin: 0; /* Remover margens automáticas */
