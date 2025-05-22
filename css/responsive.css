@@ -2018,10 +2018,23 @@
     justify-items: center; /* Centralizar horizontalmente os itens em cada coluna */
     align-items: center; /* Centralizar verticalmente os itens em cada coluna */
   }
-
+  
   #curriculum-section {
     font-size: 1.2em;
   }
+
+  .languages-frameworks {
+    display: flex;
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente (se necessário) */
+    flex-wrap: wrap;
+    margin: 0 auto; /* Garante que a div esteja centralizada no contêiner pai */
+    max-width: 100%;
+    text-align: center; /* Centralizar o texto dentro da div */
+    padding: 20px;
+    padding-left: 200px;
+  }
+  
   .frameworks {
     text-align: left; /* Alinhar o texto à esquerda */
     margin: 0; /* Remover margens automáticas */
@@ -2054,23 +2067,6 @@
     font-size: 0.8em;
   }
 
-  .languages-frameworks {
-    display: flex;
-    justify-content: center; /* Centralizar horizontalmente */
-    align-items: center; /* Centralizar verticalmente (se necessário) */
-    flex-wrap: wrap;
-    margin: 0 auto; /* Garante que a div esteja centralizada no contêiner pai */
-    max-width: 100%;
-    text-align: center; /* Centralizar o texto dentro da div */
-    padding: 20px;
-    padding-left: 200px;
-  }
-
-    .languages {
-    text-align: right;
-    margin: 0;
-    justify-content: flex-end; /* Alinhar os itens horizontalmente à direita */
-  }
 
   /*PROJECTS SECTION*/
   #projects-section h2 {
