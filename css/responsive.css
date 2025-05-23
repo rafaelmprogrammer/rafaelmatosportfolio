@@ -2247,7 +2247,7 @@
 }
 
 /* Badges para telas muito grandes (1400px e acima) */
-@media (min-width: 1400px) {
+@media (min-width: 1400px) and (max-width:2560px){
   .card-body .card-footer .badge {
     padding: 8px 16px; /* Espaçamento interno maior */
     font-size: 1.1em; /* Tamanho do texto maior */
@@ -2288,6 +2288,10 @@
     text-align: center; /* Centralizar o texto dentro da div */
     padding: 20px;
     padding-right: 200px;
+  }
+
+  #intro-pre .hello{
+    padding-left: 50px; 
   }
 }
 
