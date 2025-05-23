@@ -1,5 +1,3 @@
-/*REVER*/
-
 /*X-Small devices (portrait phones, less than 576px)*/
 /*No media query for `xs` since this is the default in Bootstrap*/
 
@@ -2292,6 +2290,62 @@
 
   #intro-pre .hello{
     padding-left: 50px; 
+  }
+}
+
+
+
+/* Ultra-wide screens (1800px and up) */
+@media (min-width: 1800px) {
+  #intro-pre {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    overflow: hidden;
+    width: 80%;
+    margin: 0;
+    align-items: flex-start; 
+  }
+
+  #intro-pre .hello-role {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: start; /* alinha à esquerda */
+    width: 100%;
+  }
+
+  #intro-pre .hello,
+  #intro-pre .world {
+    font-size: 6em;
+    text-indent: 0;
+    text-align: start;
+
+  }
+
+  #intro-pre .role,
+  #intro-pre .tagline {
+    font-size: 1.6em;
+    text-indent: 0;
+    text-align: start;
+  }
+
+  #intro-pre .role{
+    text-indent: 0;
+    text-align: start; 
+    padding-left: 16vw;
+  }
+
+  #intro-pre .world{
+    margin: 0;
+    padding-left: 10vw;
+  }
+
+  #intro-pre .tagline{
+    padding-left: 10vw;
+  }
+
+  .theme-toggle-wrapper {
+    top: 80vh;
   }
 }
 
