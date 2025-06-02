@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://rafaelmprogrammer.github.io/rafaelmatosportfolio/schemas/sitemap/0.9">
+  <url>
+    <loc>https://rafaelmprogrammer.github.io/rafaelmatosportfolio/</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rafaelmprogrammer.github.io/rafaelmatosportfolio/index.html#projects-section</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rafaelmprogrammer.github.io/rafaelmatosportfolio/index.html#about-section</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Add more URLs as needed -->
