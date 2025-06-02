@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://rafaelmprogrammer.github.io/rafaelmatosportfolio/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rafaelmprogrammer.github.io/rafaelmatosportfolio/</loc>
     <lastmod>2025-06-02</lastmod>
@@ -19,3 +19,4 @@
     <priority>0.5</priority>
   </url>
   <!-- Add more URLs as needed -->
+  </urlset>
