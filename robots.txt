@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rafaelmprogrammer.github.io/rafaelmatosportfolio/sitemap.xml
